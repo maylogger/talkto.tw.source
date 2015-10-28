@@ -1,0 +1,15 @@
+// debug susy responsive layout
+$grid-background-column-color: rgba(#f15a14, 0.2)
+$grid-background-baseline-color: rgba(#009a8e, 0.3)
+$grid-background-baseline-height: $base-line-height
+
+body
+  +baseline-grid-background
+
+#{$page-container}
+  +susy-grid-background
+  +at-breakpoint($pad)
+    +susy-grid-background
+
+  +at-breakpoint($desktop)
+    +susy-grid-background
