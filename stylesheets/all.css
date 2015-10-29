@@ -325,6 +325,7 @@ img { max-width: 100%; margin-bottom: 24px; }
 .show-slider .slider-nav .slider-content.slick-current .class-info { opacity: 0; }
 .show-slider .slider-nav .slider-content .class-info { position: absolute; top: 50%; left: 0; right: 0; text-align: center; font-weight: bold; font-size: 13px; line-height: 24px; color: white; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); -webkit-transition: opacity 0.25s; -moz-transition: opacity 0.25s; -o-transition: opacity 0.25s; transition: opacity 0.25s; }
 @media (min-width: 1024px) { .show-slider { margin-left: 0; margin-right: 0; }
+  .show-slider .slider-for .slider-content { height: 100vh; }
   .show-slider .slider-for .show-info { bottom: 120px; padding: 48px; }
   .show-slider .slider-for .show-info .title { font-size: 48px; line-height: 72px; }
   .show-slider .slider-for .show-info .guest { font-size: 16px; line-height: 24px; }
