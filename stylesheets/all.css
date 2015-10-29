@@ -231,3 +231,54 @@ img { max-width: 100%; margin-bottom: 24px; }
 
 .form-action { margin-top: 24px; }
 .form-action .btn { margin-right: 12px; }
+
+.header { position: absolute; z-index: 1000; left: 0; right: 0; padding: 24px 0; }
+.header .logo { font-size: 24px; line-height: 24px; }
+
+.footer { padding: 72px 0 72px; background-color: #444444; text-align: center; }
+.footer .footer-links { margin: 0; padding: 0; border: 0; list-style: none; margin-bottom: 48px; }
+.footer .footer-links li { margin-bottom: 12px; }
+.footer .footer-link { font-size: 15px; line-height: 24px; color: #eeeeee; }
+.footer .footer-link:hover { color: white; }
+.footer .copyright { margin-bottom: 0px; font-size: 13px; line-height: 24px; color: #bbbbbb; }
+@media (min-width: 840px) { .footer .footer-links { margin-bottom: 24px; }
+  .footer .footer-links li { display: inline-block; margin: 0 12px; } }
+@media (min-width: 1272px) { .footer { padding: 72px 0 48px; } }
+
+.hero { position: relative; height: 95vh; min-height: 560px; }
+.hero .hero-content { position: absolute; top: 45%; left: 0; right: 0; padding: 0 24px; max-width: 360px; margin: 0 auto; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); text-align: center; }
+.hero .hero-title { margin-bottom: 12px; font-size: 28px; line-height: 1.2; color: black; }
+.hero .hero-subtitle { margin-bottom: 0px; font-size: 15px; line-height: 24px; }
+@media (min-width: 840px) { .hero .hero-content { max-width: 480px; }
+  .hero .hero-title { font-size: 36px; margin-bottom: 18px; }
+  .hero .hero-subtitle { font-size: 16px; line-height: 27px; } }
+@media (min-width: 1272px) { .hero .hero-content { max-width: 540px; }
+  .hero .hero-title { font-size: 48px; margin-bottom: 24px; }
+  .hero .hero-subtitle { font-size: 18px; line-height: 30px; } }
+
+.introduce { padding: 72px 0; background-color: #f3f3f3; }
+.introduce .container { max-width: 520px; }
+.introduce .introduce-title { margin-bottom: 24px; font-size: 24px; line-height: 30px; text-align: center; }
+.introduce .introduce-text { margin-bottom: 0px; font-size: 15px; line-height: 24px; }
+.introduce .introduce-text + .introduce-text { margin-top: 24px; }
+@media (min-width: 840px) { .introduce { padding: 96px 0; }
+  .introduce .introduce-title { margin-bottom: 30px; font-size: 30px; line-height: 30px; }
+  .introduce .introduce-text { font-size: 16px; line-height: 24px; }
+  .introduce .introduce-text + .introduce-text { margin-top: 30px; } }
+@media (min-width: 840px) { .introduce { padding: 144px 0; } }
+
+.partner-block { padding: 72px 0; text-align: center; }
+.partner-block .partner-block-title { margin-bottom: 24px; font-size: 24px; line-height: 30px; text-align: center; }
+.partner-block .partner-list { margin: 0; padding: 0; border: 0; list-style: none; }
+.partner-block .partner-list li { max-width: 320px; width: 100%; margin: 0 auto 24px; }
+.partner-block .partner { display: block; color: #444444; }
+.partner-block .partner:hover { text-decoration: none; }
+.partner-block .partner-logo { display: block; margin-bottom: 6px; width: 100%; height: 0; padding-top: 66.7%; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+.partner-block .partner-intro { font-size: 15px; line-height: 24px; margin-bottom: 0px; }
+@media (min-width: 840px) { .partner-block { padding: 96px 0; }
+  .partner-block .partner-block-title { margin-bottom: 36px; font-size: 30px; line-height: 30px; }
+  .partner-block .partner-list li { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: inline-block; vertical-align: top; margin: 0 auto 48px; padding: 0 12px; }
+  .partner-block .partner-intro { font-size: 16px; line-height: 24px; } }
+@media (min-width: 1272px) { .partner-block { padding: 144px 0; }
+  .partner-block .partner-block-title { margin-bottom: 48px; }
+  .partner-block .partner-list li { width: 25%; } }
