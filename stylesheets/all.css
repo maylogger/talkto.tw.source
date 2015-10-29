@@ -301,7 +301,7 @@ img { max-width: 100%; margin-bottom: 24px; }
 
 .show-container { max-width: 1272px; margin: 0 auto; }
 
-.show-slider { position: relative; margin-left: -24px; margin-right: -24px; }
+.show-slider { position: relative; }
 .show-slider .slider-for .slider-content { position: relative; min-height: 420px; height: 100vh; max-height: 800px; background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
 .show-slider .slider-for .slider-content:before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); }
 .show-slider .slider-for .show-info { position: absolute; left: 0; bottom: 96px; padding: 24px; color: white; }
