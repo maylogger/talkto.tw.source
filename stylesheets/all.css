@@ -124,6 +124,20 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 td, th { padding: 0; }
 
+.shs-extralight { font-family: "source-han-sans-traditional", sans-serif; font-weight: 100; }
+
+.shs-light { font-family: "source-han-sans-traditional", sans-serif; font-weight: 200; }
+
+.shs-normal { font-family: "source-han-sans-traditional", sans-serif; font-weight: 300; }
+
+.shs-regular { font-family: "source-han-sans-traditional", sans-serif; font-weight: 400; }
+
+.shs-medium { font-family: "source-han-sans-traditional", sans-serif; font-weight: 500; }
+
+.shs-bold, .hero .hero-title, .introduce .introduce-title, .partner-block .partner-block-title, .show-slider .slider-for .show-info .title { font-family: "source-han-sans-traditional", sans-serif; font-weight: 700; }
+
+.shs-heavy { font-family: "source-han-sans-traditional", sans-serif; font-weight: 900; }
+
 * html { font-size: 100%; }
 
 html { font-size: 16px; line-height: 24px; }
