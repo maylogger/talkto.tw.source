@@ -6,7 +6,8 @@ html lang="zh-TW"
     = render "/layout_og"
   body
     .page
-      .container
-        = yield
+      = render "/partial/header"
+      = yield
+      = render "/partial/footer"
     = render "/layout_foot"
     = render "/layout_livereload"
