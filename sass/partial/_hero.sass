@@ -1,7 +1,7 @@
 .hero
   position: relative
-  height: 95vh
-  min-height: 560px
+  height: 85vh
+  min-height: 440px
 
   .hero-content
     position: absolute
@@ -15,7 +15,7 @@
     text-align: center
 
   .hero-title
-    @extend .shs-bold
+    @extend .shs-heavy
     +trailer(0.5)
     font-size: 28px
     line-height: 1.2
@@ -26,6 +26,7 @@
     +adjust-font-size-to(15px)
 
   +at-breakpoint($pad)
+    height: 90vh
 
     .hero-content
       max-width: 480px
