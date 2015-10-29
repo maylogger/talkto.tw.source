@@ -1,0 +1,158 @@
+.show
+  background-color: #171717
+
+.show-slider
+  position: relative
+  margin-left: -24px
+  margin-right: -24px
+
+  .slider-for
+    .slider-content
+      position: relative
+      min-height: 420px
+      height: 100vh
+      max-height: 800px
+      background-position: center center
+      +background-size(cover)
+
+      &:before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: rgba(0,0,0,.5)
+
+    .show-info
+      position: absolute
+      left: 0
+      bottom: 96px
+      padding: 24px
+      color: white
+
+      .title
+        +trailer(.5)
+        +adjust-font-size-to(32px)
+
+      .guest
+        +adjust-font-size-to(13px)
+
+        &:before
+          content: "特別來賓"
+          padding-right: 6px
+          color: rgba(255,255,255,.7)
+
+  .slider-nav
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(0,0,0,.5)
+
+    .slick-prev, .slick-next
+      position: absolute
+      top: 12px
+      width: 38px
+      height: 64px
+      color: white
+      background: transparent
+      border: none
+
+    .slick-prev, .slick-next
+      +hide-text()
+      opacity: .7
+      +transition(opacity .25s)
+      outline: none
+
+      &:hover
+        opacity: 1
+
+    .slick-prev
+      left: 0
+      background: url("/images/slider-prev.svg") center no-repeat
+
+    .slick-next
+      right: 0
+      background: url("/images/slider-next.svg") center no-repeat
+
+
+
+    .slick-list
+      margin: 6px 38px
+
+    .slider-content
+      position: relative
+      height: 64px
+      margin: 6px
+      background-position: center center
+      +background-size(cover)
+
+      &:focus
+        outline: none
+
+      &:hover
+        margin: 3px
+        border: 3px solid rgba(255,255,255,.7)
+
+      &:before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: rgba(0,0,0,.5)
+        opacity: 1
+        +transition(opacity .25s)
+
+      &.slick-current
+        margin: 3px
+        border: 3px solid white
+
+        &:before
+          opacity: 0
+
+        .class-info
+          opacity: 0
+
+      .class-info
+        position: absolute
+        top: 50%
+        left: 0
+        right: 0
+        text-align: center
+        font-weight: bold
+        +adjust-font-size-to(13px)
+        color: white
+        +translateY(-50%)
+        +transition(opacity .25s)
+
+  @include at-breakpoint($desktop)
+    margin-left: 0
+    margin-right: 0
+
+    .slider-for
+      .show-info
+        bottom: 120px
+        padding: 48px
+
+        .title
+          +adjust-font-size-to(48px)
+
+        .guest
+          +adjust-font-size-to(16px)
+
+    .slider-nav
+      .slick-prev, .slick-next
+        width: 70px
+        height: 96px
+
+      .slick-list
+        margin: 6px 70px
+
+      .slider-content
+        height: 96px
+
+        .class-info
+          +adjust-font-size-to(16px)
