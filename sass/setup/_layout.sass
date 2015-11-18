@@ -19,3 +19,10 @@ $page-container: ".container"
 // ---- container setting ----
 #{$page-container}
   +container($phone, $pad, $desktop)
+  padding: 0 12px
+
+  +at-breakpoint($pad)
+    padding: 0 24px
+
+  +at-breakpoint($desktop)
+    padding: 0 48px

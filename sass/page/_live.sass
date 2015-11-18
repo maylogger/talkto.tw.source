@@ -1,0 +1,79 @@
+.live
+  +leader()
+  +trailer()
+
+  .container
+    +pie-clearfix
+
+  .stream
+    +pie-clearfix
+    position: relative
+
+    .video
+      position: relative
+      padding-top: 62%
+
+      iframe
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+
+  .chatroom
+    position: relative
+    padding-top: 75%
+
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+
+  .polis
+
+    iframe
+      box-sizing: border-box
+
+    .vote
+      iframe
+        width: 100%
+        height: 280px
+
+    .perspective
+      iframe
+        width: 100%
+
+  @include at-breakpoint($desktop)
+    .container
+      position: relative
+      height: 80vh
+      min-height: 940px
+
+    .left
+      float: left
+      width: 65%
+
+    .right
+      position: absolute
+      float: right
+      width: 35%
+      top: 0
+      right: 0
+      bottom: 0
+
+    .chatroom
+      position: absolute
+      width: 100%
+      top: 0
+      right: 0
+      bottom: 0
+      padding-top: 0
+
+      iframe
+        position: absolute
+        top: 0
+        bottom: 0
+        width: calc(100% - 48px)
+        height: 100%
