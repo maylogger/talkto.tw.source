@@ -348,7 +348,7 @@ img { max-width: 100%; margin-bottom: 24px; }
 .live .polis iframe { box-sizing: border-box; }
 .live .polis .vote iframe { width: 100%; height: 280px; }
 .live .polis .perspective iframe { width: 100%; }
-@media (min-width: 1024px) { .live .container { position: relative; height: 80vh; }
+@media (min-width: 1024px) { .live .container { position: relative; height: 80vh; min-height: 940px; }
   .live .left { float: left; width: 65%; }
   .live .right { position: absolute; float: right; width: 35%; top: 0; right: 0; bottom: 0; }
   .live .chatroom { position: absolute; width: 100%; top: 0; right: 0; bottom: 0; padding-top: 0; }
