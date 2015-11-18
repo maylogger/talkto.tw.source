@@ -350,6 +350,6 @@ img { max-width: 100%; margin-bottom: 24px; }
 .live .polis .perspective iframe { width: 100%; }
 @media (min-width: 1024px) { .live .container { position: relative; }
   .live .left { float: left; width: 65%; }
-  .live .right { position: absolute; float: right; width: 35%; top: 0; right: 0; height: 80vh; max-height: 760px; }
+  .live .right { position: absolute; float: right; width: 35%; top: 0; right: 0; height: 80vh; max-height: 952px; }
   .live .chatroom { position: absolute; width: 100%; top: 0; right: 0; bottom: 0; padding-top: 0; }
   .live .chatroom iframe { position: absolute; top: 0; bottom: 0; width: calc(100% - 48px); height: 100%; } }
