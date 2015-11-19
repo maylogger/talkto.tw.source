@@ -148,7 +148,7 @@ code { font-family: "Anonymous Pro", "Inconsolata", "Consolas Regular Font", "Mo
 
 .btn, .form-label { -webkit-font-smoothing: subpixel-antialiased; }
 
-body { -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; color: #444444; background-color: #0e0e0e; }
+body { -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; color: #444444; }
 
 h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; border: 0; font-weight: normal; margin-bottom: 24px; }
 
@@ -337,10 +337,10 @@ img { max-width: 100%; margin-bottom: 24px; }
   .show-slider .slider-nav .slider-content { height: 96px; }
   .show-slider .slider-nav .slider-content .class-info { font-size: 16px; line-height: 24px; } }
 
-.TTT-pattern { height: 100%; background: #0e0e0e url("/images/TTT-pattern.svg") center repeat; }
+.index { height: 100%; background: #0e0e0e url("/images/TTT-pattern.svg") center repeat; }
 
-.index-countdown { max-width: 1520px; position: absolute; top: 50%; left: 0; right: 0; color: white; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); }
-.index-countdown .logo { margin: 0 auto; margin-bottom: 36px; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo-small.png?1447935520'); background-repeat: no-repeat; background-position: 50% 50%; width: 220px; height: 220px; background-image: none, url('/images/logo-small.svg?1447935520'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
+.index-countdown { max-width: 1520px; position: absolute; left: 0; right: 0; color: white; text-align: center; }
+.index-countdown .logo { margin-bottom: 36px; margin-left: auto; margin-right: auto; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo-small.png?1447935520'); background-repeat: no-repeat; background-position: 50% 50%; width: 220px; height: 220px; background-image: none, url('/images/logo-small.svg?1447935520'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
 .index-countdown .countdown .item, .index-countdown .countdown .colon { display: inline-block; vertical-align: top; }
 .index-countdown .countdown .item { min-width: 40px; }
 .index-countdown .countdown .item .number { font-size: 36px; line-height: 48px; }
@@ -348,6 +348,7 @@ img { max-width: 100%; margin-bottom: 24px; }
 .index-countdown .countdown .colon { font-size: 36px; line-height: 48px; }
 .index-countdown .slogan { margin-top: 36px; font-size: 24px; line-height: 48px; }
 .index-countdown .slogan .highlight { color: #e63082; }
+@media screen and (min-height: 400px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
 @media (min-width: 768px) { .index-countdown .logo { margin-bottom: 48px; }
   .index-countdown .countdown .item .number { font-size: 84px; line-height: 96px; }
   .index-countdown .countdown .item .unit { font-size: 16px; line-height: 24px; }

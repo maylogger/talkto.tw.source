@@ -1,4 +1,4 @@
-.TTT-pattern
+.index
   height: 100%
   background: $color-ci-black url('/images/TTT-pattern.svg') center repeat
 
@@ -6,16 +6,15 @@
   @extend .container
   max-width: 1520px
   position: absolute
-  top: 50%
   left: 0
   right: 0
   color: white
   text-align: center
-  @include translateY(-50%)
 
   .logo
-    margin: 0 auto
     +trailer(1.5)
+    margin-left: auto
+    margin-right: auto
     +replace-text-with-svg('logo-small')
 
   .countdown
@@ -41,6 +40,11 @@
 
     .highlight
       color: $color-ci-pink
+
+  @media screen and (min-height: 400px)
+    top: 50%
+    @include translateY(-50%)
+
 
   @include at-breakpoint($pad)
     .logo

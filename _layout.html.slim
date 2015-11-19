@@ -4,7 +4,7 @@ html lang="zh-TW"
     = render "/layout_head"
     = render "/layout_siteinfo"
     = render "/layout_og"
-  body.TTT-pattern
+  body class="#{@page_name}"
     .page
       - if @page_name == "index"
       - else
