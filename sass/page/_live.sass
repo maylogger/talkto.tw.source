@@ -4,26 +4,26 @@
 
   .container
     +pie-clearfix
+    padding-left: 0
+    padding-right: 0
+
+  iframe
+    box-sizing: border-box
 
   .stream
     +pie-clearfix
     position: relative
 
-    .video
-      position: relative
-      padding-top: 62%
-
-      iframe
-        position: absolute
-        top: 0
-        left: 0
-        width: 100%
-        height: 100%
+  .video
+    position: relative
+    padding-top: 71.5%
 
   .chatroom
     position: relative
-    padding-top: 75%
+    padding-top: 100%
+    overflow: hidden
 
+  .video, .chatroom
     iframe
       position: absolute
       top: 0
@@ -32,23 +32,30 @@
       height: 100%
 
   .polis
-
-    iframe
-      box-sizing: border-box
-
     .vote
       iframe
         width: 100%
-        height: 360px
+        min-height: 360px
 
     .perspective
       iframe
         width: 100%
 
+    .opinion-groups
+      iframe
+        width: 100%
+        min-height: 800px
+
+  @include at-breakpoint($pad)
+    .container
+      padding-left: 24px
+      padding-right: 24px
+
   @include at-breakpoint($desktop)
     .container
       position: relative
-      // height: 80vh
+      padding-left: 48px
+      padding-right: 48px
 
     .left
       float: left
@@ -60,8 +67,10 @@
       width: 35%
       top: 0
       right: 0
-      height: 80vh
-      max-height: 952px
+      bottom: 0
+
+    .video
+      padding-top: 56%
 
     .chatroom
       position: absolute
@@ -77,3 +86,7 @@
         bottom: 0
         width: calc(100% - 48px)
         height: 100%
+
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)and (-webkit-min-device-pixel-ratio: 2)
+    .video
+      padding-top: 64%

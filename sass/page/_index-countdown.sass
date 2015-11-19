@@ -1,0 +1,97 @@
+.TTT-pattern
+  height: 100%
+  background: $color-ci-black url('/images/TTT-pattern.svg') center repeat
+
+.index-countdown
+  @extend .container
+  max-width: 1520px
+  position: absolute
+  top: 50%
+  left: 0
+  right: 0
+  color: white
+  text-align: center
+  @include translateY(-50%)
+
+  .logo
+    margin: 0 auto
+    +trailer(1.5)
+    +replace-text-with-svg('logo-small')
+
+  .countdown
+    .item, .colon
+      display: inline-block
+      vertical-align: top
+
+    .item
+      min-width: 40px
+      .number
+        +adjust-font-size-to(36px)
+
+      .unit
+        color: $color-ci-gray
+        +adjust-font-size-to(12px)
+
+    .colon
+      +adjust-font-size-to(36px)
+
+  .slogan
+    +leader(1.5)
+    +adjust-font-size-to(24px)
+
+    .highlight
+      color: $color-ci-pink
+
+  @include at-breakpoint($pad)
+    .logo
+      +trailer(2)
+
+    .countdown
+      .item
+        .number
+          +adjust-font-size-to(84px)
+
+        .unit
+          +adjust-font-size-to(16px)
+
+      .colon
+        +adjust-font-size-to(84px)
+
+    .slogan
+      +leader(2)
+      +adjust-font-size-to(24px)
+
+  @include at-breakpoint($desktop)
+    .logo
+      +replace-text-with-svg('logo')
+
+    .countdown
+      .item
+        .number
+          +adjust-font-size-to(96px)
+
+      .colon
+        +adjust-font-size-to(96px)
+
+    .slogan
+      +adjust-font-size-to(28px)
+
+  @include at-breakpoint(1520px 16)
+    .logo
+      +trailer(4)
+      +adjust-font-size-to(72px)
+
+    .countdown
+      .item
+        .number
+          +adjust-font-size-to(128px)
+
+        .unit
+          +adjust-font-size-to(18px)
+
+      .colon
+        +adjust-font-size-to(128px)
+
+    .slogan
+      +leader(4)
+      +adjust-font-size-to(36px)

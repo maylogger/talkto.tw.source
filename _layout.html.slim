@@ -4,12 +4,14 @@ html lang="zh-TW"
     = render "/layout_head"
     = render "/layout_siteinfo"
     = render "/layout_og"
-  body
+  body.TTT-pattern
     .page
       - if @page_name == "index"
       - else
         = render "/partial/header"
       = yield
-      = render "/partial/footer"
+      - if @page_name == "index"
+      - else
+        = render "/partial/footer"
     = render "/layout_foot"
     = render "/layout_livereload"

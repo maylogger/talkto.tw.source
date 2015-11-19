@@ -148,7 +148,7 @@ code { font-family: "Anonymous Pro", "Inconsolata", "Consolas Regular Font", "Mo
 
 .btn, .form-label { -webkit-font-smoothing: subpixel-antialiased; }
 
-body { -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; color: #444444; }
+body { -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; color: #444444; background-color: #0e0e0e; }
 
 h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; border: 0; font-weight: normal; margin-bottom: 24px; }
 
@@ -196,12 +196,12 @@ hr, .divider { margin-top: 24px; margin-bottom: 24px; border-top: 1px solid #ddd
 
 img { max-width: 100%; margin-bottom: 24px; }
 
-.container { max-width: 624px; padding-left: 24px; padding-right: 24px; margin-left: auto; margin-right: auto; padding: 0 12px; }
-.container:after { content: ""; display: table; clear: both; }
-@media (min-width: 768px) { .container { max-width: 840px; } }
-@media (min-width: 1024px) { .container { max-width: 1272px; } }
-@media (min-width: 768px) { .container { padding: 0 24px; } }
-@media (min-width: 1024px) { .container { padding: 0 48px; } }
+.container, .index-countdown { max-width: 624px; padding-left: 24px; padding-right: 24px; margin-left: auto; margin-right: auto; padding: 0 12px; }
+.container:after, .index-countdown:after { content: ""; display: table; clear: both; }
+@media (min-width: 768px) { .container, .index-countdown { max-width: 840px; } }
+@media (min-width: 1024px) { .container, .index-countdown { max-width: 1272px; } }
+@media (min-width: 768px) { .container, .index-countdown { padding: 0 24px; } }
+@media (min-width: 1024px) { .container, .index-countdown { padding: 0 48px; } }
 
 .btn { display: inline-block; margin-bottom: 0; padding: 5px 23px; border: 1px solid #dddddd; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; font-size: 15px; line-height: 24px; background-image: none; text-align: center; text-shadow: none; cursor: pointer; outline: none; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; user-select: none; color: #444444; background-color: #dddddd; }
 .btn:hover { text-decoration: none; color: #444444; border-color: #dddddd; background-color: #dddddd; }
@@ -275,7 +275,7 @@ img { max-width: 100%; margin-bottom: 24px; }
   .hero .hero-subtitle { font-size: 18px; line-height: 30px; } }
 
 .introduce { padding: 72px 0; background-color: #f3f3f3; }
-.introduce .container { max-width: 520px; }
+.introduce .container, .introduce .index-countdown { max-width: 520px; }
 .introduce .introduce-title { margin-bottom: 24px; font-size: 24px; line-height: 30px; text-align: center; }
 .introduce .introduce-text { margin-bottom: 0px; font-size: 15px; line-height: 24px; }
 .introduce .introduce-text + .introduce-text { margin-top: 24px; }
@@ -337,19 +337,49 @@ img { max-width: 100%; margin-bottom: 24px; }
   .show-slider .slider-nav .slider-content { height: 96px; }
   .show-slider .slider-nav .slider-content .class-info { font-size: 16px; line-height: 24px; } }
 
+.TTT-pattern { height: 100%; background: #0e0e0e url("/images/TTT-pattern.svg") center repeat; }
+
+.index-countdown { max-width: 1520px; position: absolute; top: 50%; left: 0; right: 0; color: white; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); }
+.index-countdown .logo { margin: 0 auto; margin-bottom: 36px; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo-small.png?1447935520'); background-repeat: no-repeat; background-position: 50% 50%; width: 220px; height: 220px; background-image: none, url('/images/logo-small.svg?1447935520'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
+.index-countdown .countdown .item, .index-countdown .countdown .colon { display: inline-block; vertical-align: top; }
+.index-countdown .countdown .item { min-width: 40px; }
+.index-countdown .countdown .item .number { font-size: 36px; line-height: 48px; }
+.index-countdown .countdown .item .unit { color: #aaaaaa; font-size: 12px; line-height: 24px; }
+.index-countdown .countdown .colon { font-size: 36px; line-height: 48px; }
+.index-countdown .slogan { margin-top: 36px; font-size: 24px; line-height: 48px; }
+.index-countdown .slogan .highlight { color: #e63082; }
+@media (min-width: 768px) { .index-countdown .logo { margin-bottom: 48px; }
+  .index-countdown .countdown .item .number { font-size: 84px; line-height: 96px; }
+  .index-countdown .countdown .item .unit { font-size: 16px; line-height: 24px; }
+  .index-countdown .countdown .colon { font-size: 84px; line-height: 96px; }
+  .index-countdown .slogan { margin-top: 48px; font-size: 24px; line-height: 48px; } }
+@media (min-width: 1024px) { .index-countdown .logo { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo.png?1447935202'); background-repeat: no-repeat; background-position: 50% 50%; width: 300px; height: 300px; background-image: none, url('/images/logo.svg?1447935202'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
+  .index-countdown .countdown .item .number { font-size: 96px; line-height: 120px; }
+  .index-countdown .countdown .colon { font-size: 96px; line-height: 120px; }
+  .index-countdown .slogan { font-size: 28px; line-height: 48px; } }
+@media (min-width: 1520px) { .index-countdown .logo { margin-bottom: 96px; font-size: 72px; line-height: 96px; }
+  .index-countdown .countdown .item .number { font-size: 128px; line-height: 144px; }
+  .index-countdown .countdown .item .unit { font-size: 18px; line-height: 24px; }
+  .index-countdown .countdown .colon { font-size: 128px; line-height: 144px; }
+  .index-countdown .slogan { margin-top: 96px; font-size: 36px; line-height: 48px; } }
+
 .live { margin-top: 24px; margin-bottom: 24px; }
-.live .container:after { content: ""; display: table; clear: both; }
+.live .container, .live .index-countdown { padding-left: 0; padding-right: 0; }
+.live .container:after, .live .index-countdown:after { content: ""; display: table; clear: both; }
+.live iframe { box-sizing: border-box; }
 .live .stream { position: relative; }
 .live .stream:after { content: ""; display: table; clear: both; }
-.live .stream .video { position: relative; padding-top: 62%; }
-.live .stream .video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-.live .chatroom { position: relative; padding-top: 75%; }
-.live .chatroom iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-.live .polis iframe { box-sizing: border-box; }
-.live .polis .vote iframe { width: 100%; height: 360px; }
+.live .video { position: relative; padding-top: 71.5%; }
+.live .chatroom { position: relative; padding-top: 100%; overflow: hidden; }
+.live .video iframe, .live .chatroom iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.live .polis .vote iframe { width: 100%; min-height: 360px; }
 .live .polis .perspective iframe { width: 100%; }
-@media (min-width: 1024px) { .live .container { position: relative; }
+.live .polis .opinion-groups iframe { width: 100%; min-height: 800px; }
+@media (min-width: 768px) { .live .container, .live .index-countdown { padding-left: 24px; padding-right: 24px; } }
+@media (min-width: 1024px) { .live .container, .live .index-countdown { position: relative; padding-left: 48px; padding-right: 48px; }
   .live .left { float: left; width: 65%; }
-  .live .right { position: absolute; float: right; width: 35%; top: 0; right: 0; height: 80vh; max-height: 952px; }
+  .live .right { position: absolute; float: right; width: 35%; top: 0; right: 0; bottom: 0; }
+  .live .video { padding-top: 56%; }
   .live .chatroom { position: absolute; width: 100%; top: 0; right: 0; bottom: 0; padding-top: 0; }
   .live .chatroom iframe { position: absolute; top: 0; bottom: 0; width: calc(100% - 48px); height: 100%; } }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) { .live .video { padding-top: 64%; } }
