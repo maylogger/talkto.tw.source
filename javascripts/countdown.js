@@ -1,5 +1,6 @@
-$('#countdown-timer').countdown('2015/11/26 00:00').on('update.countdown', function(event) {
-  var totalHours = event.offset.totalDays * 24 + event.offset.hours;
+var taipeiTime = moment.tz("2015-11-26 00:00", "Asia/Taipei");
+
+$('#countdown-timer').countdown(taipeiTime.toDate(), function(event) {
   var $this = $(this).html(event.strftime(''
     + '<div class="item"><div class="number">%D</div><div class="unit">DAYS</div></div>'
     + '<div class="colon">：</div>'
