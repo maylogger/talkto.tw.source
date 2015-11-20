@@ -1,18 +1,15 @@
 .live
+  .livestream
+    .container
+      .livestream-inner
+        .main-content
+          .video
+            iframe src="https://livehouse.in/embed/channel/talktotaiwansub/video" frameborder="0" allowfullscreen=""
+        .side-content
+          .chatroom
+            iframe src="https://livehouse.in/embed/channel/talktotaiwansub/chatroom" frameborder="0" allowfullscreen=""
   .container
-    .stream
-      .main-content
-        .video
-          iframe src="https://livehouse.in/embed/channel/talktotaiwansub/video" frameborder="0" allowfullscreen=""
-      .side-content
-        .chatroom
-          iframe src="https://livehouse.in/embed/channel/talktotaiwansub/chatroom" frameborder="0" allowfullscreen=""
-    .main-content
-      .polis
-        .vote
-          iframe frameborder="0" scrolling="no" class="rotate" src="https://pol.is/73rxk6/?ucv=1&amp;ucw=0&amp;ucst=0&amp;ucsd=0&amp;ucsv=0&amp;ucsf=0"
-        .perspective
-          iframe frameborder="0" scrolling="no" class="invert" src="https://pol.is/73rxk6/?ucv=0&amp;ucw=1&amp;ucst=0&amp;ucsd=0&amp;ucsv=0&amp;ucsf=0"
-        .opinion-groups
-           iframe frameborder="0" scrolling="no" class="rotate" src="https://pol.is/73rxk6/?ucv=0&amp;ucw=0&amp;ucst=0&amp;ucsd=0&amp;ucsv=1&amp;ucsf=0"
+    .polis-embed
+      .polis data-conversation_id="73rxk6"
+      script async="true" src="https://pol.is/embed.js"
 

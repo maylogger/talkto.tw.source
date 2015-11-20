@@ -1,6 +1,5 @@
 .live
-  +leader()
-  +trailer()
+  +trailer(2)
 
   .container
     +pie-clearfix
@@ -11,8 +10,19 @@
     box-sizing: border-box
 
   .stream
+    +leader()
     +pie-clearfix
     position: relative
+
+  .livestream
+    +padding-leader()
+    +padding-trailer()
+    +trailer()
+    background-color: $color-ci-black
+
+    .livestream-inner
+      +pie-clearfix
+      position: relative
 
   .video
     position: relative
@@ -20,7 +30,7 @@
 
   .chatroom
     position: relative
-    padding-top: 100%
+    padding-top: 70%
     overflow: hidden
 
   .video, .chatroom
@@ -40,7 +50,7 @@
     .perspective
       iframe
         width: 100%
-        min-height: 300px
+        min-height: 200px
 
     .opinion-groups
       iframe
@@ -52,6 +62,11 @@
       padding-left: 24px
       padding-right: 24px
 
+    .livestream
+      +padding-leader(2)
+      +padding-trailer(2)
+      +trailer(2)
+
   @include at-breakpoint($desktop)
     .container
       position: relative
@@ -60,12 +75,12 @@
 
     .main-content
       float: left
-      width: 65%
+      width: 64%
 
     .side-content
       position: absolute
       float: right
-      width: 35%
+      width: 36%
       top: 0
       right: 0
       bottom: 0
@@ -85,8 +100,12 @@
         position: absolute
         top: 0
         bottom: 0
-        width: calc(100% - 48px)
+        width: calc(100%)
         height: 100%
+
+    .polis-embed
+      iframe
+        width: 100%
 
   @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)and (-webkit-min-device-pixel-ratio: 2)
     .video
