@@ -1,10 +1,10 @@
 site-url: "http://localhost:3000"
 site-name: "政問 Talk To Taiwan"
 site-title: "政問 Talk To Taiwan"
-site-keywords: "尚未填寫敘述"
-site-description: "尚未填寫敘述"
+site-keywords: "政治問卦, 關鍵領袖, 核心問題, 解決方案, 政策備忘錄, 總統選舉"
+site-description: ""
 
 
 og-type: "website"
-og-image: "http://localhost:3000/fb.png"
-fb-admins: "123456"
+og-image: "http://talkto.tw/ogimage-cs.png"
+fb-admins: "612130717"

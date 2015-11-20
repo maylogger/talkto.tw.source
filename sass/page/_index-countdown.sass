@@ -8,6 +8,8 @@
   position: absolute
   left: 0
   right: 0
+  +padding-leader(2)
+  +padding-trailer(2)
   color: white
   text-align: center
 
@@ -23,28 +25,36 @@
       vertical-align: top
 
     .item
-      min-width: 40px
+      width: 48px
+
       .number
-        +adjust-font-size-to(36px)
+        font-family: "Gotham SSm A", "Gotham SSm B"
+        font-style: normal
+        font-weight: 700
+        +adjust-font-size-to(32px)
 
       .unit
+        font-family: "Gotham SSm A", "Gotham SSm B"
+        font-style: normal
+        font-weight: 400
         color: $color-ci-gray
         +adjust-font-size-to(12px)
 
     .colon
-      +adjust-font-size-to(36px)
+      +adjust-font-size-to(32px)
 
   .slogan
+    @extend .shs-regular
     +leader(1.5)
     +adjust-font-size-to(24px)
 
+    .date
+      font-family: "Gotham SSm A", "Gotham SSm B"
+      font-style: normal
+      font-weight: 400
+
     .highlight
       color: $color-ci-pink
-
-  @media screen and (min-height: 400px)
-    top: 50%
-    @include translateY(-50%)
-
 
   @include at-breakpoint($pad)
     .logo
@@ -52,6 +62,8 @@
 
     .countdown
       .item
+        width: 100px
+
         .number
           +adjust-font-size-to(84px)
 
@@ -65,12 +77,15 @@
       +leader(2)
       +adjust-font-size-to(24px)
 
+
   @include at-breakpoint($desktop)
     .logo
       +replace-text-with-svg('logo')
 
     .countdown
       .item
+        width: 140px
+
         .number
           +adjust-font-size-to(96px)
 
@@ -80,6 +95,7 @@
     .slogan
       +adjust-font-size-to(28px)
 
+
   @include at-breakpoint(1520px 16)
     .logo
       +trailer(4)
@@ -87,6 +103,8 @@
 
     .countdown
       .item
+        width: 186px
+
         .number
           +adjust-font-size-to(128px)
 
@@ -99,3 +117,19 @@
     .slogan
       +leader(4)
       +adjust-font-size-to(36px)
+
+  @media (max-width: 767px) and (min-height: 566px)
+    top: 50%
+    @include translateY(-50%)
+
+  @media (min-width: 768px) and (min-height: 638px) and (max-width: 1023px)
+    top: 50%
+    @include translateY(-50%)
+
+  @media (min-width: 1024px) and (min-height: 741px) and (max-width: 1519px)
+    top: 50%
+    @include translateY(-50%)
+
+  @media (min-width: 1520px) and (min-height: 862px)
+    top: 50%
+    @include translateY(-50%)

@@ -1,0 +1,25 @@
+.share-button
+  +leader()
+  margin-right: 16px
+  text-align: center
+
+  span
+    display: inline-block
+    margin-right: 6px
+    vertical-align: text-top
+    +adjust-font-size-to(15px)
+
+  .fb-share, .tweet
+    +inline-block()
+
+  .fb-share
+    +replace-text-with-svg("icon-share-facebook-gray")
+
+    &:hover
+      +replace-text-with-svg("icon-share-facebook")
+
+  .tweet
+    +replace-text-with-svg("icon-share-twitter-gray")
+
+    &:hover
+      +replace-text-with-svg("icon-share-twitter")

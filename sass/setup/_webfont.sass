@@ -25,3 +25,12 @@
 .shs-heavy
   font-family: "source-han-sans-traditional",sans-serif
   font-weight: 900
+
+.shs-extralight, .shs-light, .shs-normal, .shs-regular, .shs-medium, .shs-bold, .shs-heavy
+  +transition(opacity .5s .5s)
+
+  .wf-loading &
+    opacity: 0
+
+  .wf-active &
+    opacity: 1
