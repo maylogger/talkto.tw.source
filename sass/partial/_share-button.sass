@@ -13,13 +13,21 @@
     +inline-block()
 
   .fb-share
-    +replace-text-with-svg("icon-share-facebook-gray")
+    +replace-text-with-svg("icon-sns-share")
+    width: 32px
+    height: 32px
+    background-position: 0 0
+    +background-size(cover)
 
     &:hover
-      +replace-text-with-svg("icon-share-facebook")
+      background-position: 0 -32px
 
   .tweet
-    +replace-text-with-svg("icon-share-twitter-gray")
+    +replace-text-with-svg("icon-sns-share")
+    width: 32px
+    height: 32px
+    background-position: 0 -64px
+    +background-size(cover)
 
     &:hover
-      +replace-text-with-svg("icon-share-twitter")
+      background-position: 0 -96px
