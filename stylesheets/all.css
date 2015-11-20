@@ -352,36 +352,35 @@ img { max-width: 100%; margin-bottom: 24px; }
 .index { height: 100%; background: #0e0e0e url("/images/TTT-pattern.svg") center repeat; }
 
 .index-countdown { max-width: 1520px; position: absolute; left: 0; right: 0; padding-top: 48px; padding-bottom: 48px; color: white; text-align: center; }
-.index-countdown .logo { margin-bottom: 36px; margin-left: auto; margin-right: auto; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo-small.png?1447935520'); background-repeat: no-repeat; background-position: 50% 50%; width: 220px; height: 220px; background-image: none, url('/images/logo-small.svg?1447935520'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
+.index-countdown .logo { margin-bottom: 24px; margin-left: auto; margin-right: auto; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo-small.png?1447935520'); background-repeat: no-repeat; background-position: 50% 50%; width: 220px; height: 220px; background-image: none, url('/images/logo-small.svg?1447935520'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
 .index-countdown .countdown .item, .index-countdown .countdown .colon { display: inline-block; vertical-align: top; }
 .index-countdown .countdown .item { width: 48px; }
 .index-countdown .countdown .item .number { font-family: "Gotham SSm A", "Gotham SSm B"; font-style: normal; font-weight: 700; font-size: 32px; line-height: 48px; }
 .index-countdown .countdown .item .unit { font-family: "Gotham SSm A", "Gotham SSm B"; font-style: normal; font-weight: 400; color: #aaaaaa; font-size: 12px; line-height: 24px; }
 .index-countdown .countdown .colon { font-size: 32px; line-height: 48px; }
-.index-countdown .slogan { margin-top: 36px; font-size: 24px; line-height: 48px; }
+.index-countdown .slogan { margin-top: 24px; font-size: 24px; line-height: 48px; }
 .index-countdown .slogan .date { font-family: "Gotham SSm A", "Gotham SSm B"; font-style: normal; font-weight: 400; }
 .index-countdown .slogan .highlight { color: #e63082; }
-@media (min-width: 768px) { .index-countdown .logo { margin-bottom: 48px; }
+@media (min-width: 768px) { .index-countdown .logo { margin-bottom: 36px; }
   .index-countdown .countdown .item { width: 100px; }
-  .index-countdown .countdown .item .number { font-size: 84px; line-height: 96px; }
+  .index-countdown .countdown .item .number { font-size: 72px; line-height: 96px; }
   .index-countdown .countdown .item .unit { font-size: 16px; line-height: 24px; }
-  .index-countdown .countdown .colon { font-size: 84px; line-height: 96px; }
-  .index-countdown .slogan { margin-top: 48px; font-size: 24px; line-height: 48px; } }
-@media (min-width: 1024px) { .index-countdown .logo { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo.png?1447935202'); background-repeat: no-repeat; background-position: 50% 50%; width: 300px; height: 300px; background-image: none, url('/images/logo.svg?1447935202'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
-  .index-countdown .countdown .item { width: 140px; }
-  .index-countdown .countdown .item .number { font-size: 96px; line-height: 120px; }
-  .index-countdown .countdown .colon { font-size: 96px; line-height: 120px; }
+  .index-countdown .countdown .colon { font-size: 72px; line-height: 96px; }
+  .index-countdown .slogan { margin-top: 36px; font-size: 24px; line-height: 48px; } }
+@media (min-width: 1024px) { .index-countdown .countdown .item { width: 140px; }
+  .index-countdown .countdown .item .number { font-size: 88px; line-height: 96px; }
+  .index-countdown .countdown .colon { font-size: 88px; line-height: 96px; }
   .index-countdown .slogan { font-size: 28px; line-height: 48px; } }
-@media (min-width: 1520px) { .index-countdown .logo { margin-bottom: 96px; font-size: 72px; line-height: 96px; }
+@media (min-width: 1520px) { .index-countdown .logo { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo.png?1447935202'); background-repeat: no-repeat; background-position: 50% 50%; width: 300px; height: 300px; background-image: none, url('/images/logo.svg?1447935202'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; margin-bottom: 72px; }
   .index-countdown .countdown .item { width: 186px; }
   .index-countdown .countdown .item .number { font-size: 128px; line-height: 144px; }
   .index-countdown .countdown .item .unit { font-size: 18px; line-height: 24px; }
   .index-countdown .countdown .colon { font-size: 128px; line-height: 144px; }
-  .index-countdown .slogan { margin-top: 96px; font-size: 36px; line-height: 48px; } }
-@media (max-width: 767px) and (min-height: 566px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
-@media (min-width: 768px) and (min-height: 638px) and (max-width: 1023px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
-@media (min-width: 1024px) and (min-height: 741px) and (max-width: 1519px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
-@media (min-width: 1520px) and (min-height: 862px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
+  .index-countdown .slogan { margin-top: 72px; font-size: 36px; line-height: 48px; } }
+@media (max-width: 767px) and (min-height: 542px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
+@media (min-width: 768px) and (min-height: 614px) and (max-width: 1023px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
+@media (min-width: 1024px) and (min-height: 613px) and (max-width: 1519px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
+@media (min-width: 1520px) and (min-height: 814px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
 
 .live { margin-top: 24px; margin-bottom: 24px; }
 .live .container, .live .index-countdown { padding-left: 0; padding-right: 0; }

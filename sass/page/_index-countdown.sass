@@ -14,7 +14,7 @@
   text-align: center
 
   .logo
-    +trailer(1.5)
+    +trailer()
     margin-left: auto
     margin-right: auto
     +replace-text-with-svg('logo-small')
@@ -45,7 +45,7 @@
 
   .slogan
     @extend .shs-regular
-    +leader(1.5)
+    +leader()
     +adjust-font-size-to(24px)
 
     .date
@@ -58,39 +58,38 @@
 
   @include at-breakpoint($pad)
     .logo
-      +trailer(2)
+      +trailer(1.5)
 
     .countdown
       .item
         width: 100px
 
         .number
-          +adjust-font-size-to(84px)
+          +adjust-font-size-to(72px)
 
         .unit
           +adjust-font-size-to(16px)
 
       .colon
-        +adjust-font-size-to(84px)
+        +adjust-font-size-to(72px)
 
     .slogan
-      +leader(2)
+      +leader(1.5)
       +adjust-font-size-to(24px)
 
 
   @include at-breakpoint($desktop)
     .logo
-      +replace-text-with-svg('logo')
 
     .countdown
       .item
         width: 140px
 
         .number
-          +adjust-font-size-to(96px)
+          +adjust-font-size-to(88px)
 
       .colon
-        +adjust-font-size-to(96px)
+        +adjust-font-size-to(88px)
 
     .slogan
       +adjust-font-size-to(28px)
@@ -98,8 +97,8 @@
 
   @include at-breakpoint(1520px 16)
     .logo
-      +trailer(4)
-      +adjust-font-size-to(72px)
+      +replace-text-with-svg('logo')
+      +trailer(3)
 
     .countdown
       .item
@@ -115,21 +114,21 @@
         +adjust-font-size-to(128px)
 
     .slogan
-      +leader(4)
+      +leader(3)
       +adjust-font-size-to(36px)
 
-  @media (max-width: 767px) and (min-height: 566px)
+  @media (max-width: 767px) and (min-height: 542px)
     top: 50%
     @include translateY(-50%)
 
-  @media (min-width: 768px) and (min-height: 638px) and (max-width: 1023px)
+  @media (min-width: 768px) and (min-height: 614px) and (max-width: 1023px)
     top: 50%
     @include translateY(-50%)
 
-  @media (min-width: 1024px) and (min-height: 741px) and (max-width: 1519px)
+  @media (min-width: 1024px) and (min-height: 613px) and (max-width: 1519px)
     top: 50%
     @include translateY(-50%)
 
-  @media (min-width: 1520px) and (min-height: 862px)
+  @media (min-width: 1520px) and (min-height: 814px)
     top: 50%
     @include translateY(-50%)
