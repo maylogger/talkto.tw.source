@@ -1,0 +1,33 @@
+.share-button
+  +leader()
+  margin-right: 16px
+  text-align: center
+
+  span
+    display: inline-block
+    margin-right: 6px
+    vertical-align: text-top
+    +adjust-font-size-to(15px)
+
+  .fb-share, .tweet
+    +inline-block()
+
+  .fb-share
+    +replace-text-with-svg("icon-sns-share")
+    width: 32px
+    height: 32px
+    background-position: 0 0
+    +background-size(cover)
+
+    &:hover
+      background-position: 0 -32px
+
+  .tweet
+    +replace-text-with-svg("icon-sns-share")
+    width: 32px
+    height: 32px
+    background-position: 0 -64px
+    +background-size(cover)
+
+    &:hover
+      background-position: 0 -96px

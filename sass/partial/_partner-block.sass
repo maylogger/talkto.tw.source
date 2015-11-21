@@ -1,0 +1,61 @@
+.partner-block
+  padding: rhythm(3) 0
+  text-align: center
+
+  .partner-block-title
+    @extend .shs-heavy
+    +trailer(1)
+    +adjust-font-size-to(24px, 1.25)
+    text-align: center
+
+  .partner-list
+    +reset-box-model()
+    list-style: none
+    li
+      max-width: 320px
+      width: 100%
+      margin: 0 auto rhythm(1)
+
+  .partner
+    display: block
+    color: #444
+    &:hover
+      text-decoration: none
+
+  .partner-logo
+    display: block
+    +trailer(0.25)
+    width: 100%
+
+  .partner-intro
+    +adjust-font-size-to(15px)
+    +trailer(0)
+
+  +at-breakpoint($pad)
+    padding: rhythm(4) 0
+
+    .partner-block-title
+      +trailer(1.5)
+      +adjust-font-size-to(30px, 1.25)
+
+    .partner-list
+      li
+        +box-sizing(border-box)
+        display: inline-block
+        vertical-align: top
+        margin: 0 auto rhythm(1)
+        padding: 0 12px
+
+    .partner-intro
+      +adjust-font-size-to(16px)
+
+  +at-breakpoint($desktop)
+    padding: rhythm(6) 0
+
+    .partner-block-title
+      +trailer(2)
+
+    .partner-list
+      li
+        width: 25%
+

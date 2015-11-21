@@ -4,9 +4,14 @@ html lang="zh-TW"
     = render "/layout_head"
     = render "/layout_siteinfo"
     = render "/layout_og"
-  body
+  body class="#{@page_name}"
     .page
-      .container
-        = yield
+      - if @page_name == "index"
+      - else
+        = render "/partial/header"
+      = yield
+      - if @page_name == "index"
+      - else
+        = render "/partial/footer"
     = render "/layout_foot"
     = render "/layout_livereload"

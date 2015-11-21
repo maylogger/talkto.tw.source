@@ -1,0 +1,36 @@
+.footer
+  position: relative
+  z-index: 10
+  padding: rhythm(3) 0 rhythm(3)
+  background-color: #EEE
+  text-align: center
+
+  .footer-links
+    +reset-box-model
+    list-style: none
+    +trailer(2)
+    li
+      +trailer(0.5)
+
+  .footer-link
+    +adjust-font-size-to(15px)
+
+    color: $color-black
+    &:hover
+      color: $color-black
+
+  .copyright
+    +trailer(0)
+    +adjust-font-size-to(13px)
+    color: $color-black
+
+  +at-breakpoint($pad)
+    .footer-links
+      +trailer(1)
+
+      li
+        display: inline-block
+        margin: 0 12px
+
+  +at-breakpoint($desktop)
+    padding: rhythm(3) 0 rhythm(2)

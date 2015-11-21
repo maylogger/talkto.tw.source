@@ -7,8 +7,8 @@ $grid-padding: $gutter-width
 
 // add media
 $phone: $total-columns
-$pad: 8
-$desktop: 12
+$pad: 768px 8
+$desktop: 1024px 12
 
 // page-container
 $page-container: ".container"
@@ -19,3 +19,10 @@ $page-container: ".container"
 // ---- container setting ----
 #{$page-container}
   +container($phone, $pad, $desktop)
+  padding: 0 12px
+
+  +at-breakpoint($pad)
+    padding: 0 24px
+
+  +at-breakpoint($desktop)
+    padding: 0 48px

@@ -1,0 +1,112 @@
+.live
+  +trailer(2)
+
+  .container
+    +pie-clearfix
+    padding-left: 0
+    padding-right: 0
+
+  iframe
+    box-sizing: border-box
+
+  .stream
+    +leader()
+    +pie-clearfix
+    position: relative
+
+  .livestream
+    +padding-leader()
+    +padding-trailer()
+    +trailer()
+    background-color: $color-ci-black
+
+    .livestream-inner
+      +pie-clearfix
+      position: relative
+
+  .video
+    position: relative
+    padding-top: 71.5%
+
+  .chatroom
+    position: relative
+    padding-top: 70%
+    overflow: hidden
+
+  .video, .chatroom
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+
+  .polis
+    .vote
+      iframe
+        width: 100%
+        min-height: 360px
+
+    .perspective
+      iframe
+        width: 100%
+        min-height: 200px
+
+    .opinion-groups
+      iframe
+        width: 100%
+        min-height: 860px
+
+  @include at-breakpoint($pad)
+    .container
+      padding-left: 24px
+      padding-right: 24px
+
+    .livestream
+      +padding-leader(2)
+      +padding-trailer(2)
+      +trailer(2)
+
+  @include at-breakpoint($desktop)
+    .container
+      position: relative
+      padding-left: 48px
+      padding-right: 48px
+
+    .main-content
+      float: left
+      width: 64%
+
+    .side-content
+      position: absolute
+      float: right
+      width: 36%
+      top: 0
+      right: 0
+      bottom: 0
+
+    .video
+      padding-top: 56%
+
+    .chatroom
+      position: absolute
+      width: 100%
+      top: 0
+      right: 0
+      bottom: 0
+      padding-top: 0
+
+      iframe
+        position: absolute
+        top: 0
+        bottom: 0
+        width: calc(100%)
+        height: 100%
+
+    .polis-embed
+      iframe
+        width: 100%
+
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)and (-webkit-min-device-pixel-ratio: 2)
+    .video
+      padding-top: 64%

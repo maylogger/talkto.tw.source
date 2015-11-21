@@ -1,0 +1,52 @@
+.hero
+  position: relative
+  height: 85vh
+  min-height: 440px
+
+  .hero-content
+    position: absolute
+    top: 45%
+    left: 0
+    right: 0
+    padding: 0 24px
+    max-width: 360px
+    margin: 0 auto
+    +translateY(-50%)
+    text-align: center
+
+  .hero-title
+    @extend .shs-heavy
+    +trailer(0.5)
+    font-size: 28px
+    line-height: 1.2
+    color: black
+
+  .hero-subtitle
+    +trailer(0)
+    +adjust-font-size-to(15px)
+
+  +at-breakpoint($pad)
+    height: 90vh
+
+    .hero-content
+      max-width: 480px
+
+    .hero-title
+      font-size: 36px
+      +trailer(0.75)
+
+    .hero-subtitle
+      +adjust-font-size-to(16px, 1.15)
+
+  +at-breakpoint($desktop)
+
+    .hero-content
+      max-width: 540px
+
+    .hero-title
+      font-size: 48px
+      +trailer(1)
+
+    .hero-subtitle
+      +adjust-font-size-to(18px, 1.25)
+

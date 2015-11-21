@@ -1,0 +1,134 @@
+.index
+  height: 100%
+  background: $color-ci-black url('/images/TTT-pattern.svg') center repeat
+
+.index-countdown
+  @extend .container
+  max-width: 1520px
+  position: absolute
+  left: 0
+  right: 0
+  +padding-leader(2)
+  +padding-trailer(2)
+  color: white
+  text-align: center
+
+  .logo
+    +trailer()
+    margin-left: auto
+    margin-right: auto
+    +replace-text-with-svg('logo-small')
+
+  .countdown
+    .item, .colon
+      display: inline-block
+      vertical-align: top
+
+    .item
+      width: 48px
+
+      .number
+        font-family: "Gotham SSm A", "Gotham SSm B"
+        font-style: normal
+        font-weight: 700
+        +adjust-font-size-to(32px)
+
+      .unit
+        font-family: "Gotham SSm A", "Gotham SSm B"
+        font-style: normal
+        font-weight: 400
+        color: $color-ci-gray
+        +adjust-font-size-to(12px)
+
+    .colon
+      +adjust-font-size-to(32px)
+
+  .slogan
+    @extend .shs-regular
+    +leader()
+    +adjust-font-size-to(24px)
+
+    .date
+      font-family: "Gotham SSm A", "Gotham SSm B"
+      font-style: normal
+      font-weight: 400
+
+    .highlight
+      color: $color-ci-pink
+
+  @include at-breakpoint($pad)
+    .logo
+      +trailer(1.5)
+
+    .countdown
+      .item
+        width: 100px
+
+        .number
+          +adjust-font-size-to(72px)
+
+        .unit
+          +adjust-font-size-to(16px)
+
+      .colon
+        +adjust-font-size-to(72px)
+
+    .slogan
+      +leader(1.5)
+      +adjust-font-size-to(24px)
+
+
+  @include at-breakpoint($desktop)
+    .logo
+
+    .countdown
+      .item
+        width: 140px
+
+        .number
+          +adjust-font-size-to(88px)
+
+      .colon
+        +adjust-font-size-to(88px)
+
+    .slogan
+      +adjust-font-size-to(28px)
+
+
+  @include at-breakpoint(1520px 16)
+    .logo
+      +replace-text-with-svg('logo')
+      +trailer(3)
+
+    .countdown
+      .item
+        width: 186px
+
+        .number
+          +adjust-font-size-to(128px)
+
+        .unit
+          +adjust-font-size-to(18px)
+
+      .colon
+        +adjust-font-size-to(128px)
+
+    .slogan
+      +leader(3)
+      +adjust-font-size-to(36px)
+
+  @media (max-width: 767px) and (min-height: 542px)
+    top: 50%
+    @include translateY(-50%)
+
+  @media (min-width: 768px) and (min-height: 614px) and (max-width: 1023px)
+    top: 50%
+    @include translateY(-50%)
+
+  @media (min-width: 1024px) and (min-height: 613px) and (max-width: 1519px)
+    top: 50%
+    @include translateY(-50%)
+
+  @media (min-width: 1520px) and (min-height: 814px)
+    top: 50%
+    @include translateY(-50%)
