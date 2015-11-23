@@ -28,13 +28,13 @@
       width: 48px
 
       .number
-        font-family: "Gotham SSm A", "Gotham SSm B"
+        font-family: "Gotham SSm A", "Gotham SSm B", sans-serif
         font-style: normal
         font-weight: 700
         +adjust-font-size-to(32px)
 
       .unit
-        font-family: "Gotham SSm A", "Gotham SSm B"
+        font-family: "Gotham SSm A", "Gotham SSm B", sans-serif
         font-style: normal
         font-weight: 400
         color: $color-ci-gray
@@ -43,18 +43,46 @@
     .colon
       +adjust-font-size-to(32px)
 
-  .slogan
+  .polis-link
+    display: block
+    max-width: 280px
+    margin-left: auto
+    margin-right: auto
+    margin-top: 32px
+    padding: 12px 15px 15px
     @extend .shs-regular
-    +leader()
-    +adjust-font-size-to(24px)
+    +adjust-font-size-to(13px)
+    color: white
+    background-color: #111
+    border: 1px solid #6E6E6E
+    +transition(background-color .25s)
+
+    &:hover
+      background-color: $color-ci-pink
+      border-color: $color-ci-pink
+      text-decoration: none
+
+      .highlight
+        color: white
+
+      .go-to-polis
+        opacity: .85
+
+    .slogan
+      +adjust-font-size-to(18px, 1.5)
+
+    .go-to-polis
+      opacity: .60
+      +transition(opacity .25s)
 
     .date
-      font-family: "Gotham SSm A", "Gotham SSm B"
+      font-family: "Gotham SSm A", "Gotham SSm B", sans-serif
       font-style: normal
       font-weight: 400
 
     .highlight
       color: $color-ci-pink
+      +transition(color .25s)
 
   @include at-breakpoint($pad)
     .logo
@@ -73,9 +101,8 @@
       .colon
         +adjust-font-size-to(72px)
 
-    .slogan
-      +leader(1.5)
-      +adjust-font-size-to(24px)
+    .polis-link
+      margin-top: 36px
 
 
   @include at-breakpoint($desktop)
@@ -91,8 +118,13 @@
       .colon
         +adjust-font-size-to(88px)
 
-    .slogan
-      +adjust-font-size-to(28px)
+    .polis-link
+      max-width: 320px
+      margin-top: 48px
+      +adjust-font-size-to(15px)
+
+      .slogan
+        +adjust-font-size-to(24px, 1.5)
 
 
   @include at-breakpoint(1520px 16)
@@ -113,22 +145,21 @@
       .colon
         +adjust-font-size-to(128px)
 
-    .slogan
-      +leader(3)
-      +adjust-font-size-to(36px)
+    .polis-link
+      margin-top: 84px
 
-  @media (max-width: 767px) and (min-height: 542px)
+  @media (max-width: 767px) and (min-height: 590px)
     top: 50%
     @include translateY(-50%)
 
-  @media (min-width: 768px) and (min-height: 614px) and (max-width: 1023px)
+  @media (min-width: 768px) and (min-height: 654px) and (max-width: 1023px)
     top: 50%
     @include translateY(-50%)
 
-  @media (min-width: 1024px) and (min-height: 613px) and (max-width: 1519px)
+  @media (min-width: 1024px) and (min-height: 667px) and (max-width: 1519px)
     top: 50%
     @include translateY(-50%)
 
-  @media (min-width: 1520px) and (min-height: 814px)
+  @media (min-width: 1520px) and (min-height: 891px)
     top: 50%
     @include translateY(-50%)

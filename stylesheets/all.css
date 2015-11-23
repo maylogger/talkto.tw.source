@@ -130,7 +130,7 @@ td, th { padding: 0; }
 
 .shs-normal { font-family: "source-han-sans-traditional", sans-serif; font-weight: 300; }
 
-.shs-regular, .index-countdown .slogan { font-family: "source-han-sans-traditional", sans-serif; font-weight: 400; }
+.shs-regular, .index-countdown .polis-link { font-family: "source-han-sans-traditional", sans-serif; font-weight: 400; }
 
 .shs-medium { font-family: "source-han-sans-traditional", sans-serif; font-weight: 500; }
 
@@ -337,46 +337,53 @@ img { max-width: 100%; margin-bottom: 24px; }
   .show-slider .slider-nav .slider-content { height: 96px; }
   .show-slider .slider-nav .slider-content .class-info { font-size: 16px; line-height: 24px; } }
 
-.share-button { margin-top: 24px; margin-right: 16px; text-align: center; }
+.share-button { margin-top: 24px; text-align: center; }
 .share-button span { display: inline-block; margin-right: 6px; vertical-align: text-top; font-size: 15px; line-height: 24px; }
 .share-button .fb-share, .share-button .tweet { display: -moz-inline-stack; display: inline-block; vertical-align: middle; }
-.share-button .fb-share { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/icon-sns-share.png?1448123269'); background-repeat: no-repeat; background-position: 50% 50%; width: 32px; height: 128px; background-image: none, url('/images/icon-sns-share.svg?1448123269'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; width: 32px; height: 32px; background-position: 0 0; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
+.share-button .fb-share { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/icon-sns-share.png?1448242499'); background-repeat: no-repeat; background-position: 50% 50%; width: 32px; height: 128px; background-image: none, url('/images/icon-sns-share.svg?1448242499'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; width: 32px; height: 32px; background-position: 0 0; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
 .share-button .fb-share:hover { background-position: 0 -32px; }
-.share-button .tweet { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/icon-sns-share.png?1448123269'); background-repeat: no-repeat; background-position: 50% 50%; width: 32px; height: 128px; background-image: none, url('/images/icon-sns-share.svg?1448123269'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; width: 32px; height: 32px; background-position: 0 -64px; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
+.share-button .tweet { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/icon-sns-share.png?1448242499'); background-repeat: no-repeat; background-position: 50% 50%; width: 32px; height: 128px; background-image: none, url('/images/icon-sns-share.svg?1448242499'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; width: 32px; height: 32px; background-position: 0 -64px; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
 .share-button .tweet:hover { background-position: 0 -96px; }
+@media (min-width: 1520px) { .share-button { margin-top: 48px; } }
 
 .index { height: 100%; background: #0e0e0e url("/images/TTT-pattern.svg") center repeat; }
 
 .index-countdown { max-width: 1520px; position: absolute; left: 0; right: 0; padding-top: 48px; padding-bottom: 48px; color: white; text-align: center; }
-.index-countdown .logo { margin-bottom: 24px; margin-left: auto; margin-right: auto; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo-small.png?1448123269'); background-repeat: no-repeat; background-position: 50% 50%; width: 220px; height: 220px; background-image: none, url('/images/logo-small.svg?1448123269'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
+.index-countdown .logo { margin-bottom: 24px; margin-left: auto; margin-right: auto; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo-small.png?1448242499'); background-repeat: no-repeat; background-position: 50% 50%; width: 220px; height: 220px; background-image: none, url('/images/logo-small.svg?1448242499'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
 .index-countdown .countdown .item, .index-countdown .countdown .colon { display: inline-block; vertical-align: top; }
 .index-countdown .countdown .item { width: 48px; }
-.index-countdown .countdown .item .number { font-family: "Gotham SSm A", "Gotham SSm B"; font-style: normal; font-weight: 700; font-size: 32px; line-height: 48px; }
-.index-countdown .countdown .item .unit { font-family: "Gotham SSm A", "Gotham SSm B"; font-style: normal; font-weight: 400; color: #aaaaaa; font-size: 12px; line-height: 24px; }
+.index-countdown .countdown .item .number { font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; font-style: normal; font-weight: 700; font-size: 32px; line-height: 48px; }
+.index-countdown .countdown .item .unit { font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; font-style: normal; font-weight: 400; color: #aaaaaa; font-size: 12px; line-height: 24px; }
 .index-countdown .countdown .colon { font-size: 32px; line-height: 48px; }
-.index-countdown .slogan { margin-top: 24px; font-size: 24px; line-height: 48px; }
-.index-countdown .slogan .date { font-family: "Gotham SSm A", "Gotham SSm B"; font-style: normal; font-weight: 400; }
-.index-countdown .slogan .highlight { color: #e63082; }
+.index-countdown .polis-link { display: block; max-width: 280px; margin-left: auto; margin-right: auto; margin-top: 32px; padding: 12px 15px 15px; font-size: 13px; line-height: 24px; color: white; background-color: #111111; border: 1px solid #6e6e6e; -webkit-transition: background-color 0.25s; -moz-transition: background-color 0.25s; -o-transition: background-color 0.25s; transition: background-color 0.25s; }
+.index-countdown .polis-link:hover { background-color: #e63082; border-color: #e63082; text-decoration: none; }
+.index-countdown .polis-link:hover .highlight { color: white; }
+.index-countdown .polis-link:hover .go-to-polis { opacity: 0.85; }
+.index-countdown .polis-link .slogan { font-size: 18px; line-height: 36px; }
+.index-countdown .polis-link .go-to-polis { opacity: 0.6; -webkit-transition: opacity 0.25s; -moz-transition: opacity 0.25s; -o-transition: opacity 0.25s; transition: opacity 0.25s; }
+.index-countdown .polis-link .date { font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; font-style: normal; font-weight: 400; }
+.index-countdown .polis-link .highlight { color: #e63082; -webkit-transition: color 0.25s; -moz-transition: color 0.25s; -o-transition: color 0.25s; transition: color 0.25s; }
 @media (min-width: 768px) { .index-countdown .logo { margin-bottom: 36px; }
   .index-countdown .countdown .item { width: 100px; }
   .index-countdown .countdown .item .number { font-size: 72px; line-height: 96px; }
   .index-countdown .countdown .item .unit { font-size: 16px; line-height: 24px; }
   .index-countdown .countdown .colon { font-size: 72px; line-height: 96px; }
-  .index-countdown .slogan { margin-top: 36px; font-size: 24px; line-height: 48px; } }
+  .index-countdown .polis-link { margin-top: 36px; } }
 @media (min-width: 1024px) { .index-countdown .countdown .item { width: 140px; }
   .index-countdown .countdown .item .number { font-size: 88px; line-height: 96px; }
   .index-countdown .countdown .colon { font-size: 88px; line-height: 96px; }
-  .index-countdown .slogan { font-size: 28px; line-height: 48px; } }
-@media (min-width: 1520px) { .index-countdown .logo { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo.png?1448123269'); background-repeat: no-repeat; background-position: 50% 50%; width: 300px; height: 300px; background-image: none, url('/images/logo.svg?1448123269'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; margin-bottom: 72px; }
+  .index-countdown .polis-link { max-width: 320px; margin-top: 48px; font-size: 15px; line-height: 24px; }
+  .index-countdown .polis-link .slogan { font-size: 24px; line-height: 36px; } }
+@media (min-width: 1520px) { .index-countdown .logo { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo.png?1448242499'); background-repeat: no-repeat; background-position: 50% 50%; width: 300px; height: 300px; background-image: none, url('/images/logo.svg?1448242499'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; margin-bottom: 72px; }
   .index-countdown .countdown .item { width: 186px; }
   .index-countdown .countdown .item .number { font-size: 128px; line-height: 144px; }
   .index-countdown .countdown .item .unit { font-size: 18px; line-height: 24px; }
   .index-countdown .countdown .colon { font-size: 128px; line-height: 144px; }
-  .index-countdown .slogan { margin-top: 72px; font-size: 36px; line-height: 48px; } }
-@media (max-width: 767px) and (min-height: 542px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
-@media (min-width: 768px) and (min-height: 614px) and (max-width: 1023px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
-@media (min-width: 1024px) and (min-height: 613px) and (max-width: 1519px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
-@media (min-width: 1520px) and (min-height: 814px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
+  .index-countdown .polis-link { margin-top: 84px; } }
+@media (max-width: 767px) and (min-height: 590px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
+@media (min-width: 768px) and (min-height: 654px) and (max-width: 1023px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
+@media (min-width: 1024px) and (min-height: 667px) and (max-width: 1519px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
+@media (min-width: 1520px) and (min-height: 891px) { .index-countdown { top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } }
 
 .live { margin-bottom: 48px; }
 .live .container, .live .index-countdown { padding-left: 0; padding-right: 0; }
