@@ -1,15 +1,12 @@
-.index
-  height: 100%
+.index-countdown
+  position: relative
   background: $color-ci-black url('/images/TTT-pattern.svg') center repeat
 
-.index-countdown
+.index-countdown-inner
   @extend .container
   max-width: 100%
-  position: absolute
-  left: 0
-  right: 0
-  +padding-leader(2)
-  +padding-trailer(2)
+  +padding-leader(3)
+  +padding-trailer(3)
   color: white
   text-align: center
 
@@ -85,6 +82,7 @@
       +transition(color .25s)
 
   @include at-breakpoint($pad)
+
     .logo
       +trailer(1.5)
 
@@ -128,6 +126,9 @@
 
 
   @include at-breakpoint(1520px 16)
+    +padding-leader(5)
+    +padding-trailer(5)
+
     .logo
       +replace-text-with-svg('logo')
       +trailer(3)
@@ -147,19 +148,3 @@
 
     .polis-link
       margin-top: 84px
-
-  @media (max-width: 767px) and (min-height: 590px)
-    top: 50%
-    @include translateY(-50%)
-
-  @media (min-width: 768px) and (min-height: 654px) and (max-width: 1023px)
-    top: 50%
-    @include translateY(-50%)
-
-  @media (min-width: 1024px) and (min-height: 667px) and (max-width: 1519px)
-    top: 50%
-    @include translateY(-50%)
-
-  @media (min-width: 1520px) and (min-height: 891px)
-    top: 50%
-    @include translateY(-50%)
