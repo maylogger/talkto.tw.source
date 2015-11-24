@@ -3,12 +3,16 @@
 
   .intro-content-en, .intro-content-ch
     +box-sizing(border-box)
-    float: left
-    width: 50%
+    +padding-leader()
     color: white
 
-  .intro-content-en
-    padding: 24px 0 24px 24px
+  @include at-breakpoint($pad)
+    .intro-content-en, .intro-content-ch
+      float: left
+      width: 50%
 
-  .intro-content-ch
-    padding: 24px 24px 24px 0
+    .intro-content-en
+      padding: 24px 0 24px 24px
+
+    .intro-content-ch
+      padding: 24px 24px 24px 0
