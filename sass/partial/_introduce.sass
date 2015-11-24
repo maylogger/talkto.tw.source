@@ -1,36 +1,14 @@
 .introduce
   padding: rhythm(3) 0
-  background-color: #f3f3f3
 
-  .container
-    max-width: 520px
+  .intro-content-en, .intro-content-ch
+    +box-sizing(border-box)
+    float: left
+    width: 50%
+    color: white
 
-  .introduce-title
-    @extend .shs-heavy
-    +trailer(1)
-    +adjust-font-size-to(24px, 1.25)
-    text-align: center
+  .intro-content-en
+    padding: 24px 0 24px 24px
 
-  .introduce-text
-    +trailer(0)
-    +adjust-font-size-to(15px)
-
-  .introduce-text + .introduce-text
-    +leader(1)
-
-
-  +at-breakpoint($pad)
-    padding: rhythm(4) 0
-
-    .introduce-title
-      +trailer(1.25)
-      +adjust-font-size-to(30px, 1.25)
-
-    .introduce-text
-      +adjust-font-size-to(16px)
-
-    .introduce-text + .introduce-text
-      +leader(1.25)
-
-  +at-breakpoint($pad)
-    padding: rhythm(6) 0
+  .intro-content-ch
+    padding: 24px 24px 24px 0
