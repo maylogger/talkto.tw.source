@@ -38,7 +38,7 @@
       margin: 24px auto
       cursor: default
 
-    .jldesign, .thenewslens, .thereporter, .livehousein, .unfold, .simpleinfo, .mgrmedia, .tripmoment, .mudsm, .whitelightstudio, .designbutik, .ifoffice
+    .jldesign, .thenewslens, .thereporter, .livehousein, .unfold, .simpleinfo, .mgrmedia, .tripmoment, .mudsm, .whitelightstudio, .designbutik, .ifoffice, .houth
       width: 96px
       height: 96px
 
@@ -78,10 +78,11 @@
     .ifoffice
       +replace-text-with-svg('team/ifoffice')
 
+    .houth
+      +replace-text-with-svg('team/houth')
+
   .pad
     display: none
-
-  // @media ( min-width: )
 
   @include at-breakpoint($pad)
     .team-member
@@ -103,12 +104,9 @@
         display: inline-block
         margin: 12px
 
-      .jldesign, .thenewslens, .thereporter, .livehousein, .unfold, .simpleinfo, .mgrmedia, .tripmoment, .mudsm, .whitelightstudio, .designbutik, .ifoffice
+      .jldesign, .thenewslens, .thereporter, .livehousein, .unfold, .simpleinfo, .mgrmedia, .tripmoment, .mudsm, .whitelightstudio, .designbutik, .ifoffice, .houth
         width: 64px
         height: 64px
-
-    .mobile
-      display: none
 
   @include at-breakpoint($desktop)
     .team-member
@@ -118,6 +116,6 @@
     .team-logo
       +leader(.5)
 
-  @media ( min-width: 768px ) and ( max-width: 1023px)
+  @media ( min-width: 768px ) and ( max-width: 1176px)
     .pad
       display: block
