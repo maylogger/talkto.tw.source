@@ -1,0 +1,121 @@
+.team
+  +padding-leader(3)
+  +padding-trailer(3)
+  @extend .shs-regular
+  text-align: center
+  background-color: lighten($color-ci-black ,5%)
+
+  .team-title
+    display: inline-block
+    +trailer(2)
+    +padding-trailer(.15)
+    +adjust-font-size-to(18px)
+    color: rgba(white, .5)
+    border-bottom: 2px solid rgba(white, .3)
+
+
+  .team-member
+    color: white
+    letter-spacing: 2px
+
+    .name
+      padding: 12px
+
+    span
+      @extend .shs-light
+      display: block
+      position: relative
+      top: -.05em
+
+  .team-logo
+    max-width: 375px
+    +leader(2)
+    margin-left: auto
+    margin-right: auto
+
+    a
+      display: block
+      margin: 24px auto
+      cursor: default
+
+    .jldesign, .thenewslens, .thereporter, .livehousein, .unfold, .simpleinfo, .mgrmedia, .tripmoment, .mudsm, .whitelightstudio, .designbutik, .ifoffice, .houth
+      width: 96px
+      height: 96px
+
+    .jldesign
+      +replace-text-with-svg('team/jldesign')
+
+    .thenewslens
+      +replace-text-with-svg('team/thenewslens')
+
+    .thereporter
+      +replace-text-with-svg('team/thereporter')
+
+    .livehousein
+      +replace-text-with-svg('team/livehousein')
+
+    .unfold
+      +replace-text-with-svg('team/unfold')
+
+    .simpleinfo
+      +replace-text-with-svg('team/simpleinfo')
+
+    .mgrmedia
+      +replace-text-with-svg('team/mgrmedia')
+
+    .tripmoment
+      +replace-text-with-svg('team/tripmoment')
+
+    .mudsm
+      +replace-text-with-svg('team/mudsm')
+
+    .whitelightstudio
+      +replace-text-with-svg('team/whitelightstudio')
+
+    .designbutik
+      +replace-text-with-svg('team/designbutik')
+
+    .ifoffice
+      +replace-text-with-svg('team/ifoffice')
+
+    .houth
+      +replace-text-with-svg('team/houth')
+
+  .pad
+    display: none
+
+  @include at-breakpoint($pad)
+    .team-member
+      .name
+        display: inline-block
+        padding: 0 3px
+        +adjust-font-size-to(18px)
+
+      span
+        display: inline-block
+        padding: 0 3px
+
+    .team-logo
+      +leader()
+      max-width: none
+      text-align: center
+
+      a
+        display: inline-block
+        margin: 12px
+
+      .jldesign, .thenewslens, .thereporter, .livehousein, .unfold, .simpleinfo, .mgrmedia, .tripmoment, .mudsm, .whitelightstudio, .designbutik, .ifoffice, .houth
+        width: 64px
+        height: 64px
+
+  @include at-breakpoint($desktop)
+    .team-member
+      .name
+        +adjust-font-size-to(21px)
+
+    .team-logo
+      +leader(.5)
+
+  @media ( min-width: 768px ) and ( max-width: 1176px)
+    .pad
+      display: block
