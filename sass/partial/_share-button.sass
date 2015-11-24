@@ -1,6 +1,5 @@
 .share-button
   +leader()
-  margin-right: 16px
   text-align: center
 
   span
@@ -31,3 +30,6 @@
 
     &:hover
       background-position: 0 -96px
+
+  @include at-breakpoint(1520px 16)
+    +leader(2)

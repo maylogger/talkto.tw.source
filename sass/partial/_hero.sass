@@ -2,10 +2,11 @@
   position: relative
   height: 85vh
   min-height: 440px
+  background: $color-ci-black url('/images/TTT-pattern.svg') center repeat
 
   .hero-content
     position: absolute
-    top: 45%
+    top: 50%
     left: 0
     right: 0
     padding: 0 24px
@@ -20,6 +21,28 @@
     font-size: 28px
     line-height: 1.2
     color: black
+
+  .ttt-logo
+    position: relative
+    width: 220px
+    height: 220px
+    margin: 0 auto
+
+  .logo
+    position: absolute
+    top: 0
+    +trailer()
+    margin-left: auto
+    margin-right: auto
+    +replace-text-with-svg('logo-small')
+
+  .logo-light
+    position: absolute
+    top: 0
+    +trailer()
+    margin-left: auto
+    margin-right: auto
+    +replace-text-with-svg('logo-light')
 
   .hero-subtitle
     +trailer(0)
