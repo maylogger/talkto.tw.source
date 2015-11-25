@@ -16,13 +16,34 @@
     position: relative
     z-index: 1
     height: 90vh
+    min-height: 460px
     max-height: 900px
+
+  .live-header
+    position: absolute
+    left: 18px
+    top: 0
+    padding: 12px 2px
+    background-color: rgba($color-ci-black, .5)
+
+    .logo
+      +replace-text-with-svg("logo-small")
+      width: 80px
+      height: 80px
 
   .program-info
     position: absolute
-    right: 12px
-    bottom: 2.5%
+    left: 18px
+    bottom: 0
     @extend .shs-heavy
+
+    .program-number
+      @extend .gotham-bold-wz-shs
+      color: white
+      +adjust-font-size-to(48px, 2)
+
+    .pink-number
+      color: $color-ci-pink
 
     .guest
       +adjust-font-size-to(18px, 1.5)
@@ -36,6 +57,14 @@
       +adjust-font-size-to(16px, 1.5)
       color: $color-ci-gray
 
+    .link
+      +leader(.25)
+      display: inline-block
+      padding: 6px 12px
+      color: white
+      background-color: $color-ci-pink
+      text-decoration: none
+
   @include at-breakpoint($pad)
     background: $color-ci-black url("/images/program1_bg.png") no-repeat center
     +background-size(cover)
@@ -43,9 +72,20 @@
     &:after
       background: rgba($color-ci-black, .25)
 
+    .live-header
+      left: 24px
+
+      .logo
+        width: 128px
+        height: 128px
+
     .program-info
       bottom: 5%
+      left: auto
       right: 24px
+
+      .program-number
+        +adjust-font-size-to(96px, 4)
 
       .guest
         +adjust-font-size-to(21px, 1.5)
@@ -56,23 +96,39 @@
       .time
         +adjust-font-size-to(18px, 1.5)
 
+      .link
+        +leader(.5)
+        padding: 6px 18px
+        +adjust-font-size-to(21px, 1.5)
+
   @include at-breakpoint($desktop)
     .program-info
-      bottom: 7.5%
+      bottom: 5%
       right: 24px
+
+      .program-number
+        +adjust-font-size-to(128px)
 
       .guest
         +adjust-font-size-to(21px, 1.5)
 
       .title
+        padding: 6px 0
         +adjust-font-size-to(64px, 3)
 
       .time
         +adjust-font-size-to(18px, 1.5)
 
   @include at-breakpoint($wide-desktop)
+    .live-header
+      left: 24px
+
+      .logo
+        width: 140px
+        height: 140px
+
     .program-info
-      bottom: 10%
+      bottom: 7.5%
       right: 24px
 
       .guest

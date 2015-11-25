@@ -10,7 +10,7 @@ if ($('.program-slider').length != 0) {
     slidesToShow: 5,
     slidesToScroll: 1,
     asNavFor: '.slider-for',
-    centerMode: true,
+    centerMode: false,
     centerPadding: '0px',
     infinite: true,
     focusOnSelect: true,

@@ -52,8 +52,9 @@ body
 // heading
 #{headings()}
   +reset-box-model
-  font-weight: normal
-  +trailer(1)
+
+.article #{headings()}
+  +trailer()
 
 h1
   +adjust-font-size-to(32px, 1.5)
