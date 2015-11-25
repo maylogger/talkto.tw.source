@@ -17,19 +17,20 @@
     z-index: 1
     height: 90vh
     min-height: 460px
-    max-height: 900px
+    max-height: 1000px
 
   .live-header
     position: absolute
-    left: 18px
-    top: 0
-    padding: 12px 2px
-    background-color: rgba($color-ci-black, .5)
+    left: 8px
+    top: 8px
+    padding: 12px 0
 
     .logo
-      +replace-text-with-svg("logo-small")
       width: 80px
       height: 80px
+      +hide-text()
+      background: url("/images/logo.svg") center no-repeat
+      +background-size(contain)
 
   .program-info
     position: absolute
@@ -41,6 +42,10 @@
       @extend .gotham-bold-wz-shs
       color: white
       +adjust-font-size-to(48px, 2)
+      text-align: right
+
+    .gray-number
+      opacity: .5
 
     .pink-number
       color: $color-ci-pink
@@ -65,6 +70,7 @@
       background-color: $color-ci-pink
       text-decoration: none
 
+
   @include at-breakpoint($pad)
     background: $color-ci-black url("/images/program1_bg.png") no-repeat center
     +background-size(cover)
@@ -74,6 +80,7 @@
 
     .live-header
       left: 24px
+      top: 24px
 
       .logo
         width: 128px
@@ -101,10 +108,11 @@
         padding: 6px 18px
         +adjust-font-size-to(21px, 1.5)
 
+
   @include at-breakpoint($desktop)
     .program-info
       bottom: 5%
-      right: 24px
+      right: 48px
 
       .program-number
         +adjust-font-size-to(128px)
@@ -114,10 +122,11 @@
 
       .title
         padding: 6px 0
-        +adjust-font-size-to(64px, 3)
+        +adjust-font-size-to(56px, 2.75)
 
       .time
         +adjust-font-size-to(18px, 1.5)
+
 
   @include at-breakpoint($wide-desktop)
     .live-header

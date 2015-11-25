@@ -1,6 +1,12 @@
 .live
   .livestream
     .container
+      .live-title
+        .program-number <span class="gray-number">0</span><span class="pink-number">1</span>
+        .program-content
+          .guest 台北市長 / 柯文哲
+          .title 台灣醫療崩壞，健保亂象如何解決？
+
       .livestream-inner
         .main-content
           .video
@@ -8,8 +14,13 @@
         .side-content
           .chatroom
             iframe src="https://livehouse.in/embed/channel/talktotaiwansub/chatroom/dark" frameborder="0" allowfullscreen=""
-  .container
-    .polis-embed
+
+  .block.container
+    .block-title
+      .title-en pol.is
+      .title-ch 分享你的觀點
+
+    .block-content.polis-embed
       .polis data-conversation_id="73rxk6"
       script async="true" src="https://pol.is/embed.js"
 

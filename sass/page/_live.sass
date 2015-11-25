@@ -1,10 +1,40 @@
 .live
-  +trailer(2)
+  +padding-trailer(2)
+  background-color: $color-ci-black
 
   .container
     +pie-clearfix
     padding-left: 0
     padding-right: 0
+
+  .live-title
+    +pie-clearfix
+    +trailer()
+    padding: 0 18px
+
+    .program-number
+      float: left
+      padding-right: 12px
+      @extend .gotham-bold-wz-shs
+      color: white
+      +adjust-font-size-to(48px, 2.25)
+
+    .gray-number
+      opacity: .5
+
+    .pink-number
+      color: $color-ci-pink
+
+    .program-content
+      overflow: hidden
+      @extend .shs-heavy
+
+      .guest
+        +adjust-font-size-to(13px, 1)
+        color: $color-ci-pink
+
+      .title
+        +adjust-font-size-to(21px, 1.25)
 
   iframe
     box-sizing: border-box
@@ -18,7 +48,7 @@
     +padding-leader()
     +padding-trailer()
     +trailer()
-    background-color: $color-ci-black
+    background-color: $color-ci-black-light
 
     .livestream-inner
       +pie-clearfix
@@ -41,21 +71,9 @@
       width: 100%
       height: 100%
 
-  .polis
-    .vote
-      iframe
-        width: 100%
-        min-height: 360px
-
-    .perspective
-      iframe
-        width: 100%
-        min-height: 200px
-
-    .opinion-groups
-      iframe
-        width: 100%
-        min-height: 860px
+  .polis-embed
+    iframe
+      width: 100%
 
   @include at-breakpoint($pad)
     .container
@@ -66,6 +84,20 @@
       +padding-leader(2)
       +padding-trailer(2)
       +trailer(2)
+
+    .live-title
+      padding: 0
+
+      .program-number
+        +adjust-font-size-to(72px, 3)
+
+      .program-content
+        .guest
+          +adjust-font-size-to(18px, 1.25)
+
+        .title
+          +adjust-font-size-to(32px, 1.5)
+
 
   @include at-breakpoint($desktop)
     .container
@@ -103,9 +135,6 @@
         width: calc(100%)
         height: 100%
 
-    .polis-embed
-      iframe
-        width: 100%
 
   @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)and (-webkit-min-device-pixel-ratio: 2)
     .video

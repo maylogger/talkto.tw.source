@@ -12,20 +12,14 @@
     padding: 0 24px
     max-width: 360px
     margin: 0 auto
+    @extend .shs-heavy
     +translateY(-50%)
     text-align: center
 
-  .hero-title
-    @extend .shs-heavy
-    +trailer(0.5)
-    font-size: 28px
-    line-height: 1.2
-    color: black
-
   .ttt-logo
     position: relative
-    width: 300px
-    height: 300px
+    width: 200px
+    height: 200px
     margin: 0 auto
 
   .logo
@@ -34,7 +28,11 @@
     +trailer()
     margin-left: auto
     margin-right: auto
-    +replace-text-with-svg('logo')
+    width: 200px
+    height: 200px
+    +hide-text()
+    background: url("/images/logo.svg") center no-repeat
+    +background-size(contain)
 
   .logo-light
     position: absolute
@@ -44,9 +42,24 @@
     margin-right: auto
     +replace-text-with-svg('logo-light')
 
-  .hero-subtitle
-    +trailer(0)
-    +adjust-font-size-to(15px)
+  .slogan
+    +leader()
+    +adjust-font-size-to(16px)
+
+  .more
+    display: block
+    position: absolute
+    bottom: 72px
+    left: 0
+    right: 0
+    margin: 0 auto
+    padding: 12px 24px
+    width: 24px
+    height: 14px
+
+  .arrow
+    +replace-text-with-svg("arrow")
+
 
   +at-breakpoint($pad)
     height: 90vh
@@ -54,12 +67,9 @@
     .hero-content
       max-width: 480px
 
-    .hero-title
-      font-size: 36px
-      +trailer(0.75)
+    .slogan
+      +adjust-font-size-to(18px, 1.15)
 
-    .hero-subtitle
-      +adjust-font-size-to(16px, 1.15)
 
   +at-breakpoint($desktop)
     height: 100vh
@@ -67,10 +77,14 @@
     .hero-content
       max-width: 540px
 
-    .hero-title
-      font-size: 48px
-      +trailer(1)
+    .slogan
+      +adjust-font-size-to(24px, 1.25)
 
-    .hero-subtitle
-      +adjust-font-size-to(18px, 1.25)
+    .ttt-logo
+      width: 300px
+      height: 300px
+
+      .logo
+        width: 300px
+        height: 300px
 

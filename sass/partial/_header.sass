@@ -1,10 +1,12 @@
 .header
   z-index: 1000
-  padding: 24px 0
-  background-color: #EEE
+  padding: 16px 0
+  background-color: $color-ci-black
 
   .logo
-    +adjust-font-size-to(24px, 1)
-
-    a
-      color: $color-black
+    display: block
+    width: 52px
+    height: 64px
+    +hide-text()
+    background: url("/images/logo.svg") center no-repeat
+    +background-size(contain)

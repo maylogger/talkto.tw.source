@@ -23,7 +23,7 @@
       position: relative
       min-height: 440px
       height: 85vh
-      max-height: 800px
+      max-height: 900px
 
     .program-info
       position: absolute
@@ -35,9 +35,14 @@
         @extend .gotham-bold-wz-shs
         color: white
         +adjust-font-size-to(48px, 2)
+        text-align: right
+
+      .gray-number
+        opacity: .5
 
       .pink-number
         color: $color-ci-pink
+        opacity: 1
 
       .guest
         +adjust-font-size-to(18px, 1.5)
@@ -51,15 +56,6 @@
         @extend .gotham-bold-wz-shs
         +adjust-font-size-to(16px, 1.5)
         color: $color-ci-gray
-
-      .link
-        +leader(.25)
-        display: inline-block
-        padding: 6px 12px
-        +adjust-font-size-to(13px)
-        color: white
-        background-color: $color-ci-pink
-        text-decoration: none
 
   .slider-nav
     max-width: 960px
@@ -113,17 +109,18 @@
         color: $color-ci-gray
         +transition(color .5s)
 
+      .gray-number
+        opacity: .5
+
       &:focus
         outline: none
 
       &.slick-current
         opacity: 1
 
-        .program-number
-          opacity: .7
-
         .pink-number
           color: $color-ci-pink
+
 
   @include at-breakpoint($pad)
     .slider-for
@@ -146,16 +143,12 @@
         .time
           +adjust-font-size-to(18px, 1.5)
 
-        .link
-          +leader(.5)
-          padding: 6px 18px
-          +adjust-font-size-to(16px, 1.5)
 
   @include at-breakpoint($desktop)
     .slider-for
       .program-info
         bottom: 7.5%
-        right: 24px
+        right: 48px
 
         .program-number
           +adjust-font-size-to(128px)
@@ -165,7 +158,7 @@
 
         .title
           padding: 6px 0
-          +adjust-font-size-to(64px, 3)
+          +adjust-font-size-to(56px, 2.75)
 
         .time
           +adjust-font-size-to(18px, 1.5)
