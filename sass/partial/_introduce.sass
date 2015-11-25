@@ -1,18 +1,20 @@
 .introduce
-  padding: rhythm(3) 0
+  padding: rhythm(4) 0
+
+  .container
+    max-width: 720px
 
   .intro-content-en, .intro-content-ch
     +box-sizing(border-box)
-    +padding-leader()
-    color: white
+    padding-top: 24px
 
-  @include at-breakpoint($pad)
-    .intro-content-en, .intro-content-ch
-      float: left
-      width: 50%
+  // @include at-breakpoint($desktop)
+  //   .intro-content-en, .intro-content-ch
+  //     float: left
+  //     width: 50%
 
-    .intro-content-en
-      padding: 24px 0 24px 24px
+  //   .intro-content-en
+  //     padding: 24px 0 0 24px
 
-    .intro-content-ch
-      padding: 24px 24px 24px 0
+  //   .intro-content-ch
+  //     padding: 24px 24px 0 0

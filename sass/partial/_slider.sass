@@ -1,20 +1,12 @@
-.show
-  background-color: #171717
+.slider
+  background-color: $color-ci-black
   overflow: hidden
 
-.show-container
-  max-width: 1272px
-  margin: 0 auto
-
-.show-slider
-  position: relative
+.program-slider
 
   .slider-for
     .slider-content
       position: relative
-      min-height: 440px
-      height: 85vh
-      max-height: 800px
       background-position: center center
       +background-size(cover)
 
@@ -25,38 +17,40 @@
         left: 0
         right: 0
         bottom: 0
-        background-color: rgba(0,0,0,.5)
+        +background(linear-gradient(to bottom, rgba($color-ci-black, 0), rgba($color-ci-black, .1), rgba($color-ci-black, 1)))
 
-    .show-info
+    .container
+      position: relative
+      min-height: 440px
+      height: 85vh
+      max-height: 800px
+
+    .program-info
       position: absolute
-      left: 0
-      bottom: 96px
-      padding: 24px
-      color: white
-
-      .title
-        @extend .shs-heavy
-        +trailer(.5)
-        +adjust-font-size-to(32px)
+      right: 12px
+      bottom: 2.5%
+      @extend .shs-heavy
 
       .guest
-        +adjust-font-size-to(13px)
+        +adjust-font-size-to(18px, 1.5)
+        color: $color-ci-pink
 
-        &:before
-          content: "特別來賓"
-          padding-right: 6px
-          color: rgba(255,255,255,.7)
+      .title
+        +adjust-font-size-to(32px, 1.5)
+        color: white
+
+      .time
+        @extend .gotham-bold-wz-shs
+        +adjust-font-size-to(16px, 1.5)
+        color: $color-ci-gray
 
   .slider-nav
-    position: absolute
-    left: 0
-    right: 0
-    bottom: 0
-    background-color: rgba(0,0,0,.5)
+    max-width: 960px
+    margin: 0 auto
 
     .slick-prev, .slick-next
       position: absolute
-      top: 12px
+      top: 6px
       width: 38px
       height: 64px
       color: white
@@ -80,8 +74,6 @@
       right: 0
       background: url("/images/slider-next.svg") center no-repeat
 
-
-
     .slick-list
       margin: 6px 38px
 
@@ -89,66 +81,64 @@
       position: relative
       height: 64px
       margin: 6px
-      background-position: center center
+      @extend .gotham-bold-wz-shs
+      text-align: center
+      font-size: 36px
+      line-height: 64px
+      cursor: pointer
+      opacity: .25
+      background-repeat: no-repeat
+      background-position: center
       +background-size(cover)
+      +transition(opacity .5s)
+
+      .episode
+        +transition(color .5s)
 
       &:focus
         outline: none
 
-      &:hover
-        margin: 3px
-        border: 3px solid rgba(255,255,255,.7)
-
-      &:before
-        content: ""
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        background-color: rgba(0,0,0,.5)
-        opacity: 1
-        +transition(opacity .25s)
-
       &.slick-current
-        margin: 3px
-        border: 3px solid white
+        opacity: 1
 
-        &:before
-          opacity: 0
+        .program-number
+          opacity: .7
 
-        .class-info
-          opacity: 0
+        .episode
+          color: $color-ci-pink
 
-      .class-info
-        position: absolute
-        top: 50%
-        left: 0
-        right: 0
-        text-align: center
-        font-weight: bold
-        +adjust-font-size-to(13px)
-        color: white
-        +translateY(-50%)
-        +transition(opacity .25s)
-
-  @include at-breakpoint($desktop)
-    margin-left: 0
-    margin-right: 0
-
+  @include at-breakpoint($pad)
     .slider-for
-      .slider-content
-        height: 100vh
+      .slider-content:before
+        background: rgba($color-ci-black, .25)
 
-      .show-info
-        bottom: 120px
-        padding: 48px
-
-        .title
-          +adjust-font-size-to(48px)
+      .program-info
+        bottom: 5%
+        right: 24px
 
         .guest
-          +adjust-font-size-to(16px)
+          +adjust-font-size-to(21px, 1.5)
+
+        .title
+          +adjust-font-size-to(56px, 2.75)
+
+        .time
+          +adjust-font-size-to(18px, 1.5)
+
+  @include at-breakpoint($desktop)
+    .slider-for
+      .program-info
+        bottom: 7.5%
+        right: 24px
+
+        .guest
+          +adjust-font-size-to(21px, 1.5)
+
+        .title
+          +adjust-font-size-to(64px, 3)
+
+        .time
+          +adjust-font-size-to(18px, 1.5)
 
     .slider-nav
       .slick-prev, .slick-next
@@ -160,6 +150,5 @@
 
       .slider-content
         height: 96px
-
-        .class-info
-          +adjust-font-size-to(16px)
+        font-size: 64px
+        line-height: 96px

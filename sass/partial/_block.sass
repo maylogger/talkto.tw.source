@@ -1,11 +1,16 @@
 .block
+  background-color: $color-ci-black-light
+
+  & + .block
+    background-color: $color-ci-black
+
   .block-title
     padding: 6px 0
     border-bottom: 2px solid $color-ci-pink
 
     .title-en, .title-ch
       display: inline-block
-      @extend .shs-heavy
+      @extend .gotham-bold-wz-shs
       +adjust-font-size-to(18px)
 
     .title-en
@@ -16,7 +21,8 @@
 
     .title-en + .title-ch
       &:before
-        content: "／"
+        content: "/"
+        padding: 0 6px
 
   .block-content
     +pie-clearfix
