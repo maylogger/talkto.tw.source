@@ -3,8 +3,32 @@
   overflow: hidden
 
 .program-slider
+  position: relative
+
+  .slider-header
+    position: absolute
+    z-index: 2
+    top: 18px
+    left: 0
+    right: 0
+    text-align: right
+    pointer-events: none
+
+    .container
+      max-width: 1120px
+
+    .logo
+      display: inline-block
+      width: 62px
+      height: 80px
+      +hide-text()
+      background: url("/images/logo.svg") center no-repeat
+      +background-size(contain)
 
   .slider-for
+    max-width: 1520px
+    margin: 0 auto
+
     .slider-content
       position: relative
       background-position: center center
@@ -21,15 +45,40 @@
 
     .container
       position: relative
+      max-width: 1120px
       min-height: 440px
-      height: 85vh
-      max-height: 900px
+      max-height: 720px
+      height: 90vh
 
     .program-info
       position: absolute
       right: 12px
       bottom: 2.5%
       @extend .shs-heavy
+
+
+      .guest
+        +adjust-font-size-to(18px, 1.5)
+        color: $color-ci-pink
+        letter-spacing: 0.1em
+
+      .title
+        +adjust-font-size-to(32px, 1.5)
+        color: white
+
+      .time
+        @extend .gotham-bold-wz-shs
+        +adjust-font-size-to(16px, 1.5)
+        color: $color-ci-gray
+
+      .link
+        +leader(.25)
+        display: inline-block
+        padding: 6px 12px
+        @extend .shs-regular
+        color: white
+        background-color: $color-ci-pink
+        text-decoration: none
 
       .program-number
         @extend .gotham-bold-wz-shs
@@ -44,21 +93,11 @@
         color: $color-ci-pink
         opacity: 1
 
-      .guest
-        +adjust-font-size-to(18px, 1.5)
-        color: $color-ci-pink
-
-      .title
-        +adjust-font-size-to(32px, 1.5)
-        color: white
-
-      .time
-        @extend .gotham-bold-wz-shs
-        +adjust-font-size-to(16px, 1.5)
-        color: $color-ci-gray
+      .link + .program-number
+        margin-top: -42px
 
   .slider-nav
-    max-width: 960px
+    max-width: 1120px
     margin: 0 auto
 
     .slick-prev, .slick-next
@@ -92,8 +131,8 @@
 
     .slider-content
       position: relative
-      height: 64px
       margin: 6px
+      height: 64px
       @extend .gotham-bold-wz-shs
       text-align: center
       font-size: 36px
@@ -123,6 +162,13 @@
 
 
   @include at-breakpoint($pad)
+    .slider-header
+      top: 24px
+
+      .logo
+        width: 102px
+        height: 128px
+
     .slider-for
       .slider-content:before
         background: rgba($color-ci-black, .25)
@@ -131,37 +177,40 @@
         bottom: 5%
         right: 24px
 
+        .guest
+          +adjust-font-size-to(21px, 1.5)
+
+        .title
+          +adjust-font-size-to(48px, 2.5)
+
+        .time
+          +adjust-font-size-to(18px, 1.5)
+
+        .link
+          +leader(.5)
+          padding: 6px 18px
+          +adjust-font-size-to(20px, 1.5)
+
         .program-number
           +adjust-font-size-to(96px, 4)
 
-        .guest
-          +adjust-font-size-to(21px, 1.5)
-
-        .title
-          +adjust-font-size-to(56px, 2.75)
-
-        .time
-          +adjust-font-size-to(18px, 1.5)
+        .link + .program-number
+          margin-top: -60px
 
 
   @include at-breakpoint($desktop)
+    .slider-header
+      top: 48px
+
     .slider-for
+      .container
+        min-height: 640px
+
       .program-info
-        bottom: 7.5%
         right: 48px
 
         .program-number
-          +adjust-font-size-to(128px)
-
-        .guest
-          +adjust-font-size-to(21px, 1.5)
-
-        .title
-          padding: 6px 0
-          +adjust-font-size-to(56px, 2.75)
-
-        .time
-          +adjust-font-size-to(18px, 1.5)
+          +adjust-font-size-to(112px, 5)
 
     .slider-nav
       .slick-prev, .slick-next
@@ -175,3 +224,17 @@
         height: 96px
         font-size: 64px
         line-height: 96px
+
+  @include at-breakpoint($wide-desktop)
+    .slider-header
+      .logo
+        width: 120px
+        height: 156px
+
+    .slider-for
+      .program-info
+        .title
+          +adjust-font-size-to(56px, 2.75)
+
+        .program-number
+          +adjust-font-size-to(128px, 5)
