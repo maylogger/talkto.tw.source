@@ -1,9 +1,19 @@
 .introduce
-  padding: rhythm(4) 0
+  padding: rhythm(1) 0
   background-color: $color-ci-black-light
 
   .container
+    width: 80%
     max-width: 720px
 
-  .intro-content-tw
+  .intro-content
     +box-sizing(border-box)
+
+
+  @include at-breakpoint($pad)
+    padding: rhythm(2) 0
+
+  @include at-breakpoint($desktop)
+    padding: rhythm(3) 0
+    .intro-content p
+      +adjust-font-size-to(24px, 3/2)
