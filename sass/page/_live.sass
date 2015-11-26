@@ -1,16 +1,12 @@
 .live
-  +padding-trailer(2)
-  background-color: $color-ci-black
 
   .container
     +pie-clearfix
-    padding-left: 0
-    padding-right: 0
 
   .live-title
     +pie-clearfix
+    +leader()
     +trailer()
-    padding: 0 18px
 
     .program-number
       float: left
@@ -39,22 +35,16 @@
   iframe
     box-sizing: border-box
 
-  .stream
-    +leader()
-    +pie-clearfix
-    position: relative
-
   .livestream
     +padding-leader()
     +padding-trailer()
     +trailer()
-    background-color: $color-ci-black-light
 
     .livestream-inner
       +pie-clearfix
       position: relative
 
-  .video
+  .stream
     position: relative
     padding-top: 71.5%
 
@@ -63,7 +53,7 @@
     padding-top: 70%
     overflow: hidden
 
-  .video, .chatroom
+  .stream, .chatroom
     iframe
       position: absolute
       top: 0
@@ -71,22 +61,23 @@
       width: 100%
       height: 100%
 
+  .livedata
+    +pie-clearfix
+
   .polis-embed
+    +padding-leader(2)
+    +padding-trailer(2)
+    background-color: rgb(247, 247, 247)
+
     iframe
       width: 100%
+      border: none !important
 
   @include at-breakpoint($pad)
     .container
-      padding-left: 24px
-      padding-right: 24px
 
     .livestream
-      +padding-leader(2)
-      +padding-trailer(2)
       +trailer(2)
-
-    .live-title
-      padding: 0
 
       .program-number
         +adjust-font-size-to(72px, 3)
@@ -102,22 +93,27 @@
   @include at-breakpoint($desktop)
     .container
       position: relative
-      padding-left: 48px
-      padding-right: 48px
 
     .main-content
+      +box-sizing(border-box)
       float: left
       width: 64%
+      padding-right: 24px
+
+      &.video
+        padding-right: 0
 
     .side-content
-      position: absolute
       float: right
       width: 36%
-      top: 0
-      right: 0
-      bottom: 0
 
-    .video
+      &.chat
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+
+    .stream
       padding-top: 56%
 
     .chatroom
@@ -135,6 +131,12 @@
         width: calc(100%)
         height: 100%
 
+  @media (min-width: 1186px)
+    .main-content
+      width: 70%
+
+    .side-content
+      width: 30%
 
   @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)and (-webkit-min-device-pixel-ratio: 2)
     .video

@@ -1,26 +1,37 @@
 .live
   .livestream
     .container
+      .livestream-inner
+        .main-content.video
+          .stream
+            iframe src="https://livehouse.in/embed/channel/talktotaiwansub/video" frameborder="0" allowfullscreen=""
+        .side-content.chat
+          .chatroom
+            iframe src="https://livehouse.in/embed/channel/talktotaiwansub/chatroom/dark" frameborder="0" allowfullscreen=""
+
       .live-title
         .program-number <span class="gray-number">0</span><span class="pink-number">1</span>
         .program-content
           .guest 柯文哲
           .title 台灣醫療崩壞，健保亂象如何解決？
 
-      .livestream-inner
+      .block.livedata
         .main-content
-          .video
-            iframe src="https://livehouse.in/embed/channel/talktotaiwansub/video" frameborder="0" allowfullscreen=""
+          .block-title
+            .title-en INTRODUCE
+            .title-tw 簡介
+          .block-content
+            p 台灣的醫療環境在健保制度下存在著許多問題，使醫療崩壞成現在進行式：血汗工廠、五大皆空、健保核刪、健保點數打折、缺藥潮都是崩壞的一環。<br><br>曾經擔任第一線醫師的台北市長柯文哲，對於眼前台灣醫療環境所碰到的問題，提出他的看法。
+
         .side-content
-          .chatroom
-            iframe src="https://livehouse.in/embed/channel/talktotaiwansub/chatroom/dark" frameborder="0" allowfullscreen=""
+          .block-title
+            .title-en BIO
+            .title-tw 來賓介紹
 
-  .block.container
-    .block-title
-      .title-en pol.is
-      .title-ch 分享你的觀點
 
-    .block-content.polis-embed
-      .polis data-conversation_id="73rxk6"
-      script async="true" src="https://pol.is/embed.js"
+  .block.polis-embed
+    .container
+      .block-content
+        .polis data-conversation_id="73rxk6"
+        script async="true" src="https://pol.is/embed.js"
 
