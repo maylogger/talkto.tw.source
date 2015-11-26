@@ -10,9 +10,7 @@ html lang="zh-TW"
       - else
         = render "/partial/header"
       = yield
-      - if @page_name == "index"
-      - else
-        = render "/partial/footer"
+      = render "/partial/footer"
     = render "/layout_foot"
     = render "/layout_google_analytics.erb"
     = render "/layout_livereload"
