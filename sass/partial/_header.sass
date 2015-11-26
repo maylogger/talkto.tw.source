@@ -12,7 +12,7 @@
   .logo-left
     float: left
     width: 64px
-    height: 37px
+    height: 38px
     +hide-text()
     background: url("/images/header-logo-left.svg") center no-repeat
     +background-size(contain)
@@ -21,13 +21,34 @@
     float: right
     width: 122px
     height: 8px
-    margin-top: 29px
+    margin-top: 30px
     +hide-text()
     background: url("/images/header-logo-right.svg") center no-repeat
     +background-size(contain)
 
 
   @include at-breakpoint($pad)
+    .logo-left
+      width: 96px
+      height: 58px
+
+    .logo-right
+      width: 183px
+      height: 13px
+      margin-top: 45px
+
+
+  @include at-breakpoint($desktop)
+    .header-inner
+      padding-top: 48px
+      padding-bottom: 24px
+
+
+  @include at-breakpoint($wide-desktop)
+    .header-inner
+      padding-top: 72px
+      padding-bottom: 24px
+
     .logo-left
       width: 128px
       height: 77px
@@ -36,8 +57,3 @@
       width: 244px
       height: 17px
       margin-top: 60px
-
-  @include at-breakpoint($desktop)
-    .header-inner
-      padding-top: 72px
-      padding-bottom: 24px
