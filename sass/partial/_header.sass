@@ -1,12 +1,43 @@
 .header
   z-index: 1000
-  padding: 16px 0
+
   background-color: $color-ci-black
 
-  .logo
-    display: block
-    width: 52px
-    height: 64px
+  .header-inner
+    +pie-clearfix
+    padding-top: 24px
+    padding-bottom: 16px
+    border-bottom: 1px solid $color-ci-pink
+
+  .logo-left
+    float: left
+    width: 64px
+    height: 37px
     +hide-text()
-    background: url("/images/logo.svg") center no-repeat
+    background: url("/images/header-logo-left.svg") center no-repeat
     +background-size(contain)
+
+  .logo-right
+    float: right
+    width: 122px
+    height: 8px
+    margin-top: 29px
+    +hide-text()
+    background: url("/images/header-logo-right.svg") center no-repeat
+    +background-size(contain)
+
+
+  @include at-breakpoint($pad)
+    .logo-left
+      width: 128px
+      height: 77px
+
+    .logo-right
+      width: 244px
+      height: 17px
+      margin-top: 60px
+
+  @include at-breakpoint($desktop)
+    .header-inner
+      padding-top: 72px
+      padding-bottom: 24px
