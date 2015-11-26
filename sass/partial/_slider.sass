@@ -11,14 +11,22 @@
     top: 18px
     left: 0
     right: 0
+    height: 0
     text-align: right
-    pointer-events: none
 
     .container
       max-width: 1120px
+      height: 0
+
+    .share
+      float: left
+      opacity: .7
+
+      &:hover
+        opacity: 1
 
     .logo
-      display: inline-block
+      float: right
       width: 62px
       height: 80px
       +hide-text()
