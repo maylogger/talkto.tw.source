@@ -265,7 +265,7 @@ img { max-width: 100%; margin-bottom: 24px; }
 .slider { background-color: #0e0e0e; overflow: hidden; }
 
 .program-slider { position: relative; }
-.program-slider .slider-header { position: absolute; z-index: 2; top: 18px; left: 0; right: 0; height: 0; text-align: right; }
+.program-slider .slider-header { position: absolute; z-index: 1000; top: 18px; left: 0; right: 0; height: 0; text-align: right; }
 .program-slider .slider-header .container, .program-slider .slider-header .index-countdown-inner { max-width: 1120px; height: 0; }
 .program-slider .slider-header .share { float: left; opacity: 0.7; }
 .program-slider .slider-header .share:hover { opacity: 1; }
