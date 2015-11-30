@@ -110,12 +110,12 @@
               .title 給這次三位總統選人建議<br>醫療健保要改的話最重要的順序是什麼？
               p 兩個字，勇敢。什麼是對的什麼是錯的事情大家都知道，但是對的不做，錯的事情每天做。
 
-      .block.talk-data
+      .block.talk-data#anchor
         .block-title
           .title-en POLIS
           .title-tw 全民共識排行榜
 
-        .block-content#anchor
+        .block-content
           ul.nav-tabs.switch-tab
             li.active: a href="#polis-talk01-01" data-toggle="tab" 柯文哲 <br>醫療與健保
             li: a href="#polis-talk01-02" data-toggle="tab" 番外篇：來台<br>留學生與健保
@@ -136,7 +136,7 @@
             .tab-pane.fade#polis-talk01-02
               .polis-list style="display: none;"
                 .list-item dir-paginate="talk_02_poli in talk_02_polis | itemsPerPage: pageSize" pagination-id="b"
-                  .rank= "{{talk_01_poli.id}}"
+                  .rank= "{{talk_02_poli.id}}"
                   .percentage ng-class="{'bg_gray': talk_02_poli.percentage < 60 }": span= "{{talk_02_poli.percentage | number:0}}"
                   .content: p= "{{talk_02_poli.comment_body}}"
 
