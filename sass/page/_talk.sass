@@ -155,7 +155,29 @@
           display: none
 
       p
+        color: $color-ci-gray
         +adjust-font-size-to(16px, 1)
+
+  .polis-list
+    .list-item
+      position: relative
+      .rank
+        position: absolute
+        top: 0
+        right: 0
+        color: $color-ci-pink
+
+        &:before
+          content: "NO."
+          color: white
+          font-size: 11px
+
+        span
+          color: $color-ci-pink
+
+    .content
+      p
+        color: white
 
   .point-of-view-list
     .list-item:last-child
@@ -233,6 +255,10 @@
           +adjust-font-size-to(16px, 1.25)
 
     .polis-list
+      .list-item
+        padding-right: 48px
+        .rank
+          top: 48px
       .content
         p
           +adjust-font-size-to(20px, 1.4)

@@ -123,9 +123,10 @@
           .tab-content.switch-content
             .tab-pane.fade.in.active#polis-talk01-01
               .polis-list style="display: none;"
-                .list-item dir-paginate="tally in tallys | itemsPerPage: pageSize" pagination-id="a"
-                  .percentage ng-class="{'bg_gray': tally.percentage < 60 }": span= "{{tally.percentage | number:0}}"
-                  .content: p= "{{tally.comment_body}}"
+                .list-item dir-paginate="talk_01_poli in talk_01_polis | itemsPerPage: pageSize" pagination-id="a"
+                  .rank= "{{talk_01_poli.id}}"
+                  .percentage ng-class="{'bg_gray': talk_01_poli.percentage < 60 }": span= "{{talk_01_poli.percentage | number:0}}"
+                  .content: p= "{{talk_01_poli.comment_body}}"
 
 
                 div ng-controller="paginationController"
@@ -134,9 +135,10 @@
 
             .tab-pane.fade#polis-talk01-02
               .polis-list style="display: none;"
-                .list-item dir-paginate="book in books | itemsPerPage: pageSize" pagination-id="b"
-                  .percentage ng-class="{'bg_gray': book.percentage < 60 }": span= "{{book.percentage | number:0}}"
-                  .content: p= "{{book.comment_body}}"
+                .list-item dir-paginate="talk_02_poli in talk_02_polis | itemsPerPage: pageSize" pagination-id="b"
+                  .rank= "{{talk_01_poli.id}}"
+                  .percentage ng-class="{'bg_gray': talk_02_poli.percentage < 60 }": span= "{{talk_02_poli.percentage | number:0}}"
+                  .content: p= "{{talk_02_poli.comment_body}}"
 
                 div ng-controller="paginationController"
                   dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="/partial/dirPagination.tpl.html"  pagination-id="b"
