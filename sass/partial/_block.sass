@@ -1,13 +1,22 @@
 .block
+  & + .block
+    +leader(2)
+
   .block-title
     +trailer()
     padding: 12px 0
+    +adjust-font-size-to(18px)
     border-bottom: 1px solid $color-ci-pink
+
+    &.center
+      text-align: center
+      padding: 24px 0
+      +adjust-font-size-to(21px)
+      border-bottom: 2px solid $color-ci-pink
 
     .title-en, .title-tw
       display: inline-block
       @extend .gotham-bold-wz-shs
-      +adjust-font-size-to(18px)
       letter-spacing: .1em
 
     .title-en

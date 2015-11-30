@@ -1,0 +1,44 @@
+.live
+  .livestream
+    +pie-clearfix
+    position: relative
+
+  .stream
+    position: relative
+    padding-top: 71.5%
+
+  .chatroom
+    position: relative
+    padding-top: 70%
+    overflow: hidden
+
+  .stream, .chatroom
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+
+  @include at-breakpoint($pad)
+    .livestream
+      +trailer(2)
+
+  @include at-breakpoint($desktop)
+    .stream
+      padding-top: 56%
+
+    .chatroom
+      position: absolute
+      width: 100%
+      top: 0
+      right: 0
+      bottom: 0
+      padding-top: 0
+
+      iframe
+        position: absolute
+        top: 0
+        bottom: 0
+        width: calc(100%)
+        height: 100%

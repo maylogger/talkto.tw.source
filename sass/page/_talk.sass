@@ -47,27 +47,6 @@
     +padding-trailer(2)
     +trailer()
 
-    .livestream
-      +pie-clearfix
-      position: relative
-
-  .stream
-    position: relative
-    padding-top: 71.5%
-
-  .chatroom
-    position: relative
-    padding-top: 70%
-    overflow: hidden
-
-  .stream, .chatroom
-    iframe
-      position: absolute
-      top: 0
-      left: 0
-      width: 100%
-      height: 100%
-
   .talk-data
     +pie-clearfix
 
@@ -80,12 +59,64 @@
       width: 100%
       border: none !important
 
+  .record-tab
+    +pie-clearfix
+    +reset-box-model
+    +trailer()
+    list-style: none
+
+    a
+      display: inline-block
+      width: 100%
+      @extend .shs-heavy
+      +adjust-font-size-to(18px, 1.5)
+      color: $color-ci-gray
+      text-decoration: none
+
+    li
+      float: left
+      width: calc(50% - 2px)
+      text-align: center
+      border-left: 1px solid $color-ci-pink
+
+      &.active a
+        color: $color-ci-pink
+
+      &:last-child
+        border-right: 1px solid $color-ci-pink
+
+  .record-content
+    .tab-pane
+      position: relative
+      padding-top: 56.25%
+
+      iframe
+        position: absolute
+        top: 0
+        width: 100%
+        height: 100%
+
+  .point-of-view-list
+    .list-item
+      +pie-clearfix
+      +padding-leader(2)
+      +padding-trailer(2)
+
+      .point
+        float: left
+        width: 30%
+
+        span
+          display: inline-block
+          background-color: $color-ci-pink
+          +border-radius(50%)
+
+      .content
+        float: right
+        width: 70%
+
+
   @include at-breakpoint($pad)
-    .container
-
-    .livestream
-      +trailer(2)
-
     .talk-title
       .program-number
         float: left
@@ -97,6 +128,15 @@
 
         .title
           +adjust-font-size-to(32px, 1.5)
+
+    .record-tab
+      a
+        width: auto
+        +adjust-font-size-to(21px)
+        padding: 0 48px
+
+      li
+        width: auto
 
 
   @include at-breakpoint($desktop)
@@ -126,10 +166,13 @@
       p
         +adjust-font-size-to(15px, 1.25)
 
-
     .talk-title
       .share
         margin-top: .5em
+
+    .record-tab
+      a
+        +adjust-font-size-to(24px)
 
     .side-content
       float: right
@@ -140,24 +183,6 @@
         top: 0
         right: 0
         bottom: 0
-
-    .stream
-      padding-top: 56%
-
-    .chatroom
-      position: absolute
-      width: 100%
-      top: 0
-      right: 0
-      bottom: 0
-      padding-top: 0
-
-      iframe
-        position: absolute
-        top: 0
-        bottom: 0
-        width: calc(100%)
-        height: 100%
 
   @media (min-width: 1186px)
     .main-content
