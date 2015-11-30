@@ -101,19 +101,29 @@
       +pie-clearfix
       +padding-leader(2)
       +padding-trailer(2)
+      border-bottom: 1px solid $color-ci-pink
 
       .point
         float: left
-        width: 30%
+        width: 20%
 
         span
           display: inline-block
+          width: 120px
+          height: 120px
+          @extend .shs-heavy
+          +adjust-font-size-to(64px, 4.75)
+          text-align: center
           background-color: $color-ci-pink
           +border-radius(50%)
 
       .content
         float: right
-        width: 70%
+        width: 80%
+
+        .title
+          @extend .shs-heavy
+          +adjust-font-size-to(24px, 1.5)
 
 
   @include at-breakpoint($pad)

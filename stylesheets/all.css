@@ -136,7 +136,7 @@ td, th { padding: 0; }
 
 .shs-bold { font-family: "source-han-sans-traditional", sans-serif; font-weight: 700; }
 
-.shs-heavy, .program-slider .slider-for .program-info, .talk .talk-title .program-content, .talk .record-tab a { font-family: "source-han-sans-traditional", sans-serif; font-weight: 900; }
+.shs-heavy, .program-slider .slider-for .program-info, .talk .talk-title .program-content, .talk .record-tab a, .talk .point-of-view-list .list-item .point span, .talk .point-of-view-list .list-item .content .title { font-family: "source-han-sans-traditional", sans-serif; font-weight: 900; }
 
 .gotham-regular-wz-shs { font-family: "Gotham SSm A", "Gotham SSm B", "source-han-sans-traditional", sans-serif; font-style: normal; font-weight: 400; }
 
@@ -437,11 +437,12 @@ img { max-width: 100%; margin-bottom: 24px; }
 .talk .record-tab li:last-child { border-right: 1px solid #e63082; }
 .talk .record-content .tab-pane { position: relative; padding-top: 56.25%; }
 .talk .record-content .tab-pane iframe { position: absolute; top: 0; width: 100%; height: 100%; }
-.talk .point-of-view-list .list-item { padding-top: 48px; padding-bottom: 48px; }
+.talk .point-of-view-list .list-item { padding-top: 48px; padding-bottom: 48px; border-bottom: 1px solid #e63082; }
 .talk .point-of-view-list .list-item:after { content: ""; display: table; clear: both; }
-.talk .point-of-view-list .list-item .point { float: left; width: 30%; }
-.talk .point-of-view-list .list-item .point span { display: inline-block; background-color: #e63082; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%; }
-.talk .point-of-view-list .list-item .content { float: right; width: 70%; }
+.talk .point-of-view-list .list-item .point { float: left; width: 20%; }
+.talk .point-of-view-list .list-item .point span { display: inline-block; width: 120px; height: 120px; font-size: 64px; line-height: 114px; text-align: center; background-color: #e63082; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%; }
+.talk .point-of-view-list .list-item .content { float: right; width: 80%; }
+.talk .point-of-view-list .list-item .content .title { font-size: 24px; line-height: 36px; }
 @media (min-width: 768px) { .talk .talk-title .program-number { float: left; font-size: 72px; line-height: 84px; }
   .talk .talk-title .program-content .guest { font-size: 18px; line-height: 36px; }
   .talk .talk-title .program-content .title { font-size: 32px; line-height: 36px; }
