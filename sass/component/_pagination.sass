@@ -1,16 +1,15 @@
 .pagination
   text-align: center
-  margin: 0
+  margin: 24px 0
   padding: 0
   list-style: none
   a
     +unstyled-link
     display: block
-    +border-radius(17px)
     width: 30px
     height: 30px
-    border: 1px solid white
-    font-size: 13px
+    @extend .shs-heavy
+    font-size: 18px
     line-height: 30px
     color: white
   li
@@ -25,10 +24,15 @@
         color: #ccc
         cursor: default
         pointer-events: none
+
   +at-breakpoint($pad)
     li
       display: inline-block
+      a
+        width: 42px
+        font-size: 24px
+        line-height: 48px
       a:hover
-        border: 1px solid #ddd
+        color: $color-ci-pink
       &.active a
-        border: 1px solid white
+        color: $color-ci-pink
