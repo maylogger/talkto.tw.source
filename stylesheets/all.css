@@ -136,7 +136,7 @@ td, th { padding: 0; }
 
 .shs-bold { font-family: "source-han-sans-traditional", sans-serif; font-weight: 700; }
 
-.shs-heavy, .program-slider .slider-for .program-info, .talk .talk-title .program-content, .talk .record-tab a, .talk .point-of-view-list .list-item .point span, .talk .point-of-view-list .list-item .content .title { font-family: "source-han-sans-traditional", sans-serif; font-weight: 900; }
+.shs-heavy, .program-slider .slider-for .program-info, .talk .talk-title .program-content, .talk .switch-tab a, .talk .point-of-view-list .point span, .talk .point-of-view-list .content .title { font-family: "source-han-sans-traditional", sans-serif; font-weight: 900; }
 
 .gotham-regular-wz-shs { font-family: "Gotham SSm A", "Gotham SSm B", "source-han-sans-traditional", sans-serif; font-style: normal; font-weight: 400; }
 
@@ -256,13 +256,13 @@ img { max-width: 100%; margin-bottom: 24px; }
   .introduce .intro-content p { font-size: 24px; line-height: 36px; } }
 
 .block + .block { margin-top: 48px; }
-.block .block-title { margin-bottom: 24px; padding: 12px 0; font-size: 18px; line-height: 24px; border-bottom: 1px solid #e63082; }
-.block .block-title.center { text-align: center; padding: 24px 0; font-size: 21px; line-height: 48px; border-bottom: 2px solid #e63082; }
+.block .block-title { margin-bottom: 24px; padding: 12px 0; font-size: 16px; line-height: 24px; border-bottom: 1px solid #e63082; }
 .block .block-title .title-en, .block .block-title .title-tw { display: inline-block; letter-spacing: 0.1em; }
 .block .block-title .title-en { color: #e63082; }
 .block .block-title .title-tw { color: #aaaaaa; }
 .block .block-title .title-en + .title-tw:before { content: "/"; padding: 0 6px; }
 .block .block-content:after { content: ""; display: table; clear: both; }
+@media (min-width: 768px) { .block .block-title { font-size: 18px; line-height: 24px; } }
 
 .slider { background-color: #0e0e0e; overflow: hidden; }
 
@@ -429,25 +429,34 @@ img { max-width: 100%; margin-bottom: 24px; }
 .talk .talk-data:after { content: ""; display: table; clear: both; }
 .talk .polis-embed { padding-top: 72px; padding-bottom: 96px; background-color: #f7f7f7; }
 .talk .polis-embed iframe { width: 100%; border: none !important; }
-.talk .record-tab { margin: 0; padding: 0; border: 0; margin-bottom: 24px; list-style: none; }
-.talk .record-tab:after { content: ""; display: table; clear: both; }
-.talk .record-tab a { display: inline-block; width: 100%; font-size: 18px; line-height: 36px; color: #aaaaaa; text-decoration: none; }
-.talk .record-tab li { float: left; width: calc(50% - 2px); text-align: center; border-left: 1px solid #e63082; }
-.talk .record-tab li.active a { color: #e63082; }
-.talk .record-tab li:last-child { border-right: 1px solid #e63082; }
-.talk .record-content .tab-pane { position: relative; padding-top: 56.25%; }
-.talk .record-content .tab-pane iframe { position: absolute; top: 0; width: 100%; height: 100%; }
-.talk .point-of-view-list .list-item { padding-top: 48px; padding-bottom: 48px; border-bottom: 1px solid #e63082; }
+.talk .switch-tab { margin: 0; padding: 0; border: 0; margin-bottom: 36px; list-style: none; }
+.talk .switch-tab:after { content: ""; display: table; clear: both; }
+.talk .switch-tab a { position: relative; display: inline-block; width: 100%; font-size: 18px; line-height: 36px; color: #aaaaaa; text-decoration: none; }
+.talk .switch-tab li { float: left; width: calc(50% - 2px); text-align: center; border-left: 1px solid #e63082; }
+.talk .switch-tab li.active a { color: #e63082; }
+.talk .switch-tab li.active a:after { content: ""; position: absolute; left: 50%; bottom: -16px; margin-left: -8px; border: 8px solid transparent; border-top-color: rgba(230, 48, 130, 0.7); }
+.talk .switch-tab li:last-child { border-right: 1px solid #e63082; }
+.talk .switch-content .tab-pane { position: relative; padding-top: 56.25%; }
+.talk .switch-content .tab-pane iframe { position: absolute; top: 0; width: 100%; height: 100%; }
+.talk .point-of-view-list .list-item { padding-bottom: 12px; border-bottom: 1px solid #e63082; }
 .talk .point-of-view-list .list-item:after { content: ""; display: table; clear: both; }
-.talk .point-of-view-list .list-item .point { float: left; width: 20%; }
-.talk .point-of-view-list .list-item .point span { display: inline-block; width: 120px; height: 120px; font-size: 64px; line-height: 114px; text-align: center; background-color: #e63082; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%; }
-.talk .point-of-view-list .list-item .content { float: right; width: 80%; }
-.talk .point-of-view-list .list-item .content .title { font-size: 24px; line-height: 36px; }
+.talk .point-of-view-list .point { margin-top: 36px; margin-bottom: 24px; }
+.talk .point-of-view-list .point span { display: inline-block; width: 72px; height: 72px; font-size: 32px; line-height: 66px; text-align: center; background-color: #e63082; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%; }
+.talk .point-of-view-list .content .title { margin-bottom: 24px; font-size: 21px; line-height: 30px; }
+.talk .point-of-view-list .content .title br { display: none; }
+.talk .point-of-view-list .content p { font-size: 16px; line-height: 24px; }
 @media (min-width: 768px) { .talk .talk-title .program-number { float: left; font-size: 72px; line-height: 84px; }
   .talk .talk-title .program-content .guest { font-size: 18px; line-height: 36px; }
   .talk .talk-title .program-content .title { font-size: 32px; line-height: 36px; }
-  .talk .record-tab a { width: auto; font-size: 21px; line-height: 48px; padding: 0 48px; }
-  .talk .record-tab li { width: auto; } }
+  .talk .switch-tab a { width: auto; font-size: 21px; line-height: 48px; padding: 0 48px; }
+  .talk .switch-tab li { width: auto; }
+  .talk .point-of-view-list .list-item { padding-top: 48px; padding-bottom: 48px; }
+  .talk .point-of-view-list .point { margin-top: 0px; float: left; width: 20%; }
+  .talk .point-of-view-list .point span { display: inline-block; width: 120px; height: 120px; font-size: 64px; line-height: 114px; text-align: center; background-color: #e63082; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%; }
+  .talk .point-of-view-list .content { float: left; width: 79.5%; max-width: 800px; }
+  .talk .point-of-view-list .content .title { margin-bottom: 24px; font-size: 24px; line-height: 36px; }
+  .talk .point-of-view-list .content .title br { display: block; }
+  .talk .point-of-view-list .content p { font-size: 16px; line-height: 30px; } }
 @media (min-width: 1024px) { .talk .container, .talk .index-countdown-inner { position: relative; }
   .talk .main-content { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; width: 64%; padding-right: 24px; }
   .talk .main-content.video { padding-right: 0; }
@@ -457,7 +466,7 @@ img { max-width: 100%; margin-bottom: 24px; }
   .talk .bio { font-size: 15px; line-height: 30px; }
   .talk .bio p { font-size: 15px; line-height: 30px; }
   .talk .talk-title .share { margin-top: 0.5em; }
-  .talk .record-tab a { font-size: 24px; line-height: 48px; }
+  .talk .switch-tab a { font-size: 24px; line-height: 48px; }
   .talk .side-content { float: right; width: 36%; }
   .talk .side-content.chat { position: absolute; top: 0; right: 0; bottom: 0; } }
 @media (min-width: 1186px) { .talk .main-content { width: 70%; }

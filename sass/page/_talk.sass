@@ -59,13 +59,14 @@
       width: 100%
       border: none !important
 
-  .record-tab
+  .switch-tab
     +pie-clearfix
     +reset-box-model
-    +trailer()
+    +trailer(1.5)
     list-style: none
 
     a
+      position: relative
       display: inline-block
       width: 100%
       @extend .shs-heavy
@@ -82,10 +83,19 @@
       &.active a
         color: $color-ci-pink
 
+        &:after
+          content: ""
+          position: absolute
+          left: 50%
+          bottom: -16px
+          margin-left: -8px
+          border: 8px solid transparent
+          border-top-color: rgba($color-ci-pink, .7)
+
       &:last-child
         border-right: 1px solid $color-ci-pink
 
-  .record-content
+  .switch-content
     .tab-pane
       position: relative
       padding-top: 56.25%
@@ -99,31 +109,35 @@
   .point-of-view-list
     .list-item
       +pie-clearfix
-      +padding-leader(2)
-      +padding-trailer(2)
+      +padding-trailer(.5)
       border-bottom: 1px solid $color-ci-pink
 
-      .point
-        float: left
-        width: 20%
+    .point
+      +leader(1.5)
+      +trailer()
 
-        span
-          display: inline-block
-          width: 120px
-          height: 120px
-          @extend .shs-heavy
-          +adjust-font-size-to(64px, 4.75)
-          text-align: center
-          background-color: $color-ci-pink
-          +border-radius(50%)
+      span
+        display: inline-block
+        width: 72px
+        height: 72px
+        @extend .shs-heavy
+        +adjust-font-size-to(32px, 2.75)
+        text-align: center
+        background-color: $color-ci-pink
+        +border-radius(50%)
 
-      .content
-        float: right
-        width: 80%
+    .content
 
-        .title
-          @extend .shs-heavy
-          +adjust-font-size-to(24px, 1.5)
+      .title
+        +trailer()
+        @extend .shs-heavy
+        +adjust-font-size-to(21px, 1.25)
+
+        br
+          display: none
+
+      p
+        +adjust-font-size-to(16px, 1)
 
 
   @include at-breakpoint($pad)
@@ -139,7 +153,7 @@
         .title
           +adjust-font-size-to(32px, 1.5)
 
-    .record-tab
+    .switch-tab
       a
         width: auto
         +adjust-font-size-to(21px)
@@ -147,6 +161,42 @@
 
       li
         width: auto
+
+    .point-of-view-list
+      .list-item
+        +padding-leader(2)
+        +padding-trailer(2)
+
+      .point
+        +leader(0)
+        float: left
+        width: 20%
+
+        span
+          display: inline-block
+          width: 120px
+          height: 120px
+          @extend .shs-heavy
+          +adjust-font-size-to(64px, 4.75)
+          text-align: center
+          background-color: $color-ci-pink
+          +border-radius(50%)
+
+      .content
+        float: left
+        width: 79.5%
+        max-width: 800px
+
+        .title
+          +trailer()
+          @extend .shs-heavy
+          +adjust-font-size-to(24px, 1.5)
+
+          br
+            display: block
+
+        p
+          +adjust-font-size-to(16px, 1.25)
 
 
   @include at-breakpoint($desktop)
@@ -180,7 +230,7 @@
       .share
         margin-top: .5em
 
-    .record-tab
+    .switch-tab
       a
         +adjust-font-size-to(24px)
 
