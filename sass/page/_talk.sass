@@ -6,7 +6,7 @@
   .talk-title
     position: relative
     +pie-clearfix
-    +leader(3)
+    +leader(2)
     +trailer(1)
     margin-left: -2px
 
@@ -70,7 +70,7 @@
       display: inline-block
       width: 100%
       @extend .shs-heavy
-      +adjust-font-size-to(18px, 1.5)
+      +adjust-font-size-to(18px, 1.25)
       color: $color-ci-gray
       text-decoration: none
 
@@ -96,7 +96,7 @@
         border-right: 1px solid $color-ci-pink
 
   .switch-content
-    .tab-pane
+    .tab-pane.iframe
       position: relative
       padding-top: 56.25%
 
@@ -106,13 +106,13 @@
         width: 100%
         height: 100%
 
-  .point-of-view-list
+  .point-of-view-list, .polis-list
     .list-item
       +pie-clearfix
       +padding-trailer(.5)
       border-bottom: 1px solid $color-ci-pink
 
-    .point
+    .point, .percentage
       +leader(1.5)
       +trailer()
 
@@ -125,6 +125,24 @@
         text-align: center
         background-color: $color-ci-pink
         +border-radius(50%)
+
+    .percentage
+      span
+        position: relative
+        +adjust-font-size-to(26px, 2.75)
+
+        &:after
+          content: "%"
+          position: absolute
+          left: 0
+          right: 0
+          bottom: 0
+          text-align: center
+          +adjust-font-size-to(16px, 1.25)
+
+    .percentage.bg_gray
+      span
+        background-color: $color-ci-gray
 
     .content
 
@@ -139,9 +157,15 @@
       p
         +adjust-font-size-to(16px, 1)
 
+  .point-of-view-list
+    .list-item:last-child
+      border-bottom: none
+
 
   @include at-breakpoint($pad)
     .talk-title
+      +leader(3)
+
       .program-number
         float: left
         +adjust-font-size-to(72px, 3.5)
@@ -159,15 +183,18 @@
         +adjust-font-size-to(21px)
         padding: 0 48px
 
+        br
+          display: none
+
       li
         width: auto
 
-    .point-of-view-list
+    .point-of-view-list, .polis-list
       .list-item
         +padding-leader(2)
         +padding-trailer(2)
 
-      .point
+      .point, .percentage
         +leader(0)
         float: left
         width: 20%
@@ -181,6 +208,13 @@
           text-align: center
           background-color: $color-ci-pink
           +border-radius(50%)
+
+      .percentage
+        span
+          +adjust-font-size-to(48px, 4.75)
+
+          &:after
+            +adjust-font-size-to(21px)
 
       .content
         float: left
@@ -197,6 +231,11 @@
 
         p
           +adjust-font-size-to(16px, 1.25)
+
+    .polis-list
+      .content
+        p
+          +adjust-font-size-to(20px, 1.4)
 
 
   @include at-breakpoint($desktop)

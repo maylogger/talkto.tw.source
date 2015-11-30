@@ -1,6 +1,6 @@
 .block
   & + .block
-    +leader(2)
+    +leader()
 
   .block-title
     +trailer()
@@ -27,6 +27,9 @@
   .block-content
     +pie-clearfix
 
-  @include at-breakpoint($pad)
+  @include at-breakpoint($desktop)
+    & + .block
+      +leader(5)
+
     .block-title
       +adjust-font-size-to(18px)
