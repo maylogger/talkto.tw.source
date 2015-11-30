@@ -10,7 +10,7 @@
         / 列表 A
         .point-of-view-list style="display: none;"
           .list-item dir-paginate="tally in tallys | itemsPerPage: pageSize" pagination-id="a"
-            .point: span= "{{tally.percentage | number:0}}"
+            .point ng-class="{'bg_gray': tally.percentage < 60 }": span= "{{tally.percentage | number:0}}"
             .content: p= "{{tally.comment_body}}"
 
 
@@ -20,7 +20,7 @@
         / 列表 B
         .point-of-view-list style="display: none;"
           .list-item dir-paginate="book in books | itemsPerPage: pageSize" pagination-id="b"
-            .point: span= "{{book.percentage | number:0}}"
+            .point ng-class="{'bg_gray': book.percentage < 60 }": span= "{{book.percentage | number:0}}"
             .content: p= "{{book.comment_body}}"
 
           div ng-controller="paginationController"

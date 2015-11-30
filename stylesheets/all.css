@@ -473,3 +473,5 @@ img { max-width: 100%; margin-bottom: 24px; }
 @media (min-width: 1186px) { .talk .main-content { width: 70%; }
   .talk .side-content { width: 30%; } }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) { .talk .video { padding-top: 64%; } }
+
+.bg_gray span { background-color: #444444 !important; }
