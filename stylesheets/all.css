@@ -394,15 +394,20 @@ img { max-width: 100%; margin-bottom: 24px; }
 .live-countdown.program-bg { background-image: url("/images/program02_bg.jpg"); background-repeat: no-repeat; background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
 .live-countdown.program-bg:after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 80, color-stop(0%, rgba(14, 14, 14, 0.3)), color-stop(80%, #0e0e0e)); background: -webkit-radial-gradient(rgba(14, 14, 14, 0.3) 0%, #0e0e0e 80%); background: -moz-radial-gradient(rgba(14, 14, 14, 0.3) 0%, #0e0e0e 80%); background: -o-radial-gradient(rgba(14, 14, 14, 0.3) 0%, #0e0e0e 80%); background: radial-gradient(rgba(14, 14, 14, 0.3) 0%, #0e0e0e 80%); }
 .live-countdown .countdown { z-index: 10; position: absolute; top: 50%; left: 0; right: 0; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); }
-.live-countdown .countdown span { display: block; margin: 0 auto 12px; font-size: 16px; line-height: 24px; color: rgba(255, 255, 255, 0.5); }
+.live-countdown .countdown span { display: block; margin: 0 auto 12px; font-size: 16px; line-height: 24px; color: rgba(255, 255, 255, 0.5); letter-spacing: 0.2em; }
 .live-countdown .countdown .item, .live-countdown .countdown .colon { display: inline-block; vertical-align: top; }
-.live-countdown .countdown .item { width: 40px; }
-.live-countdown .countdown .item .number { font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; font-style: normal; font-weight: 700; font-size: 24px; line-height: 30px; }
+.live-countdown .countdown .item { width: 46px; }
+.live-countdown .countdown .item .number { font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; font-style: normal; font-weight: 700; font-size: 30px; line-height: 30px; }
 .live-countdown .countdown .item .unit { font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; font-style: normal; font-weight: 400; color: #aaaaaa; font-size: 10px; line-height: 24px; }
-.live-countdown .countdown .colon { font-size: 32px; line-height: 48px; }
+.live-countdown .countdown .colon { font-size: 30px; line-height: 30px; }
+@media (min-width: 375px) { .live-countdown .countdown span { margin: 0 auto 16px; }
+  .live-countdown .countdown .item { width: 52px; }
+  .live-countdown .countdown .item .number { font-size: 36px; line-height: 36px; }
+  .live-countdown .countdown .item .unit { font-size: 12px; line-height: 24px; }
+  .live-countdown .countdown .colon { font-size: 36px; line-height: 36px; } }
 @media (min-width: 768px) { .live-countdown .countdown span { font-size: 24px; line-height: 48px; }
-  .live-countdown .countdown .item { width: 100px; }
-  .live-countdown .countdown .item .number { font-size: 72px; line-height: 96px; }
+  .live-countdown .countdown .item { width: 120px; }
+  .live-countdown .countdown .item .number { font-size: 84px; line-height: 96px; }
   .live-countdown .countdown .item .unit { font-size: 16px; line-height: 24px; }
   .live-countdown .countdown .colon { font-size: 72px; line-height: 96px; } }
 @media (min-width: 1024px) { .live-countdown { padding-top: 35.9%; }

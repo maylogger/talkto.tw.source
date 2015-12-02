@@ -33,19 +33,20 @@
       @extend .shs-heavy
       +adjust-font-size-to(16px)
       color: rgba(white, .5)
+      letter-spacing: .2em
 
     .item, .colon
       display: inline-block
       vertical-align: top
 
     .item
-      width: 40px
+      width: 46px
 
       .number
         font-family: "Gotham SSm A", "Gotham SSm B", sans-serif
         font-style: normal
         font-weight: 700
-        +adjust-font-size-to(24px, 1.25)
+        +adjust-font-size-to(30px, 1.25)
 
       .unit
         font-family: "Gotham SSm A", "Gotham SSm B", sans-serif
@@ -55,7 +56,25 @@
         +adjust-font-size-to(10px)
 
     .colon
-      +adjust-font-size-to(32px)
+      +adjust-font-size-to(30px, 1.25)
+
+
+  @media (min-width: 375px)
+    .countdown
+      span
+        margin: 0 auto 16px
+
+      .item
+        width: 52px
+
+        .number
+          +adjust-font-size-to(36px, 1.5)
+
+        .unit
+          +adjust-font-size-to(12px)
+
+      .colon
+        +adjust-font-size-to(36px, 1.5)
 
 
   @include at-breakpoint($pad)
@@ -64,10 +83,10 @@
         +adjust-font-size-to(24px)
 
       .item
-        width: 100px
+        width: 120px
 
         .number
-          +adjust-font-size-to(72px)
+          +adjust-font-size-to(84px)
 
         .unit
           +adjust-font-size-to(16px)
