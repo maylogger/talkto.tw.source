@@ -93,6 +93,7 @@
         color: white
         +adjust-font-size-to(72px, 3)
         text-align: right
+        letter-spacing: -3px
 
       .gray-number
         opacity: .5
@@ -103,6 +104,10 @@
 
       .link + .program-number
         margin-top: -44px
+
+      &.program-02
+        .guest, .title, .time
+          padding-right: 12px
 
   .slider-nav
     max-width: 1120px
