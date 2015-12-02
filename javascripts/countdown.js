@@ -1,8 +1,7 @@
-var taipeiTime = moment.tz("2015-12-04 20:00", "Asia/Taipei");
+var taipeiTime = moment.tz("2015-12-03 03:48", "Asia/Taipei");
 
 $('.countdown').countdown(taipeiTime.toDate()).on('update.countdown', function(event) {
   $(this).html(event.strftime(''
-    + '<span>距離開播還有</span>'
     + '<div class="item"><div class="number">%D</div><div class="unit">DAYS</div></div>'
     + '<div class="colon">：</div>'
     + '<div class="item"><div class="number">%H</div><div class="unit">HOURS</div></div>'

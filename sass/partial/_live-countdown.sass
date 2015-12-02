@@ -19,7 +19,7 @@
       bottom: 0
       +background(radial-gradient(rgba($color-ci-black, .3) 0%, rgba($color-ci-black, 1) 80%))
 
-  .countdown
+  .live-countdown-inner
     z-index: 10
     position: absolute
     top: 50%
@@ -34,6 +34,18 @@
       +adjust-font-size-to(16px)
       color: rgba(white, .5)
       letter-spacing: .2em
+
+    .link
+      +leader(.5)
+      display: inline-block
+      padding: 6px 12px
+      @extend .shs-regular
+      +adjust-font-size-to(13px, .75)
+      color: white
+      background-color: $color-ci-pink
+      text-decoration: none
+
+  .countdown
 
     .item, .colon
       display: inline-block
@@ -60,9 +72,11 @@
 
 
   @media (min-width: 375px)
-    .countdown
+    .live-countdown
       span
         margin: 0 auto 16px
+
+    .countdown
 
       .item
         width: 52px
@@ -78,9 +92,16 @@
 
 
   @include at-breakpoint($pad)
-    .countdown
+    .live-countdown-inner
       span
         +adjust-font-size-to(24px)
+
+      .link
+        +leader(1.5)
+        padding: 3px 18px
+        +adjust-font-size-to(18px, 1.5)
+
+    .countdown
 
       .item
         width: 120px
@@ -107,21 +128,6 @@
 
       .colon
         +adjust-font-size-to(88px)
-
-
-  @include at-breakpoint($wide-desktop)
-    .countdown
-      .item
-        width: 186px
-
-        .number
-          +adjust-font-size-to(128px)
-
-        .unit
-          +adjust-font-size-to(18px)
-
-      .colon
-        +adjust-font-size-to(128px)
 
 
   @media (min-width: 1186px)
