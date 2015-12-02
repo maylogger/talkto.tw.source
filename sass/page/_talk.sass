@@ -43,7 +43,7 @@
     box-sizing: border-box
 
   .talk-content
-    +padding-leader(2)
+    +padding-leader()
     +padding-trailer(2)
     +trailer()
 
@@ -189,6 +189,9 @@
 
 
   @include at-breakpoint($pad)
+    .talk-content
+      +padding-leader(2)
+
     .talk-title
       +leader(3)
 
