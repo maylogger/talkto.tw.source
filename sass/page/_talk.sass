@@ -96,6 +96,10 @@
         border-right: 1px solid $color-ci-pink
 
   .switch-content
+    &.video
+      max-width: 760px
+      margin: 0 auto
+
     .tab-pane.iframe
       position: relative
       padding-top: 56.25%
@@ -219,7 +223,7 @@
       .point, .percentage
         +leader(0)
         float: left
-        width: 20%
+        width: 200px
 
         span
           display: inline-block
@@ -239,8 +243,8 @@
             +adjust-font-size-to(21px)
 
       .content
-        float: left
-        width: 79.5%
+        display: block
+        overflow: hidden
         max-width: 800px
 
         .title
@@ -308,6 +312,10 @@
         top: 0
         right: 0
         bottom: 0
+
+    .point-of-view-list, .polis-list
+      .point, .percentage
+        width: 220px
 
   @media (min-width: 1186px)
     .main-content

@@ -202,12 +202,12 @@ hr, .divider { margin-top: 24px; margin-bottom: 24px; border-top: 1px solid #ddd
 
 img { max-width: 100%; margin-bottom: 24px; }
 
-.container, .index-countdown-inner { max-width: 624px; padding-left: 24px; padding-right: 24px; margin-left: auto; margin-right: auto; padding: 0 18px; }
-.container:after, .index-countdown-inner:after { content: ""; display: table; clear: both; }
-@media (min-width: 768px) { .container, .index-countdown-inner { max-width: 840px; } }
-@media (min-width: 1024px) { .container, .index-countdown-inner { max-width: 1272px; } }
-@media (min-width: 768px) { .container, .index-countdown-inner { padding: 0 24px; } }
-@media (min-width: 1024px) { .container, .index-countdown-inner { padding: 0 48px; } }
+.container { max-width: 624px; padding-left: 24px; padding-right: 24px; margin-left: auto; margin-right: auto; padding: 0 18px; }
+.container:after { content: ""; display: table; clear: both; }
+@media (min-width: 768px) { .container { max-width: 840px; } }
+@media (min-width: 1024px) { .container { max-width: 1272px; } }
+@media (min-width: 768px) { .container { padding: 0 24px; } }
+@media (min-width: 1024px) { .container { padding: 0 48px; } }
 
 .btn { display: inline-block; margin-bottom: 0; padding: 5px 23px; border: 1px solid #dddddd; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; font-size: 15px; line-height: 24px; background-image: none; text-align: center; text-shadow: none; cursor: pointer; outline: none; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; user-select: none; color: #444444; background-color: #dddddd; }
 .btn:hover { text-decoration: none; color: #444444; border-color: #dddddd; background-color: #dddddd; }
@@ -260,7 +260,7 @@ img { max-width: 100%; margin-bottom: 24px; }
 @media (min-width: 1024px) { .footer { padding: 72px 0; } }
 
 .introduce { padding: 24px 0; background-color: #1b1b1b; }
-.introduce .container, .introduce .index-countdown-inner { width: 80%; max-width: 720px; }
+.introduce .container { width: 80%; max-width: 720px; }
 .introduce .intro-content { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 @media (min-width: 768px) { .introduce { padding: 48px 0; } }
 @media (min-width: 1024px) { .introduce { padding: 72px 0; }
@@ -280,14 +280,14 @@ img { max-width: 100%; margin-bottom: 24px; }
 
 .program-slider { position: relative; }
 .program-slider .slider-header { position: absolute; z-index: 1000; top: 18px; left: 0; right: 0; height: 0; text-align: right; }
-.program-slider .slider-header .container, .program-slider .slider-header .index-countdown-inner { max-width: 1120px; height: 0; }
+.program-slider .slider-header .container { max-width: 1120px; height: 0; }
 .program-slider .slider-header .share { float: left; opacity: 0.7; }
 .program-slider .slider-header .share:hover { opacity: 1; }
 .program-slider .slider-header .logo { float: right; width: 62px; height: 80px; text-indent: -119988px; overflow: hidden; text-align: left; background: url("/images/logo.svg") center no-repeat; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
 .program-slider .slider-for { max-width: 1520px; margin: 0 auto; }
 .program-slider .slider-for .slider-content { position: relative; background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
 .program-slider .slider-for .slider-content:before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: -webkit-gradient(linear, to bottom, to top, color-stop(0%, rgba(14, 14, 14, 0)), color-stop(50%, rgba(14, 14, 14, 0.1)), color-stop(100%, #0e0e0e)); background: -webkit-linear-gradient(to bottom, rgba(14, 14, 14, 0), rgba(14, 14, 14, 0.1), #0e0e0e); background: -moz-linear-gradient(to bottom, rgba(14, 14, 14, 0), rgba(14, 14, 14, 0.1), #0e0e0e); background: -o-linear-gradient(to bottom, rgba(14, 14, 14, 0), rgba(14, 14, 14, 0.1), #0e0e0e); background: linear-gradient(to bottom, rgba(14, 14, 14, 0), rgba(14, 14, 14, 0.1), #0e0e0e); }
-.program-slider .slider-for .container, .program-slider .slider-for .index-countdown-inner { position: relative; max-width: 1120px; min-height: 440px; max-height: 720px; height: 90vh; }
+.program-slider .slider-for .container { position: relative; max-width: 1120px; min-height: 440px; max-height: 720px; height: 90vh; }
 .program-slider .slider-for .program-info { position: absolute; right: 12px; bottom: 2.5%; }
 .program-slider .slider-for .program-info .guest { font-size: 18px; line-height: 36px; color: #e63082; letter-spacing: 0.1em; }
 .program-slider .slider-for .program-info .title { font-size: 30px; line-height: 36px; color: white; }
@@ -321,7 +321,7 @@ img { max-width: 100%; margin-bottom: 24px; }
   .program-slider .slider-for .program-info .program-number { font-size: 96px; line-height: 96px; }
   .program-slider .slider-for .program-info .link + .program-number { margin-top: -64px; } }
 @media (min-width: 1024px) { .program-slider .slider-header { top: 48px; }
-  .program-slider .slider-for .container, .program-slider .slider-for .index-countdown-inner { min-height: 640px; }
+  .program-slider .slider-for .container { min-height: 640px; }
   .program-slider .slider-for .program-info { right: 48px; }
   .program-slider .slider-for .program-info.program-02 .guest, .program-slider .slider-for .program-info.program-02 .title, .program-slider .slider-for .program-info.program-02 .time { padding-right: 64px; }
   .program-slider .slider-for .program-info .program-number { font-size: 108px; line-height: 120px; }
@@ -390,9 +390,9 @@ img { max-width: 100%; margin-bottom: 24px; }
 
 .fade.in { opacity: 1; }
 
-.index-countdown { position: relative; background: #0e0e0e url("/images/TTT-pattern.svg") center repeat; }
+.index-countdown { position: relative; }
 
-.index-countdown-inner { max-width: 100%; padding-top: 72px; padding-bottom: 72px; color: white; text-align: center; }
+.index-countdown-inner { color: white; text-align: center; }
 .index-countdown-inner .logo { margin-bottom: 24px; margin-left: auto; margin-right: auto; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo.png?1448898255'); background-repeat: no-repeat; background-position: 50% 50%; width: 198px; height: 256px; background-image: none, url('/images/logo.svg?1448898255'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
 .index-countdown-inner .countdown .item, .index-countdown-inner .countdown .colon { display: inline-block; vertical-align: top; }
 .index-countdown-inner .countdown .item { width: 48px; }
@@ -426,7 +426,7 @@ img { max-width: 100%; margin-bottom: 24px; }
   .index-countdown-inner .countdown .colon { font-size: 128px; line-height: 144px; }
   .index-countdown-inner .polis-link { margin-top: 84px; } }
 
-.talk .container:after, .talk .index-countdown-inner:after { content: ""; display: table; clear: both; }
+.talk .container:after { content: ""; display: table; clear: both; }
 .talk .talk-title { position: relative; margin-top: 48px; margin-bottom: 24px; margin-left: -2px; }
 .talk .talk-title:after { content: ""; display: table; clear: both; }
 .talk .talk-title .share { position: absolute; top: 0; right: 0; }
@@ -448,6 +448,7 @@ img { max-width: 100%; margin-bottom: 24px; }
 .talk .switch-tab li.active a { color: #e63082; }
 .talk .switch-tab li.active a:after { content: ""; position: absolute; left: 50%; bottom: -16px; margin-left: -8px; border: 8px solid transparent; border-top-color: rgba(230, 48, 130, 0.7); }
 .talk .switch-tab li:last-child { border-right: 1px solid #e63082; }
+.talk .switch-content.video { max-width: 760px; margin: 0 auto; }
 .talk .switch-content .tab-pane.iframe { position: relative; padding-top: 56.25%; }
 .talk .switch-content .tab-pane.iframe iframe { position: absolute; top: 0; width: 100%; height: 100%; }
 .talk .point-of-view-list .list-item, .talk .polis-list .list-item { padding-bottom: 12px; border-bottom: 1px solid #e63082; }
@@ -474,18 +475,18 @@ img { max-width: 100%; margin-bottom: 24px; }
   .talk .switch-tab a br { display: none; }
   .talk .switch-tab li { width: auto; }
   .talk .point-of-view-list .list-item, .talk .polis-list .list-item { padding-top: 48px; padding-bottom: 48px; }
-  .talk .point-of-view-list .point, .talk .point-of-view-list .percentage, .talk .polis-list .point, .talk .polis-list .percentage { margin-top: 0px; float: left; width: 20%; }
+  .talk .point-of-view-list .point, .talk .point-of-view-list .percentage, .talk .polis-list .point, .talk .polis-list .percentage { margin-top: 0px; float: left; width: 200px; }
   .talk .point-of-view-list .point span, .talk .point-of-view-list .percentage span, .talk .polis-list .point span, .talk .polis-list .percentage span { display: inline-block; width: 120px; height: 120px; font-size: 64px; line-height: 114px; text-align: center; background-color: #e63082; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%; }
   .talk .point-of-view-list .percentage span, .talk .polis-list .percentage span { font-size: 48px; line-height: 114px; }
   .talk .point-of-view-list .percentage span:after, .talk .polis-list .percentage span:after { font-size: 21px; line-height: 48px; }
-  .talk .point-of-view-list .content, .talk .polis-list .content { float: left; width: 79.5%; max-width: 800px; }
+  .talk .point-of-view-list .content, .talk .polis-list .content { display: block; overflow: hidden; max-width: 800px; }
   .talk .point-of-view-list .content .title, .talk .polis-list .content .title { margin-bottom: 24px; font-size: 24px; line-height: 36px; }
   .talk .point-of-view-list .content .title br, .talk .polis-list .content .title br { display: block; }
   .talk .point-of-view-list .content p, .talk .polis-list .content p { font-size: 16px; line-height: 30px; }
   .talk .polis-list .list-item { padding-right: 48px; }
   .talk .polis-list .list-item .rank { top: 48px; }
   .talk .polis-list .content p { font-size: 20px; line-height: 33px; } }
-@media (min-width: 1024px) { .talk .container, .talk .index-countdown-inner { position: relative; }
+@media (min-width: 1024px) { .talk .container { position: relative; }
   .talk .main-content { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; width: 64%; padding-right: 24px; }
   .talk .main-content.video { padding-right: 0; }
   .talk .main-content .block-title { width: 98%; }
@@ -496,7 +497,8 @@ img { max-width: 100%; margin-bottom: 24px; }
   .talk .talk-title .share { margin-top: 0.5em; }
   .talk .switch-tab a { font-size: 24px; line-height: 48px; }
   .talk .side-content { float: right; width: 36%; }
-  .talk .side-content.chat { position: absolute; top: 0; right: 0; bottom: 0; } }
+  .talk .side-content.chat { position: absolute; top: 0; right: 0; bottom: 0; }
+  .talk .point-of-view-list .point, .talk .point-of-view-list .percentage, .talk .polis-list .point, .talk .polis-list .percentage { width: 220px; } }
 @media (min-width: 1186px) { .talk .main-content { width: 70%; }
   .talk .side-content { width: 30%; } }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) { .talk .video { padding-top: 64%; } }
