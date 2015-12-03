@@ -3,7 +3,7 @@ html lang="zh-TW" ng-app="project"
   head
     = render "/layout_head"
     = render "/layout_siteinfo"
-    = render "/layout_og"
+    = render "/talk/#{@og_data}"
   body class="#{@page_name}" ng-controller="listController"
     .page
       - if @page_name == "index"
