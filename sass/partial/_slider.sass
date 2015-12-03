@@ -4,6 +4,8 @@
 
 .program-slider
   position: relative
+  max-height: 840px
+  overflow: hidden
 
   .slider-header
     position: absolute
@@ -85,6 +87,7 @@
         padding: 6px 12px
         @extend .shs-regular
         color: white
+        +adjust-font-size-to(13px)
         background-color: $color-ci-pink
         text-decoration: none
 
@@ -104,10 +107,6 @@
 
       .link + .program-number
         margin-top: -44px
-
-      &.program-02
-        .guest, .title, .time
-          padding-right: 12px
 
   .slider-nav
     max-width: 1120px
@@ -202,7 +201,7 @@
         .link
           +leader(.5)
           padding: 6px 18px
-          +adjust-font-size-to(20px, 1.5)
+          +adjust-font-size-to(18px, 1.5)
 
         .program-number
           +adjust-font-size-to(96px, 4)
@@ -221,10 +220,6 @@
 
       .program-info
         right: 48px
-
-        &.program-02
-          .guest, .title, .time
-            padding-right: 64px
 
         .program-number
           +adjust-font-size-to(108px, 5)
