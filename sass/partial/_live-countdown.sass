@@ -4,7 +4,7 @@
   text-align: center
   padding-top: 50%
 
-  &.program-bg
+  &.counting
     background-image: url("/images/program02_bg.jpg")
     background-repeat: no-repeat
     background-position: center center
@@ -19,6 +19,12 @@
       bottom: 0
       +background(radial-gradient(rgba($color-ci-black, .3) 0%, rgba($color-ci-black, 1) 80%))
 
+    .live-countdown-inner span
+      display: block
+
+    .live-countdown-inner .link
+      display: inline-block
+
   .live-countdown-inner
     z-index: 10
     position: absolute
@@ -28,7 +34,7 @@
     +translateY(-50%)
 
     span
-      display: block
+      display: none
       margin: 0 auto 12px
       @extend .shs-heavy
       +adjust-font-size-to(16px)
@@ -37,7 +43,7 @@
 
     .link
       +leader(.5)
-      display: inline-block
+      display: none
       padding: 6px 12px
       @extend .shs-regular
       +adjust-font-size-to(13px, .75)
