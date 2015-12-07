@@ -5,7 +5,7 @@
   .block-title
     +trailer()
     padding: 12px 0
-    +adjust-font-size-to(16px)
+    +adjust-font-size-to(15px)
     border-bottom: 1px solid $color-ci-pink
 
     .title-en, .title-tw
@@ -28,8 +28,6 @@
     +pie-clearfix
 
   @include at-breakpoint($desktop)
-    & + .block
-      +leader(5)
 
     .block-title
       +adjust-font-size-to(18px)

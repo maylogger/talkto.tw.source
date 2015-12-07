@@ -1,0 +1,313 @@
+.archive
+  +padding-leader()
+  +padding-trailer(2)
+  +trailer()
+
+  .archive-header
+    +pie-clearfix
+    position: relative
+
+  .archive-content
+    +leader(2)
+
+  .summary
+    +pie-clearfix
+    +box-sizing(border-box)
+    +leader()
+    padding: 18px
+    background-color: #1c1c1c
+
+  .summary-inner
+    position: relative
+
+    .guest, .title, .program-number
+      @extend .gotham-bold-wz-shs
+
+    .share
+      position: absolute
+      top: -6px
+      right: 0
+
+    .guest
+      margin-left: 2px
+      color: $color-ci-pink
+      letter-spacing: .1em
+
+    .title
+      +leader(.5)
+      +trailer(.5)
+      +adjust-font-size-to(24px, 1.5)
+
+      br
+        display: none
+
+    .intro
+      position: relative
+      z-index: 100
+      +adjust-font-size-to(13px)
+
+    .link
+      +reset-box-model
+      list-style: none
+
+      a
+        position: relative
+        display: inline-block
+        padding-bottom: 4px
+        color: $color-ci-pink
+        +adjust-font-size-to(15px)
+        font-weight: bold
+
+        &:after
+          content: ""
+          display: inline-block
+          position: relative
+          top: 3px
+          left: 3px
+          +replace-text-with-svg("poplink")
+
+    .program-number
+      +leader()
+      margin-left: -5px
+      font-size: 48px
+      line-height: 42px
+
+      .gray-number
+        opacity: .5
+
+      .pink-number
+        color: $color-ci-pink
+
+  .switch-tab
+    +pie-clearfix
+    +reset-box-model
+    list-style: none
+    text-align: center
+
+    a
+      display: inline-block
+      padding: 5px 24px
+      +adjust-font-size-to(13px)
+      font-weight: bold
+      color: $color-ci-gray
+      text-decoration: none
+      +border-radius(20px)
+
+    li
+      display: inline-block
+
+      &.active a
+        color: white
+        background-color: #252525
+
+  .switch-content
+    padding-bottom: 18px
+
+    .tab-pane.iframe
+      position: relative
+      padding-top: 56.25%
+
+      iframe
+        position: absolute
+        top: 0
+        width: 100%
+        height: 100%
+
+  .point-of-view
+    list-style: none
+    padding-left: 0
+
+    li
+      +trailer(2)
+
+      &:before
+        content: ''
+        display: block
+        @extend .gotham-light-wz-shs
+        font-size: 40px
+        line-height: 40px
+        margin-left: -2px
+        margin-bottom: 3px
+        color: $color-ci-pink
+
+    .title
+      +trailer(.5)
+      +adjust-font-size-to(24px, 1.5)
+
+
+  @for $i from 1 through 9
+    .point-of-view li:nth-child(#{$i})
+      &:before
+        content: '0#{$i}'
+
+  @for $i from 11 through 20
+    .point-of-view li:nth-child(#{$i})
+      &:before
+        content: '#{$i}'
+
+  .polis-result
+    +reset-box-model
+    +leader(1.5)
+    list-style: none
+
+    .animation
+      .percentage-bar
+        width: 90%
+        opacity: 0
+
+      &.is-active
+        .percentage-bar
+          width: 100%
+          opacity: .85
+
+    li
+      position: relative
+
+    .percentage-bar-wrap
+      position: absolute
+      z-index: 5
+      top: -12px
+      right: 0
+      bottom: -12px
+      text-align: right
+
+    .percentage-bar
+      display: inline-block
+      height: 100%
+      background-color: #4a4a4a
+      opacity: .85
+      +single-box-shadow(rgba(black, .15), 0, -3px, 10px)
+      +transition(width 1s .5s, opacity 1s .5s)
+
+      &.mid
+        background-color: darken(#4a4a4a, 7.5%)
+
+      &.low
+        background-color: darken(#4a4a4a, 15%)
+
+    .polis-content
+      +pie-clearfix
+      position: relative
+      z-index: 10
+      padding: 12px 0
+
+      .percentage
+        padding-left: 12px
+        padding-bottom: 12px
+        @extend .gotham-bold-wz-shs
+        font-size: 28px
+        line-height: 28px
+        color: $color-ci-pink
+
+      .comment
+        display: block
+        overflow: hidden
+        padding: 0 12px
+
+
+  @include at-breakpoint($pad)
+    .archive-content
+      position: relative
+
+
+    .point-of-view
+      padding-left: 72px
+
+      li
+        position: relative
+        +trailer()
+
+        &:before
+          position: absolute
+          top: 0
+          left: -72px
+          width: 56px
+          text-align: right
+          margin-top: 3px
+          margin-left: 0
+          margin-bottom: 0
+
+    .polis-result
+      .polis-content
+        +pie-clearfix
+        position: relative
+        z-index: 10
+        padding: 24px 0
+
+        .percentage
+          float: left
+          width: 104px
+          padding-left: 24px
+          @extend .gotham-bold-wz-shs
+          font-size: 36px
+          line-height: 36px
+          color: $color-ci-pink
+
+        .comment
+          display: block
+          overflow: hidden
+          padding: 0 24px
+
+
+  @include at-breakpoint($desktop)
+    +padding-leader(2)
+
+    .summary
+      position: absolute
+      top: 0
+      bottom: 0
+      width: 39.9%
+      min-height: 100%
+      +leader(0)
+      padding: 36px
+
+    .summary-inner
+      height: 100%
+
+      .guest
+        +adjust-font-size-to(18px)
+
+      .title
+        +adjust-font-size-to(32px, 1.75)
+        +trailer()
+
+        br
+          display: block
+
+      .intro
+        +adjust-font-size-to(15px)
+
+      .program-number
+        position: absolute
+        left: 0
+        bottom: 0
+        font-size: 84px
+        line-height: 76px
+
+    .record
+      float: right
+      width: 59.9%
+
+    .switch-content
+      padding: 36px
+
+    .archive-content
+      .block-content
+        max-width: 90%
+
+      .polis-data .block-content
+        max-width: 100%
+
+      .talk-data
+        float: left
+        width: calc(50% - 18px)
+
+      .polis-data
+        float: right
+        width: calc(50% - 18px)
+
+
+  @media screen and (min-width: 1024px) and (max-width: 1136px)
+    .summary-inner .program-number
+      font-size: 64px
+      line-height: 48px
