@@ -12,6 +12,10 @@ link href="/images/iostouchicon.png" rel="apple-touch-icon" sizes="152×152"
 /[if lt IE 9]
   = javascript_include_tag "//html5shim.googlecode.com/svn/trunk/html5.js"
 
-script src="https://use.typekit.net/aat5xly.js"
+= javascript_include_tag \
+  "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", \
+  "/vendor/bs.tab.js", \
+  "https://use.typekit.net/aat5xly.js"
+
 javascript:
   try{Typekit.load({ async: true });}catch(e){}
