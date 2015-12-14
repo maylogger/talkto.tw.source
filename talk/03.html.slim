@@ -1,4 +1,4 @@
-- @og_data = "og_03"
+- @talk_id = 3
 
 .talk.live
   .talk-content
@@ -12,17 +12,16 @@
 
       .talk-title
         .main-content
-          .program-number <span class="gray-number">0</span><span class="pink-number">3</span>
+          .program-number <span class="gray-number">0</span><span class="pink-number">#{talk_data[@talk_id]['program_number']}</span>
           .program-content
-            .guest 童子賢
-            .title 面對經濟全球化時代，產業創新的挑戰，台灣的出路在哪裡？
+            .guest #{talk_data[@talk_id]['guest']}
+            .title #{talk_data[@talk_id]['title']}
 
         .share
           .share-button
             span 分享
-            a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/03" target="_blank" 分享到 Facebook
-            a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 03《面對經濟全球化時代，產業創新的挑戰，台灣的出路在哪裡？》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F02&amp;via=talktotw" target="_blank" twitter 推文
-
+            a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/#{talk_data[@talk_id]['program_number_full']}" target="_blank" 分享到 Facebook
+            a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F02&amp;via=talktotw" target="_blank" twitter 推文
       .block.talk-data
         .main-content
           .block-title
@@ -30,7 +29,7 @@
             .title-tw 簡介
           .block-content
             .intro
-              p 「產業升級」、「產業創新」、「產業轉型」，相信這幾個口號你一定不會陌生。政府的口喊了這麼多年，但台灣的產業不管是升級創新還是轉型，雖然有廠商成功轉型，卻無法擴展成局，帶領整個產業提昇規模。但你知道最近又有新的口號：「生產力4.0」甚至是朱立倫的「三弓四箭」出現嗎？全球化的浪潮下，各國為了提昇產業競爭力，紛紛提出21世紀的新工業革命：工業4.0。台灣雖然也看到了這股浪潮，緊接在2015年著提出「生產力4.0」計畫，但回顧1980年代到現在，台灣的產業升級了什麼，又失去了什麼，相信身在相關產業的人士一定「很有感」。難看的經濟成長率、下降的外部投資與人才流失，究竟台灣產業的出路在哪裡，如何面對全球化的競爭，且聽童子賢怎麼說！
+              p #{talk_data[@talk_id]['intro']}
 
         .side-content
           .block-title
@@ -48,6 +47,6 @@
   .block.polis-embed#polis
     .container
       .block-content
-        .polis data-conversation_id="8kxha2"
+        .polis data-conversation_id="#{talk_data[@talk_id]['polis_id']}"
         script async="true" src="https://pol.is/embed.js"
 

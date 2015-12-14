@@ -1,9 +1,18 @@
 doctype 5
 html lang="zh-TW" ng-app="project"
   head
+    title="#{talk_data[@talk_id]['title']} - 政問 Talk To Taiwan"
+    meta content= data["site-keywords"] name="keywords"
+    meta content="#{talk_data[@talk_id]['intro']}" name="description"
+    meta content="#{talk_data[@talk_id]['title']} - 政問 Talk To Taiwan" property="og:title"
+    meta content= data["site-name"] property="og:site_name"
+    meta content="#{talk_data[@talk_id]['url']}" property="og:url"
+    meta content="#{talk_data[@talk_id]['ogimage_url']}" property="og:image"
+    meta content="#{talk_data[@talk_id]['intro']}" property="og:description"
+    meta content= data["og-type"] property="og:type"
+    meta content= data["fb-admins"] property="fb:admins"
     = render "/layout_head"
-    = render "/layout_siteinfo"
-    = render "/talk/#{@og_data}"
+
   body class="#{@page_name}" ng-controller="listController"
     .page
       - if @page_name == "index"
