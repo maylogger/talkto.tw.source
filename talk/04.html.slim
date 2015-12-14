@@ -1,0 +1,49 @@
+- @talk_id = 4
+
+.talk.live
+  .talk-content
+    .container
+      .livestream
+        .live-countdown
+          .live-countdown-inner
+            span 距離開播還有
+            .countdown
+            a.link#polis-link href="#polis" 分享你的觀點
+
+      .talk-title
+        .main-content
+          .program-number <span class="gray-number">0</span><span class="pink-number">#{talk_data[@talk_id]['program_number']}</span>
+          .program-content
+            .guest #{talk_data[@talk_id]['guest']}
+            .title #{talk_data[@talk_id]['title']}
+
+        .share
+          .share-button
+            span 分享
+            a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/#{talk_data[@talk_id]['program_number_full']}" target="_blank" 分享到 Facebook
+            a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F02&amp;via=talktotw" target="_blank" twitter 推文
+      .block.talk-data
+        .main-content
+          .block-title
+            .title-en INTRO
+            .title-tw 簡介
+          .block-content
+            .intro
+              p #{talk_data[@talk_id]['intro']}
+
+        .side-content
+          .block-title
+            .title-en BIO
+            .title-tw 來賓介紹
+          .block-content
+            .bio
+              p 臺北市政府都市發展局 林洲民局長<br>Jou Min Lin AIA, Commissioner of the Department of Urban Development, Taipei City Government
+              p 林洲民建築師事務所 ( J. M. Lin Architect, P.C. ) 於 1995 年成立於紐約,仲觀設 計顧問有限公司及仲觀聯合建築師事務所分別於 1997 年及 2002 年成立於台北, 兩地團隊皆由林洲民擔任主持建築師。2004 年起,仲觀團隊展開長達八年的國 立海科館園區建築案,成功保存歷史建築並將其轉型為文化活動園區。仲觀在其 他設計領域也有豐碩的成果,從博物館、交通運輸建設、表演空間、住宅與商辦、 學校、企業形象識別系統、公園與景觀設計等,以實驗性的建築設計與工法自我 挑戰,企圖激盪建築的各種可能。仲觀團隊的表現獲得諸多國際獎項的肯定,包 括 2006 年美國紐約建築師協會紐約分部年度設計獎、2007 年獲美國紐約州建 築師協會都市規劃與設計傑出獎,以及 2013 年獲美國紐約建築師協會都市設計 類榮譽獎。2014 年,林洲民建築師獲邀加入柯市府團隊,擔任臺北市政府都市 發展局局長,主要負責推動公辦都更、公共住宅及 2050 願景計畫,持續以對環 境觀察的敏銳度,在台灣這塊土地上創造更美好的生活空間。
+
+
+  .block.polis-embed#polis
+    .container
+      .block-content
+        .polis data-conversation_id="#{talk_data[@talk_id]['polis_id']}"
+        script async="true" src="https://pol.is/embed.js"
+
