@@ -145,9 +145,13 @@
       &:before
         content: '#{$i}'
 
+  .polis-data
+    .block-title
+      margin-bottom: 0
+      border-bottom: none
+
   .polis-result
     +reset-box-model
-    +leader(1.5)
     list-style: none
 
     .animation
@@ -162,39 +166,19 @@
 
     li
       position: relative
-
-    .percentage-bar-wrap
-      position: absolute
-      z-index: 5
-      top: -12px
-      right: 0
-      bottom: -12px
-      text-align: right
-
-    .percentage-bar
-      display: inline-block
-      height: 100%
-      background-color: #4a4a4a
-      opacity: .85
-      +single-box-shadow(rgba(black, .15), 0, -3px, 10px)
-      +transition(width 1s .5s, opacity 1s .5s)
-
-      &.mid
-        background-color: darken(#4a4a4a, 7.5%)
-
-      &.low
-        background-color: darken(#4a4a4a, 15%)
+      margin-bottom: 6px
+      background: #333333
 
     .polis-content
       +pie-clearfix
       position: relative
       z-index: 10
-      padding: 12px 0
+      padding: 12px
 
       .percentage
-        padding-left: 12px
         padding-bottom: 12px
         @extend .gotham-bold-wz-shs
+        text-align: center
         font-size: 28px
         line-height: 28px
         color: $color-ci-pink
@@ -202,13 +186,15 @@
       .comment
         display: block
         overflow: hidden
-        padding: 0 12px
+        margin-bottom: 0
+        padding-left: 12px
+        +adjust-font-size-to(15px, 1.25)
+
 
 
   @include at-breakpoint($pad)
     .archive-content
       position: relative
-
 
     .point-of-view
       padding-left: 72px
@@ -232,12 +218,11 @@
         +pie-clearfix
         position: relative
         z-index: 10
-        padding: 24px 0
+        padding: 24px
 
         .percentage
           float: left
           width: 104px
-          padding-left: 24px
           @extend .gotham-bold-wz-shs
           font-size: 36px
           line-height: 36px
@@ -246,7 +231,7 @@
         .comment
           display: block
           overflow: hidden
-          padding: 0 24px
+          padding-left: 24px
 
 
   @include at-breakpoint($desktop)
@@ -300,11 +285,11 @@
 
       .talk-data
         float: left
-        width: calc(50% - 18px)
+        width: calc(57.5% - 18px)
 
       .polis-data
         float: right
-        width: calc(50% - 18px)
+        width: calc(42.5% - 18px)
 
 
   @media screen and (min-width: 1024px) and (max-width: 1136px)
