@@ -39,18 +39,53 @@ if ($('#polis-link').length != 0) {
   });
 }
 
-if ( $('.animation').length != 0 ) {
-  function section_animation() {
-    var animationElements = $('.animation')
-    for (var i = 0; i < animationElements.length; i++) {
+
+function polisChart() {
+  if ( $('.polis-data').length != 0 ) {
+    var chartItem = $('.percentage');
+    for (var i = 0; i < chartItem.length; i++) {
       new Waypoint({
-        element: animationElements[i],
+        element: chartItem[i],
         handler: function(direction) {
-          $(this.element).addClass('is-active')
+          var chart = new Chartist.Pie(this.element, {
+            series: [this.element.getAttribute("data-percentage"),(100 - this.element.getAttribute("data-percentage"))]
+          },{
+            donut: true,
+            donutWidth: 3,
+            showLabel: false
+          });
+          chart.on('created', function(){
+            this.optionsProvider.removeMediaQueryListeners();
+          });
+          chart.on('draw', function(data) {
+            if(data.type === 'slice') {
+              var pathLength = data.element._node.getTotalLength();
+              data.element.attr({
+                'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+              });
+              var animationDefinition = {
+                'stroke-dashoffset': {
+                  id: 'anim' + data.index,
+                  dur: 1500,
+                  from: -pathLength + 'px',
+                  to:  '0px',
+                  easing: Chartist.Svg.Easing.easeOutQuint,
+                  fill: 'freeze'
+                }
+              };
+              if(data.index !== 0) {
+                animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+              }
+              data.element.attr({
+                'stroke-dashoffset': -pathLength + 'px'
+              });
+              data.element.animate(animationDefinition, false);
+            }
+          });
+          this.disable();
         },
         offset: '100%'
       })
     }
   }
-  section_animation();
 }

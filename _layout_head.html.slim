@@ -4,7 +4,11 @@ meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale
 link href="/images/favicon.png" rel="shortcut icon" type="image/png"
 link href="/images/iostouchicon.png" rel="apple-touch-icon" sizes="152×152"
 
-= stylesheet_link_tag "all", "/vendor/slick/slick.css", "//cloud.typography.com/7634894/760728/css/fonts.css"
+= stylesheet_link_tag \
+  "/vendor/slick/slick.css", \
+  "/vendor/chartist/chartist.min.css", \
+  "//cloud.typography.com/7634894/760728/css/fonts.css", \
+  "all"
 
 /[if IE]
   = stylesheet_link_tag "ie"

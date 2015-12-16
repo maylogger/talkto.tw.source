@@ -176,19 +176,31 @@
       padding: 12px
 
       .percentage
+        position: relative
+        width: 100px
+        height: 100px
+        margin: 0 auto
         padding-bottom: 12px
         @extend .gotham-bold-wz-shs
         text-align: center
-        font-size: 28px
-        line-height: 28px
+        font-size: 21px
+        line-height: 21px
         color: $color-ci-pink
+
+        &:after
+          content: attr(data-percentage)'%'
+          display: block
+          position: absolute
+          top: calc(50% - 16px)
+          left: 0
+          right: 0
+          margin: auto
 
       .comment
         display: block
         overflow: hidden
         margin-bottom: 0
-        padding-left: 12px
-        +adjust-font-size-to(15px, 1.25)
+        +adjust-font-size-to(13px)
 
 
 
@@ -219,17 +231,29 @@
         position: relative
         z-index: 10
         padding: 24px
+        display: table
+        vertical-align: middle
+
+        .percentage-wrap
+          display: table-cell
+          vertical-align: middle
+          width: 100px
 
         .percentage
-          float: left
-          width: 104px
-          @extend .gotham-bold-wz-shs
-          font-size: 36px
-          line-height: 36px
-          color: $color-ci-pink
+          padding-bottom: 0
+          font-size: 24px
+          line-height: 21px
+
+          &:after
+            top: calc(50% - 10px)
+
+          svg
+            overflow: visible
 
         .comment
-          display: block
+          // display: block
+          display: table-cell
+          vertical-align: middle
           overflow: hidden
           padding-left: 24px
 

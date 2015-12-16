@@ -1,5 +1,5 @@
 doctype 5
-html lang="zh-TW" ng-app="project"
+html lang="zh-TW"
   head
     title="#{talk_data[@talk_id]['title']} - 政問 Talk To Taiwan"
     meta content= data["site-keywords"] name="keywords"
@@ -13,7 +13,7 @@ html lang="zh-TW" ng-app="project"
     meta content= data["fb-admins"] property="fb:admins"
     = render "/layout_head"
 
-  body class="#{@page_name}" ng-controller="listController"
+  body class="#{@page_name}"
     .page
       - if @page_name == "index"
       - else

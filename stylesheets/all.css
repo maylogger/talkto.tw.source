@@ -490,16 +490,20 @@ img { max-width: 100%; margin-bottom: 24px; }
 .archive .polis-result li { position: relative; margin-bottom: 6px; background: #333333; }
 .archive .polis-result .polis-content { position: relative; z-index: 10; padding: 12px; }
 .archive .polis-result .polis-content:after { content: ""; display: table; clear: both; }
-.archive .polis-result .polis-content .percentage { padding-bottom: 12px; text-align: center; font-size: 28px; line-height: 28px; color: #e63082; }
-.archive .polis-result .polis-content .comment { display: block; overflow: hidden; margin-bottom: 0; padding-left: 12px; font-size: 15px; line-height: 30px; }
+.archive .polis-result .polis-content .percentage { position: relative; width: 100px; height: 100px; margin: 0 auto; padding-bottom: 12px; text-align: center; font-size: 21px; line-height: 21px; color: #e63082; }
+.archive .polis-result .polis-content .percentage:after { content: attr(data-percentage) "%"; display: block; position: absolute; top: calc(50% - 16px); left: 0; right: 0; margin: auto; }
+.archive .polis-result .polis-content .comment { display: block; overflow: hidden; margin-bottom: 0; font-size: 13px; line-height: 24px; }
 @media (min-width: 768px) { .archive .archive-content { position: relative; }
   .archive .point-of-view { padding-left: 72px; }
   .archive .point-of-view li { position: relative; margin-bottom: 24px; }
   .archive .point-of-view li:before { position: absolute; top: 0; left: -72px; width: 56px; text-align: right; margin-top: 3px; margin-left: 0; margin-bottom: 0; }
-  .archive .polis-result .polis-content { position: relative; z-index: 10; padding: 24px; }
+  .archive .polis-result .polis-content { position: relative; z-index: 10; padding: 24px; display: table; vertical-align: middle; }
   .archive .polis-result .polis-content:after { content: ""; display: table; clear: both; }
-  .archive .polis-result .polis-content .percentage { float: left; width: 104px; font-size: 36px; line-height: 36px; color: #e63082; }
-  .archive .polis-result .polis-content .comment { display: block; overflow: hidden; padding-left: 24px; } }
+  .archive .polis-result .polis-content .percentage-wrap { display: table-cell; vertical-align: middle; width: 100px; }
+  .archive .polis-result .polis-content .percentage { padding-bottom: 0; font-size: 24px; line-height: 21px; }
+  .archive .polis-result .polis-content .percentage:after { top: calc(50% - 10px); }
+  .archive .polis-result .polis-content .percentage svg { overflow: visible; }
+  .archive .polis-result .polis-content .comment { display: table-cell; vertical-align: middle; overflow: hidden; padding-left: 24px; } }
 @media (min-width: 1024px) { .archive { padding-top: 48px; }
   .archive .summary { position: absolute; top: 0; bottom: 0; width: 39.9%; min-height: 100%; margin-top: 0px; padding: 36px; }
   .archive .summary-inner { height: 100%; }
@@ -515,6 +519,10 @@ img { max-width: 100%; margin-bottom: 24px; }
   .archive .archive-content .talk-data { float: left; width: calc(57.5% - 18px); }
   .archive .archive-content .polis-data { float: right; width: calc(42.5% - 18px); } }
 @media screen and (min-width: 1024px) and (max-width: 1136px) { .archive .summary-inner .program-number { font-size: 64px; line-height: 48px; } }
+
+.ct-series-b .ct-slice-donut { stroke: #aaaaaa; }
+
+.ct-series-a .ct-slice-donut { stroke: #e63082; }
 
 .talk .container:after { content: ""; display: table; clear: both; }
 .talk .talk-title { position: relative; margin-top: 48px; margin-bottom: 24px; margin-left: -2px; }

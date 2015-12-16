@@ -6,9 +6,9 @@
       .record
         .tab-content.switch-content
           .tab-pane.iframe.fade.in.active#highlight
-            iframe src="https://www.youtube.com/embed/EGfermw3XQk" frameborder="0" allowfullscreen=""
+            iframe src="https://www.youtube.com/embed/#{talk_data[@talk_id]['highlight_id']}" frameborder="0" allowfullscreen=""
           .tab-pane.iframe.fade#complete
-            / iframe src="https://www.youtube.com/embed/eQ-qiTG4mE0" frameborder="0" allowfullscreen=""
+            / iframe src="https://www.youtube.com/embed/#{talk_data[@talk_id]['complete_id']}" frameborder="0" allowfullscreen=""
 
         ul.nav-tabs.switch-tab
           li.highlight.active: a href="#highlight" data-toggle="tab" 精華回顧
@@ -81,82 +81,47 @@
 
 
 
-      .polis-data
+      .polis-data.polis-program01
         .block
           .block-title
             .title-en POLIS
             .title-tw 全民共識排行榜
           .block-content
             ul.polis-result
-              li.animation
-                .polis-content
-                  .percentage 99%
-                  p.comment 我之前因為學校的案子，曾經在大型教學醫院急診室做過大約1個月月的觀察。很多時候進來的人只是拉肚子、或是感冒發高燒，就只為了吊點滴。可以透過結合區域小診所或是小型醫院提供正確的知識，以及適當的小型居家醫療服務，讓急診室中這種輕微症狀病人的數量減少。讓急診資源真正回到正途。
-              li.animation
-                .polis-content
-                  .percentage 99%
-                  p.comment 我覺得，該讓更多人清楚知道健保到底為何會破產，否則每隔一段時間都有新聞會報，但其實不真的知道原因，就無法思考該怎麼樣解決
-              li.animation
-                .polis-content
-                  .percentage 98%
-                  p.comment 我認為必須改變民眾對於「廉價醫療」的刻板印象，全民健保立意很棒也值得推行，但從民眾角度卻成為不用白不用的廉價服務，藥比糖果還便宜，點滴輸液比飲料還便宜，提高民眾部分負擔並且改變大眾的就醫認知（不要濫用急診、門診）是必要的！！！！！！！
-              li.animation
-                .polis-content
-                  .percentage 98%
-                  p.comment 我認為，轉診制度的確很重要。以我自己為例，一年到頭大多就是季節變換的時候有些感冒，其他的大多是鼻子過敏。如果有社區型的醫療照護體系，可以紓解我這種臨時來的小病痛，並適時地提醒我哪些狀況才是真的異常需要轉診，才不會造成健保資源的浪費。
-              li.animation
-                .polis-content
-                  .percentage 96%
-                  p.comment 健保立意是好的 但現行制度根本是社會主義式人民公社的翻版 人人免費吃大鍋飯，下場就是以後大家都沒得吃 要求「便宜、迅速、品質」的結果，就是三輸 健保若不要倒，現行制度就必須立刻改正
-              li.animation
-                .polis-content
-                  .percentage 96%
-                  p.comment 我覺得健保破產的問題，有一部分是因為群眾不了解自己看病之後，社會付出的成本有哪些，才會間接導致過度醫療的狀況發生，因此健保相關的資訊揭露跟教育是必要的。甚至該變成義務教育的一環，才有可能翻轉大眾對健保的認知
-              li.animation
-                .polis-content
-                  .percentage 94%
-                  p.comment 除了健保和醫療環境的問題，我想到之前看李惠仁導演的《不能戳的秘密》。我覺得，醫療是面對疾病的最終手段，面對疾病管制和國民健康的促進，根本上已經擴及學術道德、科學精神、法治精神等層面。改善健保體制和醫療環境，我們這個世代是不是應該從轉變推責、欺瞞的主流意識，成為當責、誠實的社會？
-              li.animation
-                .polis-content
-                  .percentage 92%
-                  p.comment 台灣看病太便宜了，健保制度變成執政黨收買人心的工具。惡性循環下去，醫生都出國發展了，醫療品質越來越差。如何是好？我還沒想到好辦法，我不是專業人士， 但是「應該讓執政者或是專業人士大量的、公開的、勇敢的來討論、研究這個議題才是」。
-              li.animation
-                .polis-content
-                  .percentage 90%
-                  p.comment 我覺得健保制度改革至少也要做到 1.疾病保大不保小 2.徹底落實醫療分級和轉診制度（杜絕去醫學中心急診看感冒青春痘的情形發生！） 3.建立一般民眾使用者付費的觀念（廉價醫療導致對醫療人員的不敬和暴力） 4.廢掉DRG跟總額制度（這制度太鳥不解釋）
-              li.animation
-                .polis-content
-                  .percentage 84%
-                  p.comment 希望有個平台，讓被核刪的醫師/醫院能公佈這些核刪項目，也做個統計，讓大眾來更加認識健保核刪的現況。
-              li.animation
-                .polis-content
-                  .percentage 72%
-                  p.comment 1、提升所有大眾對於健保正確的知識與觀念 2、檢視所有醫療單位，做最有效的資源分配
-              li.animation
-                .polis-content
-                  .percentage 68%
-                  p.comment 很多在當醫生的朋友都為了爬上白色巨塔頂端，而超時工作，這一點應該要徹底解決，不要讓有俠義道德的仁醫，不願意來當醫生
-              li.animation
-                .polis-content
-                  .percentage 59%
-                  p.comment 我在澳洲看過病，看診費很貴，但醫生教我一些不用藥的方式處理身體疾病。我覺得台灣很多醫生和病人的觀念要改。藥開太多了，污染身體也污染環境。應該獎勵不開藥的醫師得到高一些的看診費。而一年沒看病的民眾也要被獎勵，因為他把身體照顧的很好。
-              li.animation
-                .polis-content
-                  .percentage 55%
-                  p.comment 健保應該投入資源去改善醫療從業人員的工作環境，透過制度調整去降低第一線人員缺額發生
+              - 15.times
+                li.animation
+                  .polis-content
 
 
   javascript:
       $('.highlight').on('shown.bs.tab', function (e) {
-        $('#highlight').html('<iframe src="https://www.youtube.com/embed/EGfermw3XQk" frameborder="0" allowfullscreen=""></iframe>')
+        $('#highlight').html('<iframe src="https://www.youtube.com/embed/#{talk_data[@talk_id]['highlight_id']}" frameborder="0" allowfullscreen=""></iframe>')
       }).on('hidden.bs.tab', function (e) {
         $('#highlight').html('')
       });
       $('.complete').on('shown.bs.tab', function (e) {
-        $('#complete').html('<iframe src="https://www.youtube.com/embed/eQ-qiTG4mE0" frameborder="0" allowfullscreen=""></iframe>')
+        $('#complete').html('<iframe src="https://www.youtube.com/embed/#{talk_data[@talk_id]['complete_id']}" frameborder="0" allowfullscreen=""></iframe>')
       }).on('hidden.bs.tab', function (e) {
         $('#complete').html('')
       });
+      function programJSON() {
+        $.getJSON("/json/#{talk_data[@talk_id]['polis_result']}", function(json){
+          var i = 0;
+          $(".polis-content").each(function(){
+            $(this).html(''
+              + '<div class="percentage-wrap"><div class="percentage" data-percentage="' + Math.round(json[i].percentage) + '"/></div>'
+              + '<p class="comment">' + json[i].comment_body + '</p>'
+            );
+            i = i + 1;
+          })
+          polisChart();
+        });
+      }
+      $(window).load(function(){
+        programJSON();
+      });
+
+
 
 
 
