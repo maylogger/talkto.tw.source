@@ -10,7 +10,7 @@ if ($('.program-slider').length != 0) {
     slidesToShow: 5,
     slidesToScroll: 1,
     asNavFor: '.slider-for',
-    centerMode: false,
+    centerMode: true,
     centerPadding: '0px',
     infinite: true,
     focusOnSelect: true,
@@ -54,9 +54,6 @@ function polisChart() {
             donutWidth: 3,
             showLabel: false
           });
-          chart.on('created', function(){
-            this.optionsProvider.removeMediaQueryListeners();
-          });
           chart.on('draw', function(data) {
             if(data.type === 'slice') {
               var pathLength = data.element._node.getTotalLength();
@@ -66,6 +63,7 @@ function polisChart() {
               var animationDefinition = {
                 'stroke-dashoffset': {
                   id: 'anim' + data.index,
+                  begin: 250,
                   dur: 1500,
                   from: -pathLength + 'px',
                   to:  '0px',
@@ -82,9 +80,12 @@ function polisChart() {
               data.element.animate(animationDefinition, false);
             }
           });
+          $(window).resize(function(){
+            chart.off('draw');
+          });
           this.disable();
         },
-        offset: '100%'
+        offset: '95%'
       })
     }
   }
