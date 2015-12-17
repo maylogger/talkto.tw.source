@@ -1,0 +1,54 @@
+- @talk_id = 5
+
+.talk.live
+  .talk-content
+    .container
+      .livestream
+        .live-countdown
+          .live-countdown-inner
+            span 距離開播還有
+            .countdown
+            a.link#polis-link href="#polis" 分享你的觀點
+
+      .talk-title
+        .main-content
+          .program-number <span class="gray-number">0</span><span class="pink-number">#{talk_data[@talk_id]['program_number']}</span>
+          .program-content
+            .guest #{talk_data[@talk_id]['guest']}
+            .title #{talk_data[@talk_id]['title']}
+
+        .share
+          .share-button
+            span 分享
+            a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/#{talk_data[@talk_id]['program_number_full']}" target="_blank" 分享到 Facebook
+            a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F02&amp;via=talktotw" target="_blank" twitter 推文
+      .block.talk-data
+        .main-content
+          .block-title
+            .title-en INTRO
+            .title-tw 簡介
+          .block-content
+            .intro
+              p #{talk_data[@talk_id]['intro']}
+
+        .side-content
+          .block-title
+            .title-en BIO
+            .title-tw 來賓介紹
+          .block-content
+            .bio
+              ul
+                li 義美食品(股)公司 總經理
+                li 台灣英文台灣日報 發行人
+                li 網擎資訊軟體(股) 董事長
+                li 義美聯合電子商務(股)公司 董事長
+                li 義美環境保護基金會 執行長
+                li 台灣公益廣告協會 理事長
+
+
+  .block.polis-embed#polis
+    .container
+      .block-content
+        .polis data-conversation_id="#{talk_data[@talk_id]['polis_id']}"
+        script async="true" src="https://pol.is/embed.js"
+
