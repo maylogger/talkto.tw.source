@@ -4,30 +4,29 @@
   .container
     .archive-header
       .record
-        .tab-content.switch-content
-          .tab-pane.iframe.fade.in.active#highlight
-            iframe src="https://www.youtube.com/embed/#{talk_data[@talk_id]['highlight_id']}" frameborder="0" allowfullscreen=""
-          .tab-pane.iframe.fade#complete
-            / iframe src="https://www.youtube.com/embed/#{talk_data[@talk_id]['complete_id']}" frameborder="0" allowfullscreen=""
+        .share
+          .share-button.small
+            span 分享
+            a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/01" target="_blank" 分享到 Facebook
+            a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 01《台灣醫療崩壞，健保亂象如何解決？》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F01&amp;via=talktotw" target="_blank" twitter 推文
+        .video-cover style='background-image: url(/images/program01_bg.jpg)'
+          .play-button#play-button
+            span 精華回顧
+        .video-wrap
+          .highlight-video
+            iframe id="video" src="https://www.youtube.com/embed/#{talk_data[@talk_id]['highlight_id']}?enablejsapi=1&amp;html5=1&amp;showinfo=0" frameborder="0" allowfullscreen=""
 
-        ul.nav-tabs.switch-tab
-          li.highlight.active: a href="#highlight" data-toggle="tab" 精華回顧
-          li.complete: a href="#complete" data-toggle="tab" 完整重播
-
-      .summary
-        .summary-inner
-          .share
-            .share-button.small
-              span 分享
-              a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/01" target="_blank" 分享到 Facebook
-              a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 01《台灣醫療崩壞，健保亂象如何解決？》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F01&amp;via=talktotw" target="_blank" twitter 推文
-          .guest 柯文哲
-          h1.title 台灣醫療崩壞，<br>健保亂象如何解決？
-          ul.link
-            li: a href="#" target="_blank" 完整對話紀錄
-            li: a href="#" target="_blank" polis 統計資料
-            li: a href="#" target="_blank" polis 番外篇：台灣留學生與健保 統計資料
+      .program-info
+        .program-title
           .program-number <span class="gray-number">0</span><span class="pink-number">1</span>
+          .program-content
+            .guest 柯文哲
+            h1.title 台灣醫療崩壞，健保亂象如何解決？
+        ul.link
+          li: a.complete href="https://www.youtube.com/watch?v=#{talk_data[@talk_id]['complete_id']}" target="_blank" 完整重播
+          li: a.transcript href="http://sayit.archive.tw/政問-1126柯文哲-醫療與健保" target="_blank" 逐字稿
+          li: a.polis-data href="https://github.com/audreyt/polis-tally/blob/gh-pages/talkto01-11-30-tally.csv" target="_blank" 統計資料
+          li: a.extra href="https://github.com/audreyt/polis-tally/blob/gh-pages/talkto01x-11-30-tally.csv" target="_blank" 番外篇
 
     .archive-content
       .talk-data
@@ -94,32 +93,23 @@
 
 
   javascript:
-      $('.highlight').on('shown.bs.tab', function (e) {
-        $('#highlight').html('<iframe src="https://www.youtube.com/embed/#{talk_data[@talk_id]['highlight_id']}" frameborder="0" allowfullscreen=""></iframe>')
-      }).on('hidden.bs.tab', function (e) {
-        $('#highlight').html('')
+    function polisJSON() {
+      $.getJSON("/json/#{talk_data[@talk_id]['polis_result']}", function(json){
+        var i = 0;
+        $(".polis-content").each(function(){
+          $(this).html(''
+            + '<div class="percentage-wrap"><div class="percentage" data-percentage="' + Math.round(json[i].percentage) + '"/></div>'
+            + '<p class="comment">' + json[i].comment_body + '</p>'
+          );
+          i = i + 1;
+        })
+        $(".polis-result").addClass('data-complete');
+        polisChart();
       });
-      $('.complete').on('shown.bs.tab', function (e) {
-        $('#complete').html('<iframe src="https://www.youtube.com/embed/#{talk_data[@talk_id]['complete_id']}" frameborder="0" allowfullscreen=""></iframe>')
-      }).on('hidden.bs.tab', function (e) {
-        $('#complete').html('')
-      });
-      function programJSON() {
-        $.getJSON("/json/#{talk_data[@talk_id]['polis_result']}", function(json){
-          var i = 0;
-          $(".polis-content").each(function(){
-            $(this).html(''
-              + '<div class="percentage-wrap"><div class="percentage" data-percentage="' + Math.round(json[i].percentage) + '"/></div>'
-              + '<p class="comment">' + json[i].comment_body + '</p>'
-            );
-            i = i + 1;
-          })
-          polisChart();
-        });
-      }
-      $(window).load(function(){
-        programJSON();
-      });
+    }
+    $(window).load(function(){
+      polisJSON();
+    });
 
 
 
