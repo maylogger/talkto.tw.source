@@ -13,12 +13,6 @@
   .record
     position: relative
 
-    .share
-      position: absolute
-      bottom: -54px
-      right: 0px
-      z-index: 100
-
     .video-wrap
       max-width: 720px
       margin: 0 auto
@@ -40,7 +34,7 @@
       top: 0
       left: 0
       right: 0
-      bottom: 0
+      bottom: -52px
       width: 100%
       color: white
       text-align: center
@@ -64,7 +58,7 @@
     .play-button
       position: absolute
       z-index: 100
-      top: 50%
+      top: 45%
       margin: 0 auto
       width: 100%
       text-align: center
@@ -97,7 +91,13 @@
   .program-info
     position: relative
     +pie-clearfix
-    +leader()
+    +trailer()
+
+    .share
+      position: absolute
+      top: 3px
+      right: 0
+      z-index: 100
 
     .program-number
       margin-left: -2px
@@ -125,32 +125,34 @@
         +adjust-font-size-to(24px, 1.25)
 
   .link
+    position: relative
+    z-index: 1000
     +reset-box-model
     list-style: none
     +leader()
 
     li
       display: block
-      +adjust-font-size-to(12px)
+      +adjust-font-size-to(13px)
       font-weight: bold
 
       a
         position: relative
         display: block
-        padding: 2px 0
+        padding: 2px
         color: rgba(white, .7)
         text-align: left
         text-decoration: none
-        background-color: $color-ci-black
         +transition(color .25s, background-color .25s)
 
         &:hover
           color: rgba(white, 1)
-          background-color: #222
+          background-color: rgba(white, .1)
 
         &:before
           content: ""
           display: inline-block
+          margin-top: -3px
           margin-right: 3px
           vertical-align: middle
           width: 24px
@@ -281,6 +283,16 @@
         .title
           +adjust-font-size-to(32px, 1.5)
 
+    .link
+      +leader(.5)
+      text-align: center
+
+      li
+        display: inline-block
+
+        a
+          padding: 3px 12px
+
     .archive-content
       +pie-clearfix
       position: relative
@@ -340,57 +352,30 @@
       .video-cover
         display: block
         opacity: 1
-        +transition(visibility 0s 1s, opacity 1s)
-
-        &.is-playing
-          opacity: 0
-          visibility: hidden
+        +transition(visibility 0s 1.5s, opacity 1.5s)
 
       .share
         top: 12px
         right: 12px
+
+    .link
+      +translateY(-92px)
+      +transition(transform .75s)
+
+
+    .video-playing
+      .record .video-cover
+        opacity: 0
+        visibility: hidden
+
+      .link
+        +translateY(0)
 
     .program-info
       +pie-clearfix
 
       .program-title
         +pie-clearfix
-        float: left
-        width: calc(57.5% - 18px)
-
-      .link
-        float: right
-        +leader(0)
-        width: calc(42.5% - 18px)
-        text-align: right
-
-        li
-          display: inline-block
-
-          a
-            min-width: 60px
-            padding: 12px
-            text-align: center
-
-            &:before
-              content: ""
-              display: block
-              margin: 2px auto
-              width: 32px
-              height: 32px
-              +background-size(cover)
-
-          .complete:before
-            background-position: 0 -32px
-
-          .transcript:before
-            background-position: 0 0
-
-          .polis-data:before
-            background-position: 0 -64px
-
-          .extra:before
-            background-position: 0 -96px
 
     .archive-content
       +leader(2)
