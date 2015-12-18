@@ -440,7 +440,7 @@ img { max-width: 100%; margin-bottom: 24px; }
 .archive .archive-header { position: relative; }
 .archive .archive-header:after { content: ""; display: table; clear: both; }
 .archive .archive-content { margin-top: 24px; }
-.archive .record { position: relative; background-color: #1a1a1a; }
+.archive .record { position: relative; }
 .archive .record .share { position: absolute; bottom: -54px; right: 0px; z-index: 100; }
 .archive .record .video-wrap { max-width: 720px; margin: 0 auto; }
 .archive .record .video-wrap .highlight-video { position: relative; padding-top: 56.25%; }
