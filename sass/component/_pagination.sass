@@ -1,38 +1,49 @@
 .pagination
-  text-align: center
-  margin: 24px 0
-  padding: 0
+  +reset-box-model
+  +padding-leader()
+  +padding-trailer()
   list-style: none
-  a
-    +unstyled-link
-    display: block
-    width: 30px
-    height: 30px
-    @extend .shs-heavy
-    font-size: 18px
-    line-height: 30px
-    color: white
-  li
-    display: none
-    margin: 0 3px 3px
-    &.active, &.pre-btn, &.next-btn
-      display: inline-block
-    &.disabled,
-    &.disabled:hover
-      a
-        border: none
-        color: #ccc
-        cursor: default
-        pointer-events: none
+  text-align: center
 
-  +at-breakpoint($pad)
-    li
-      display: inline-block
-      a
-        width: 42px
-        font-size: 24px
-        line-height: 48px
-      a:hover
+  li
+    +pie-clearfix
+    display: inline-block
+    margin: 0 6px
+
+    a
+      position: relative
+      display: block
+      padding: 3px 12px
+      color: $color-ci-gray
+      text-decoration: none
+      @extend .shs-bold
+      +adjust-font-size-to(18px)
+      +transition(color .25s)
+
+      &:hover
         color: $color-ci-pink
-      &.active a
-        color: $color-ci-pink
+
+        &.prev:before
+          border-right-color: $color-ci-pink
+
+        &.next:before
+          border-left-color: $color-ci-pink
+
+    .prev:before
+      position: absolute
+      left: -16px
+      top: 7px
+      content: ""
+      border: 8px solid transparent
+      border-right-color: $color-ci-gray
+      +transition(border .25s)
+
+
+    .next:before
+      position: absolute
+      right: -16px
+      top: 7px
+      content: ""
+      border: 8px solid transparent
+      border-left-color: $color-ci-gray
+      +transition(border .25s)
