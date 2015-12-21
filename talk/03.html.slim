@@ -1,0 +1,132 @@
+- @talk_id = 3
+
+.archive
+  .container
+    .archive-header
+      .program-info
+        .program-title
+          .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id]}</span>
+          .program-content
+            .guest #{talk_data[@talk_id]['guest']}
+            h1.title #{talk_data[@talk_id]['title']}
+        .share
+          .share-button.small
+            span 分享
+            a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/#{talk_data[@talk_id]['program_number_full']}" target="_blank" 分享到 Facebook
+            a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F02&amp;via=talktotw" target="_blank" twitter 推文
+
+      .record
+        .video-cover style='background-image: url(/images/program0#{[@talk_id]}_bg.jpg)'
+          .play-button#play-button
+            span 精華回顧
+        .video-wrap
+          .highlight-video
+            iframe id="video" src="https://www.youtube.com/embed/#{talk_data[@talk_id]['highlight_id']}?enablejsapi=1&amp;html5=1&amp;showinfo=0" frameborder="0" allowfullscreen=""
+
+      ul.link
+        li: a.complete href="https://www.youtube.com/watch?v=#{talk_data[@talk_id]['complete_id']}" target="_blank" 完整重播
+        li: a.polis-data href="https://github.com/audreyt/polis-tally/blob/gh-pages/talkto03-12-11-tally.csv" target="_blank" 統計資料
+
+    .archive-content
+      .content-row
+        .main-content
+          .talk-data
+            .block
+              .block-title
+                .title-en INTRO
+                .title-tw 簡介
+              .block-content
+                p #{talk_data[@talk_id]['intro']}
+
+        .side-content
+          .talk-data
+            .block
+              .block-title
+                .title-en BIO
+                .title-tw 來賓介紹
+              .block-content
+                p 童子賢<br>台灣企業家及慈善工作者，1989年創立華碩電腦。
+                ul
+                  li 學歷: 台北科技大學電通所碩士、台北科技大學工學榮譽博士
+                  li 經歷: 宏碁電腦高級工程師、華碩創辦人、華碩電腦董事長
+                  li 現職：和碩聯合科技董事長暨集團總執行長、台北市電腦公會理事長、晶碩光學、捷揚光電等公司董事長
+
+
+      .content-row
+        .main-content
+          .talk-data
+            .block
+              .block-title
+                .title-en POINT OF VIEW
+                .title-tw 節目重點整理
+              .block-content
+                ol.point-of-view
+                  li
+                    h3.title 怎麼看紅色供應鍊？
+                    p 先不要管顏色。過去五年跟十年有一些變化。有些國家過去要跟我們買技術和服務，現在技術進步了之後來跟你說我們來合作一下，然後你把顏色放上去發現是紅色。
+                    p 台灣沒有能力去鎖國，不能孤芳自賞，而要是要在地球村裡面找出自己定位和附加價值。與其擔心紅色供應鍊不如把自己弄好。
+
+                  li
+                    h3.title 台灣如何找到下一個明星產業？
+                    p 台灣有很多優點也有很多迷惑。我們的政治在開放，但有還殘存一些自己限制自己的想法。覺得經濟發展一定需要一個英明偉大的政府，發出產業政策。但你很難想像會有部長或是主委或是官員比張忠謀先生更懂半導體、比蔡明介先生更懂IC設計、比施崇棠先生更懂品牌經營。
+                    p 產業升級的關鍵在於人才教育，過去因為資訊產業的蓬勃發展，讓台灣開設了太多資訊科系。而廣設大學也是一種社會資源的浪費，大家都把學校當作降低失業率的避風港。應該要有更好的基礎教育以及更貼近市場的技職教育。
+                  li
+                    h3.title 重點不是補助，而是有些不必要的法規限制太多。
+                    p 政府在產業發展方面，有很重要的一部分是有些要積極不作為，把法規管制拿掉有些再用公領域的預算做誘導。台灣四面環海，而全球有很多坐遊艇的高消費族群，卻無法很方便的到台灣來觀光。台灣每年有百萬人去普吉島和峇里島做親水活動，代表每年有幾百億的外匯支出，台灣四面環海卻沒有辦法在這上面獲得很好的觀光財。這是民間無法做到，需要主管機關作規劃提出政策的。
+                  li
+                    h3.title 產業升級的定義？
+                    p 產業升級無非是要：效率更高、就業選擇更多樣、創造更多財富、社會國家更繁榮、個人創造力活力得到釋放，全民可以分享這些果實。
+                    p 而我們從威權體制走道自由經濟，在得失之間要平衡，我們享受了很多我們現在很珍惜的生活價值，相對地不要那麼沮喪我們在經濟的表現是比較差的。
+                    p 因為身處於我的產業，我是不太信賴偉大的計畫，比如說OLPC（one laptop per chile）這個計畫，曾經是獲得聯合國的支持的偉大計畫，但是現在這個政策根本不用推，因為用低價的智慧手機和平版就可以達成了，象徵整個產業的集體演出贏過聯合國。我不太信賴偉大，制定政策的人不一定比什麼聰明最重要是鼓勵民間有創新的力量才是關鍵。
+                  li
+                    h3.title 下一個10年的產業計畫
+                    p 我反對政府去規劃下一個10年，台灣不要再集中高科技了，我們應該去想有什麼東西是你一生消費最多的，才是最應該發展的。你一生最大的消費會是手機嗎？從教育、醫療、觀光旅遊、休閒、影視到文化都是產業。
+                    p 台灣是個偏食的小孩，科專計畫一年可以有1200億的預算，但是在藝術文化領域卻往往吝嗇於給幾千萬元。不要再限制在科技產業了。
+                  li
+                    h3.title 給總統候選人的建議
+                    p 不要干預太多，白皮書不要寫得太偉大。有些法律該修的還沒有修，趕快修一修。有些基礎的東西要弄好，用少量的經費去領導，但要先把整個土壤耙梳過一遍，讓種子容易發芽。
+
+        .side-content
+          .polis-data.polis-program01
+            .block
+              .block-title
+                .title-en POLIS
+                .title-tw 全民共識排行榜
+              .block-content
+                ul.polis-result
+                  - 15.times
+                    li.animation
+                      .polis-content
+
+      ul.pagination
+        li: a.program.prev href="/talk/0#{[@talk_id-1]}.html" 上一集節目
+        li: a.program.next href="/talk/0#{[@talk_id+1]}.html" 下一集節目
+
+  javascript:
+    function polisJSON() {
+      $.getJSON("/json/#{talk_data[@talk_id]['polis_result']}", function(json){
+        var i = 0;
+        $(".polis-content").each(function(){
+          $(this).html(''
+            + '<div class="percentage-wrap"><div class="percentage" data-percentage="' + Math.round(json[i].percentage) + '"/></div>'
+            + '<p class="comment">' + json[i].comment_body + '</p>'
+          );
+          i = i + 1;
+        })
+        $(".polis-result").addClass('data-complete');
+        polisChart();
+      });
+    }
+    $(window).load(function(){
+      polisJSON();
+    });
+
+
+
+
+
+
+
+
+
+
