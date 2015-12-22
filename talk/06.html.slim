@@ -1,14 +1,14 @@
-- @talk_id = 5
+- @talk_id = 6
 
 .talk.live
-  .talk-content.program05
+  .talk-content.program06
     .container
-      .livestream.now
-        .live-countdown
+      .livestream.next
+        .live-countdown.next
           .live-countdown-inner
             span 距離開播還有
-            .countdown.now
-            a.link#polis-link href="#polis" 分享你的觀點
+            .countdown.next
+            / a.link#polis-link href="#polis" 分享你的觀點
 
       .talk-title
         .main-content
@@ -37,17 +37,25 @@
             .title-tw 來賓介紹
           .block-content
             .bio
+              p 林濁水，1947年出身，台灣南投縣埔里人
+              p 學經歷：
               ul
-                li 義美食品(股)公司 總經理
-                li 台灣英文台灣日報 發行人
-                li 網擎資訊軟體(股) 董事長
-                li 義美聯合電子商務(股)公司 董事長
-                li 義美環境保護基金會 執行長
-                li 台灣公益廣告協會 理事長
+                li 台灣政治大學畢業
+                li 新潮流雜誌總編輯
+                li 台灣國會立法委員1993〜2006
+                li 民進黨中央評議委員1986〜1992
+                li 民進黨政策會執行長2001〜2003
+                li 民進黨台灣獨立黨綱起草人（1991）
+              p 現職：專欄作者
+              p 著作：
+              ul
+                li 瓦解的帝國
+                li 世界圖像下的台灣共同體
+                li 歷史劇場－痛苦執政八年
 
 
-  .block.polis-embed#polis
-    .container
-      .block-content
-        .polis data-conversation_id="#{talk_data[@talk_id]['polis_id']}"
-        script async="true" src="https://pol.is/embed.js"
+  / .block.polis-embed#polis
+  /   .container
+  /     .block-content
+  /       .polis data-conversation_id="#{talk_data[@talk_id]['polis_id']}"
+  /       script async="true" src="https://pol.is/embed.js"
