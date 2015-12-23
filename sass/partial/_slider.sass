@@ -8,6 +8,9 @@
   51%
     width: 100%
     z-index: 1
+  100%
+    width: 100%
+    z-index: 1
 
 @-moz-keyframes livebtn-animation
   0%
@@ -19,6 +22,9 @@
   51%
     width: 100%
     z-index: 1
+  100%
+    width: 100%
+    z-index: 1
 
 @keyframes livebtn-animation
   0%
@@ -28,6 +34,9 @@
     width: 100%
     z-index: 2
   51%
+    width: 100%
+    z-index: 1
+  100%
     width: 100%
     z-index: 1
 
@@ -99,14 +108,13 @@
       bottom: 2.5%
       @extend .shs-heavy
 
-
       .guest
         +adjust-font-size-to(18px, 1.5)
         color: $color-ci-pink
         letter-spacing: 0.1em
 
       .title
-        +adjust-font-size-to(30px, 1.5)
+        +adjust-font-size-to(28px, 1.5)
         color: white
 
       .time
@@ -119,7 +127,7 @@
         overflow: hidden
         +leader(.25)
         display: inline-block
-        padding: 6px 12px
+        padding: 6px 17px
         @extend .shs-regular
         color: white
         +adjust-font-size-to(13px)
@@ -135,7 +143,7 @@
           left: 0
           right: 0
           bottom: 0
-          background: url('/images/live-btn-ani1') top left no-repeat
+          background: url('/images/live-btn-ani1-small') top left no-repeat
           -webkit-animation: livebtn-animation 5s infinite linear
           -moz-animation:    livebtn-animation 5s infinite linear
           animation:         livebtn-animation 5s infinite linear
@@ -148,7 +156,7 @@
           left: 0
           right: 0
           bottom: 0
-          background: url('/images/live-btn-ani2') top left no-repeat
+          background: url('/images/live-btn-ani2-small') top left no-repeat
           -webkit-animation: livebtn-animation 5s 2.5s infinite linear
           -moz-animation:    livebtn-animation 5s 2.5s infinite linear
           animation:         livebtn-animation 5s 2.5s infinite linear
@@ -263,8 +271,15 @@
 
         .link
           +leader(.5)
-          padding: 6px 18px
           +adjust-font-size-to(18px, 1.5)
+
+        .link.livenow
+          &:before
+            background: url('/images/live-btn-ani1') top left no-repeat
+
+          &:after
+            background: url('/images/live-btn-ani2') top left no-repeat
+
 
         .program-number
           +adjust-font-size-to(96px, 4)
