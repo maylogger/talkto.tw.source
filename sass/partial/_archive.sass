@@ -402,20 +402,40 @@
 
     .bio-content
       position: relative
+      overflow: hidden
+      +transition(height .5s)
+
+      &:after
+        content: ""
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        +background(linear-gradient(to bottom, rgba($color-ci-black, 0) 70%, rgba($color-ci-black, 1) 85%))
+        opacity: 0
+        +transition(opacity .5s)
 
       &.collapse
-        max-height: 250px
-        overflow: hidden
+        height: 250px
 
-        &:after
-          content: ""
-          display: block
+        &:before
+          content: "▼ 展開"
           position: absolute
-          top: 0
+          z-index: 10
           left: 0
           right: 0
           bottom: 0
-          +background(linear-gradient(to bottom, rgba($color-ci-black, 0) 70%, rgba($color-ci-black, 1) 85%))
+          text-align: center
+          +adjust-font-size-to(15px)
+          font-weight: bold
+          color: $color-ci-pink
+          cursor: pointer
+
+
+        &:after
+          opacity: 1
 
 
   @media screen and (min-width: 1024px) and (max-width: 1136px)
