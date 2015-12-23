@@ -21,7 +21,7 @@
           .share-button
             span 分享
             a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/#{talk_data[@talk_id]['program_number_full']}" target="_blank" 分享到 Facebook
-            a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F02&amp;via=talktotw" target="_blank" twitter 推文
+            a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F#{talk_data[@talk_id]['program_number_full']}&amp;via=talktotw" target="_blank" twitter 推文
       .block.talk-data
         .main-content
           .block-title
@@ -38,7 +38,7 @@
           .block-content
             .bio
               p 林濁水，1947年出身，台灣南投縣埔里人
-              p 學經歷：
+              h3 學經歷：
               ul
                 li 台灣政治大學畢業
                 li 新潮流雜誌總編輯
@@ -46,8 +46,8 @@
                 li 民進黨中央評議委員1986〜1992
                 li 民進黨政策會執行長2001〜2003
                 li 民進黨台灣獨立黨綱起草人（1991）
-              p 現職：專欄作者
-              p 著作：
+              h3 現職：專欄作者
+              h3 著作：
               ul
                 li 瓦解的帝國
                 li 世界圖像下的台灣共同體

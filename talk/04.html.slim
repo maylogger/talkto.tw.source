@@ -13,7 +13,7 @@
           .share-button.small
             span 分享
             a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/#{talk_data[@talk_id]['program_number_full']}" target="_blank" 分享到 Facebook
-            a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F02&amp;via=talktotw" target="_blank" twitter 推文
+            a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F#{talk_data[@talk_id]['program_number_full']}&amp;via=talktotw" target="_blank" twitter 推文
 
       .record
         .video-cover style='background-image: url(/images/program0#{[@talk_id]}_bg.jpg)'
