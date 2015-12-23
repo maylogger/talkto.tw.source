@@ -45,7 +45,7 @@ $code-scroll-shadow-weight: 0.3
 body
   @extend %helvetica
   -webkit-text-size-adjust: 100%
-  -webkit-font-smoothing: subpixel-antialiased
+  -webkit-font-smoothing: antialiased
   text-rendering: optimizeLegibility
   color: $text-color
   background-color: $color-ci-black
@@ -78,6 +78,7 @@ h6
 p
   +leader(0)
   +trailer(1)
+  @extend %subpixel
   +adjust-font-size-to(16px)
 
 // 引用他處文獻
