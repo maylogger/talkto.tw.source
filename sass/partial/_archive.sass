@@ -400,8 +400,33 @@
         float: right
         width: calc(42.5% - 18px)
 
+    .bio-content
+      position: relative
+
+      &.collapse
+        max-height: 250px
+        overflow: hidden
+
+        &:after
+          content: ""
+          display: block
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          +background(linear-gradient(to bottom, rgba($color-ci-black, 0) 70%, rgba($color-ci-black, 1) 85%))
+
 
   @media screen and (min-width: 1024px) and (max-width: 1136px)
     .summary-inner .program-number
       font-size: 64px
       line-height: 48px
+
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2)
+    .record
+      .video-cover
+        display: none
+
+    .link
+      +translateY(0px)
