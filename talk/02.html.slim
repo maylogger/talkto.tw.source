@@ -112,32 +112,14 @@
                 .title-tw 全民共識排行榜
               .block-content
                 ul.polis-result
-                  - 10.times
-                    li.animation
-                      .polis-content
+                .polis-loadmore ▼ 看更多
 
       ul.pagination
         li: a.program.prev href="/talk/0#{[@talk_id-1]}.html" 上一集節目
         li: a.program.next href="/talk/0#{[@talk_id+1]}.html" 下一集節目
 
   javascript:
-    function polisJSON() {
-      $.getJSON("/json/#{talk_data[@talk_id]['polis_result']}", function(json){
-        var i = 0;
-        $(".polis-content").each(function(){
-          $(this).html(''
-            + '<div class="percentage-wrap"><div class="percentage" data-percentage="' + Math.round(json[i].percentage) + '"/></div>'
-            + '<p class="comment">' + json[i].comment_body + '</p>'
-          );
-          i = i + 1;
-        })
-        $(".polis-result").addClass('data-complete');
-        polisChart();
-      });
-    }
-    $(window).load(function(){
-      polisJSON();
-    });
+    var jsonDataPath = "/json/#{talk_data[@talk_id]['polis_result']}"
 
 
 
