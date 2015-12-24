@@ -13,14 +13,8 @@
   .record
     position: relative
 
-    .share
-      position: absolute
-      bottom: -54px
-      right: 0px
-      z-index: 100
-
     .video-wrap
-      max-width: 720px
+      max-width: 760px
       margin: 0 auto
 
       .highlight-video
@@ -40,10 +34,11 @@
       top: 0
       left: 0
       right: 0
-      bottom: 0
+      bottom: -52px
       width: 100%
       color: white
       text-align: center
+      background-color: $color-ci-black
       background-repeat: no-repeat
       background-position: center center
       +background-size(cover)
@@ -64,7 +59,7 @@
     .play-button
       position: absolute
       z-index: 100
-      top: 50%
+      top: 42.5%
       margin: 0 auto
       width: 100%
       text-align: center
@@ -72,7 +67,8 @@
       font-weight: bold
       +translateY(-50%)
       cursor: pointer
-      opacity: .7
+      opacity: .8
+      @include text-shadow(0 0 10px rgba(black, .3))
       +transition(opacity .5s)
 
       &:before
@@ -97,7 +93,13 @@
   .program-info
     position: relative
     +pie-clearfix
-    +leader()
+    +trailer()
+
+    .share
+      position: absolute
+      top: 3px
+      right: 0
+      z-index: 100
 
     .program-number
       margin-left: -2px
@@ -125,32 +127,34 @@
         +adjust-font-size-to(24px, 1.25)
 
   .link
+    position: relative
+    z-index: 1000
     +reset-box-model
     list-style: none
     +leader()
 
     li
       display: block
-      +adjust-font-size-to(12px)
+      +adjust-font-size-to(13px)
       font-weight: bold
 
       a
         position: relative
         display: block
-        padding: 2px 0
+        padding: 2px
         color: rgba(white, .7)
         text-align: left
         text-decoration: none
-        background-color: $color-ci-black
         +transition(color .25s, background-color .25s)
 
         &:hover
           color: rgba(white, 1)
-          background-color: #222
+          background-color: rgba(white, .1)
 
         &:before
           content: ""
           display: inline-block
+          margin-top: -3px
           margin-right: 3px
           vertical-align: middle
           width: 24px
@@ -198,7 +202,7 @@
       &:before
         content: '0#{$i}'
 
-  @for $i from 11 through 20
+  @for $i from 10 through 20
     .point-of-view li:nth-child(#{$i})
       &:before
         content: '#{$i}'
@@ -281,6 +285,16 @@
         .title
           +adjust-font-size-to(32px, 1.5)
 
+    .link
+      +leader(.5)
+      text-align: center
+
+      li
+        display: inline-block
+
+        a
+          padding: 3px 12px
+
     .archive-content
       +pie-clearfix
       position: relative
@@ -340,57 +354,30 @@
       .video-cover
         display: block
         opacity: 1
-        +transition(visibility 0s 1s, opacity 1s)
-
-        &.is-playing
-          opacity: 0
-          visibility: hidden
+        +transition(visibility 0s 1.5s, opacity 1.5s)
 
       .share
         top: 12px
         right: 12px
+
+    .link
+      +translateY(-120px)
+      +transition(transform .75s)
+
+
+    .video-playing
+      .record .video-cover
+        opacity: 0
+        visibility: hidden
+
+      .link
+        +translateY(0)
 
     .program-info
       +pie-clearfix
 
       .program-title
         +pie-clearfix
-        float: left
-        width: calc(57.5% - 18px)
-
-      .link
-        float: right
-        +leader(0)
-        width: calc(42.5% - 18px)
-        text-align: right
-
-        li
-          display: inline-block
-
-          a
-            min-width: 60px
-            padding: 12px
-            text-align: center
-
-            &:before
-              content: ""
-              display: block
-              margin: 2px auto
-              width: 32px
-              height: 32px
-              +background-size(cover)
-
-          .complete:before
-            background-position: 0 -32px
-
-          .transcript:before
-            background-position: 0 0
-
-          .polis-data:before
-            background-position: 0 -64px
-
-          .extra:before
-            background-position: 0 -96px
 
     .archive-content
       +leader(2)
@@ -401,16 +388,65 @@
       .polis-data .block-content
         max-width: 100%
 
-      .talk-data
+      .content-row
+        +pie-clearfix
+        +trailer(2)
+
+      .main-content
         float: left
         width: calc(57.5% - 18px)
 
-      .polis-data
+      .side-content
         float: right
         width: calc(42.5% - 18px)
+
+    .bio-content
+      position: relative
+      overflow: hidden
+      +transition(height .5s)
+
+      &:after
+        content: ""
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        +background(linear-gradient(to bottom, rgba($color-ci-black, 0) 70%, rgba($color-ci-black, 1) 85%))
+        opacity: 0
+        +transition(opacity .5s)
+
+      &.collapse
+        height: 250px
+
+        &:before
+          content: "▼ 展開"
+          position: absolute
+          z-index: 10
+          left: 0
+          right: 0
+          bottom: 0
+          text-align: center
+          +adjust-font-size-to(15px)
+          font-weight: bold
+          color: $color-ci-pink
+          cursor: pointer
+
+
+        &:after
+          opacity: 1
 
 
   @media screen and (min-width: 1024px) and (max-width: 1136px)
     .summary-inner .program-number
       font-size: 64px
       line-height: 48px
+
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2)
+    .record
+      .video-cover
+        display: none
+
+    .link
+      +translateY(0px)

@@ -1,12 +1,14 @@
 - @talk_id = 5
 
 .talk.live
-  .talk-content.program05
+  .talk-content
     .container
-      .livestream.end
-        .live-end
-          .live-end-info
-            span 直播已結束，感謝您的收看<br>節目彙整處理中
+      .livestream.now
+        .live-countdown
+          .live-countdown-inner
+            span 距離開播還有
+            .countdown
+            a.link#polis-link href="#polis" 分享你的觀點
 
       .talk-title
         .main-content
@@ -19,7 +21,7 @@
           .share-button
             span 分享
             a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/#{talk_data[@talk_id]['program_number_full']}" target="_blank" 分享到 Facebook
-            a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F#{talk_data[@talk_id]['program_number_full']}&amp;via=talktotw" target="_blank" twitter 推文
+            a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F02&amp;via=talktotw" target="_blank" twitter 推文
       .block.talk-data
         .main-content
           .block-title
@@ -49,3 +51,4 @@
       .block-content
         .polis data-conversation_id="#{talk_data[@talk_id]['polis_id']}"
         script async="true" src="https://pol.is/embed.js"
+

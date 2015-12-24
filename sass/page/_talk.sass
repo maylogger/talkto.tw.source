@@ -187,6 +187,15 @@
         width: 100%
         height: 100%
 
+  .bio
+    h3
+      +trailer(0.25)
+      +adjust-font-size-to(16px)
+      font-weight: normal
+      @extend %subpixel
+
+    ul
+      margin-top: 0
 
   @include at-breakpoint($pad)
     .talk-content

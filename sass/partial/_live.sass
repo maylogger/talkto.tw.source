@@ -1,5 +1,5 @@
 .live
-  .livestream, .livestream-end
+  .livestream
     +pie-clearfix
     position: relative
 
@@ -38,17 +38,20 @@
       bottom: 0
       +background(radial-gradient(rgba($color-ci-black, .3) 0%, rgba($color-ci-black, 1) 80%))
 
-    &.program02
-      background-image: url("/images/program02_bg.jpg")
+  .program02 .live-end
+    background-image: url("/images/program02_bg.jpg")
 
-    &.program03
-      background-image: url("/images/program03_bg.jpg")
+  .program03 .live-end
+    background-image: url("/images/program03_bg.jpg")
 
-    &.program04
-      background-image: url("/images/program04_bg.jpg")
+  .program04 .live-end
+    background-image: url("/images/program04_bg.jpg")
 
-    &.program05
-      background-image: url("/images/program05_bg.jpg")
+  .program05 .live-end
+    background-image: url("/images/program05_bg.jpg")
+
+  .program06 .live-end
+    background-image: url("/images/program06_bg.jpg")
 
   .live-end-info
     z-index: 10
@@ -66,7 +69,7 @@
       letter-spacing: .2em
 
   @include at-breakpoint($pad)
-    .livestream, .livestream-end
+    .livestream
       +trailer(2)
 
     .live-end-info span

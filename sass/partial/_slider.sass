@@ -1,3 +1,45 @@
+@-webkit-keyframes livebtn-animation
+  0%
+    width: 0%
+    z-index: 2
+  50%
+    width: 100%
+    z-index: 2
+  51%
+    width: 100%
+    z-index: 1
+  100%
+    width: 100%
+    z-index: 1
+
+@-moz-keyframes livebtn-animation
+  0%
+    width: 0%
+    z-index: 2
+  50%
+    width: 100%
+    z-index: 2
+  51%
+    width: 100%
+    z-index: 1
+  100%
+    width: 100%
+    z-index: 1
+
+@keyframes livebtn-animation
+  0%
+    width: 0%
+    z-index: 2
+  50%
+    width: 100%
+    z-index: 2
+  51%
+    width: 100%
+    z-index: 1
+  100%
+    width: 100%
+    z-index: 1
+
 .slider
   background-color: $color-ci-black
   overflow: hidden
@@ -66,14 +108,13 @@
       bottom: 2.5%
       @extend .shs-heavy
 
-
       .guest
         +adjust-font-size-to(18px, 1.5)
         color: $color-ci-pink
         letter-spacing: 0.1em
 
       .title
-        +adjust-font-size-to(30px, 1.5)
+        +adjust-font-size-to(28px, 1.5)
         color: white
 
       .time
@@ -82,14 +123,44 @@
         color: $color-ci-gray
 
       .link
+        position: relative
+        overflow: hidden
         +leader(.25)
         display: inline-block
-        padding: 6px 12px
+        padding: 6px 17px
         @extend .shs-regular
         color: white
         +adjust-font-size-to(13px)
-        background-color: $color-ci-pink
         text-decoration: none
+        background-color: $color-ci-pink
+
+      .link.livenow
+        &:before
+          content: ""
+          overflow: hidden
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          background: url('/images/live-btn-ani1-small.svg') top left no-repeat
+          -webkit-animation: livebtn-animation 5s infinite linear
+          -moz-animation:    livebtn-animation 5s infinite linear
+          animation:         livebtn-animation 5s infinite linear
+
+        &:after
+          content: ""
+          overflow: hidden
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          background: url('/images/live-btn-ani2-small.svg') top left no-repeat
+          -webkit-animation: livebtn-animation 5s 2.5s infinite linear
+          -moz-animation:    livebtn-animation 5s 2.5s infinite linear
+          animation:         livebtn-animation 5s 2.5s infinite linear
+
 
       .program-number
         @extend .gotham-bold-wz-shs
@@ -200,8 +271,15 @@
 
         .link
           +leader(.5)
-          padding: 6px 18px
           +adjust-font-size-to(18px, 1.5)
+
+        .link.livenow
+          &:before
+            background: url('/images/live-btn-ani1.svg') top left no-repeat
+
+          &:after
+            background: url('/images/live-btn-ani2.svg') top left no-repeat
+
 
         .program-number
           +adjust-font-size-to(96px, 4)
