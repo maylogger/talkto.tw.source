@@ -1,51 +1,112 @@
 - @talk_id = 5
 
-.talk.live
-  .talk-content.program05
-    .container
-      .livestream.end
-        .live-end
-          .live-end-info
-            span 直播已結束，感謝您的收看<br>節目彙整處理中
-
-      .talk-title
-        .main-content
-          .program-number <span class="gray-number">0</span><span class="pink-number">#{talk_data[@talk_id]['program_number']}</span>
+.archive
+  .container
+    .archive-header
+      .program-info
+        .program-title
+          .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id]}</span>
           .program-content
             .guest #{talk_data[@talk_id]['guest']}
-            .title #{talk_data[@talk_id]['title']}
-
+            h1.title #{talk_data[@talk_id]['title']}
         .share
-          .share-button
+          .share-button.small
             span 分享
             a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/#{talk_data[@talk_id]['program_number_full']}" target="_blank" 分享到 Facebook
             a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F#{talk_data[@talk_id]['program_number_full']}&amp;via=talktotw" target="_blank" twitter 推文
-      .block.talk-data
+
+      .record
+        .video-cover style='background-image: url(/images/program0#{[@talk_id]}_bg.jpg)'
+          .play-button#play-button
+            span 精華回顧
+        .video-wrap
+          .highlight-video
+            iframe id="video" src="https://www.youtube.com/embed/#{talk_data[@talk_id]['highlight_id']}?enablejsapi=1&amp;html5=1&amp;showinfo=0" frameborder="0" allowfullscreen=""
+
+      ul.link
+        li: a.complete href="https://www.youtube.com/watch?v=#{talk_data[@talk_id]['complete_id']}" target="_blank" 完整重播
+        li: a.polis-data href="https://github.com/audreyt/polis-tally/blob/gh-pages/talkto05-12-28-tally.csv" target="_blank" 統計資料
+
+    .archive-content
+      .content-row
         .main-content
-          .block-title
-            .title-en INTRO
-            .title-tw 簡介
-          .block-content
-            .intro
-              p #{talk_data[@talk_id]['intro']}
+          .talk-data
+            .block
+              .block-title
+                .title-en INTRO
+                .title-tw 簡介
+              .block-content
+                p #{talk_data[@talk_id]['intro']}
 
         .side-content
-          .block-title
-            .title-en BIO
-            .title-tw 來賓介紹
-          .block-content
-            .bio
-              ul
-                li 義美食品(股)公司 總經理
-                li 台灣英文台灣日報 發行人
-                li 網擎資訊軟體(股) 董事長
-                li 義美聯合電子商務(股)公司 董事長
-                li 義美環境保護基金會 執行長
-                li 台灣公益廣告協會 理事長
+          .talk-data
+            .block
+              .block-title
+                .title-en BIO
+                .title-tw 來賓介紹
+              .block-content.bio-content
+                ul
+                  li 義美食品(股)公司 總經理
+                  li 台灣英文台灣日報 發行人
+                  li 網擎資訊軟體(股) 董事長
+                  li 義美聯合電子商務(股)公司 董事長
+                  li 義美環境保護基金會 執行長
+                  li 台灣公益廣告協會 理事長
+
+      .content-row
+        .main-content
+          .talk-data
+            .block
+              .block-title
+                .title-en POINT OF VIEW
+                .title-tw 節目重點整理
+              .block-content
+                ol.point-of-view
+                  li
+                    h3.title 太過依賴食安法
+                    p 我們太過依賴食安法，而修食安法的時候，就只看到嚴逞重罰，沒真正去探討基本的原因。基本原因是過去這是4、50年選擇產業發展的結果，核心是環境汙染。沒有解決環境污染，沒有優質的陽光、空氣、水源和土壤，食安問題沒辦法解決。
+
+                  li
+                    h3.title 食安不應該只由食藥署負責，食安法應該一拆三
+                    p 你去超市買東西有時候不是買食品而是買食材，這段應該是回歸到農委會；全世界食物有30%是廢棄的，這部分應該回歸環保署。所以我主張是將一個法要拆成三個法：食材衛生管理法、食品衛生管理法跟食物廢棄物處理法。不同部會處理，然後再整合各部會的狀況大家共同去努力。
+                  li
+                    h3.title 檢驗為什麼困難
+                    p 現在檢驗報導上面都寫兩件事情，第一，檢驗樣品只對樣品負責；第二，合格但不見得合法。另外所有目前的檢驗，全部是檢驗已知的，但未知的太多。
+                    p 很簡單自保方法，買當令的蔬果大概都沒有問題，因為第一個價格便宜，然後便宜以後施藥就很少，品質也會比較好。我們工廠累積三十年檢測，我們是用檢測來判定，什麼東西來自哪裡會有問題，來自哪裡可能沒有問題，然後當令的，大概都沒有問題。
+                  li
+                    h3.title 定義和檢驗要和國際接軌
+                    p 台灣應該跟國際接軌，重視食品安全就找歐盟接軌；覺得美國是將來談判合作的夥伴，就找美國標準接軌；然後中國市場你認為最大，就找中國標準接軌。不應該兩千三百萬人關起門來訂一個自己的標準。
+                  li
+                    h3.title 未來食物價格會上漲
+                    p 照現在的食安法規，從檢測這樣開始，政府跟廠商都需要面對，增加的成本大概每年我估算是300億到500億的成本，在這個情況之下，這些錢一定會轉嫁到一些食物上面。
+                  li
+                    h3.title 給總統候選人的建議
+                    p 每一個人都要回到放棄檢驗的概念，回到陽光空氣水源跟土壤，每一個人都這樣了話，那食安已經做好了，同時也把環境大幅度的改善，這中間同時就有很多事情已經解決。
+                    p 我呼籲總統候選人應該去關注陽光空氣水源跟土壤，有淨潔的東西然後所有食安問題也就解決了。
+
+        .side-content
+          .polis-data.polis-program01
+            .block
+              .block-title
+                .title-en POLIS
+                .title-tw 全民共識排行榜
+              .block-content
+                ul.polis-result
+                .polis-loadmore ▼ 看更多
+
+      ul.pagination
+        li: a.program.prev href="/talk/0#{[@talk_id-1]}.html" 上一集節目
+        li: a.program.next href="/talk/0#{[@talk_id+1]}.html" 下一集節目
+
+  javascript:
+    var jsonDataPath = "/json/#{talk_data[@talk_id]['polis_result']}"
 
 
-  .block.polis-embed#polis
-    .container
-      .block-content
-        .polis data-conversation_id="#{talk_data[@talk_id]['polis_id']}"
-        script async="true" src="https://pol.is/embed.js"
+
+
+
+
+
+
+
+
