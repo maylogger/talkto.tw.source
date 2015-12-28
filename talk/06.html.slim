@@ -8,7 +8,7 @@
           .live-countdown-inner
             span 距離開播還有
             .countdown.now
-            / a.link#polis-link href="#polis" 分享你的觀點
+            a.link#polis-link href="#polis" 分享你的觀點
 
       .talk-title
         .main-content
@@ -54,8 +54,8 @@
                 li 歷史劇場－痛苦執政八年
 
 
-  / .block.polis-embed#polis
-  /   .container
-  /     .block-content
-  /       .polis data-conversation_id="#{talk_data[@talk_id]['polis_id']}"
-  /       script async="true" src="https://pol.is/embed.js"
+  .block.polis-embed#polis
+    .container
+      .block-content
+        .polis data-conversation_id="#{talk_data[@talk_id]['polis_id']}"
+        script async="true" src="https://pol.is/embed.js"
