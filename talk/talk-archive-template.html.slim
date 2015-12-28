@@ -16,12 +16,12 @@
             a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F#{talk_data[@talk_id]['program_number_full']}&amp;via=talktotw" target="_blank" twitter 推文
 
       .record
-        .prev-program
+        a.program-nav.prev href="/talk/#{talk_data[@talk_id]['program_number_full']}.html"
           .program-info
             .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id]}</span>
             .program-topic #{talk_data[@talk_id]['program_topic']}
             img.program-image src="/images/program01_icon.jpg"
-        .next-program
+        a.program-nav.next href="/talk/#{talk_data[@talk_id+1]['program_number_full']}.html"
           .program-info
             .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id+1]}</span>
             .program-topic #{talk_data[@talk_id+1]['program_topic']}

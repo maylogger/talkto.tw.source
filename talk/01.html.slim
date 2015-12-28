@@ -16,6 +16,16 @@
             a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F#{talk_data[@talk_id]['program_number_full']}&amp;via=talktotw" target="_blank" twitter 推文
 
       .record
+        / a.program-nav.prev href="/talk/#{talk_data[@talk_id-1]['program_number_full']}.html"
+        /   .program-info
+        /     .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id-1]}</span>
+        /     .program-topic #{talk_data[@talk_id-1]['program_topic']}
+        /     img.program-image src="/images/program#{talk_data[@talk_id-1]['program_number_full']}_icon.jpg"
+        a.program-nav.next href="/talk/#{talk_data[@talk_id+1]['program_number_full']}.html"
+          .program-info
+            .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id+1]}</span>
+            .program-topic #{talk_data[@talk_id+1]['program_topic']}
+            img.program-image src="/images/program#{talk_data[@talk_id+1]['program_number_full']}_icon.jpg"
         .video-cover style='background-image: url(/images/program0#{[@talk_id]}_bg.jpg)'
           .play-button#play-button
             span 精華回顧
