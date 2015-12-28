@@ -35,14 +35,25 @@
 
     .program-number
       float: none
+      margin-left: -6px
+      padding: 0 6px
+      @extend .gotham-bold-wz-shs
       font-size: 28px
       line-height: 72px
+      color: white
+
+      .gray-number
+        opacity: .5
+
+      .pink-number
+        color: $color-ci-pink
 
     .program-topic
       @extend .shs-bold
       font-size: 24px
-      line-height: 72px
+      line-height: 70px
       color: white
+      vertical-align: top
 
     .program-image
       margin-bottom: 0
