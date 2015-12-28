@@ -1,0 +1,67 @@
+.prev-program, .next-program
+  +box-sizing(border-box)
+  position: absolute
+  top: calc(50% - 36px)
+  height: 72px
+  z-index: 100
+  +transition(background-color .5s)
+
+
+  &:before
+    content: ""
+    display: block
+    position: absolute
+    top: calc(50% - 12px)
+    border: 12px solid transparent
+
+  &:hover
+    background-color: rgba(white, .1)
+
+    .program-info
+      opacity: 1
+
+  .program-info
+    +pie-clearfix
+    margin-bottom: 0
+    opacity: 0
+    +transition(opacity .5s)
+
+    .program-number, .program-topic
+      display: inline-block
+
+    .program-number
+      float: none
+      font-size: 28px
+      line-height: 72px
+
+    .program-topic
+      @extend .shs-bold
+      font-size: 24px
+      line-height: 72px
+
+    .program-image
+      margin-bottom: 0
+
+.prev-program
+  left: 0
+  padding-left: 40px
+
+  &:before
+    left: 0
+    border-right-color: rgba(white, .5)
+
+  .program-image
+    float: right
+    margin-left: 15px
+
+.next-program
+  right: 0
+  padding-right: 40px
+
+  &:before
+    right: 0
+    border-left-color: rgba(white, .5)
+
+  .program-image
+    float: left
+    margin-right: 15px
