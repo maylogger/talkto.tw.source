@@ -1,7 +1,7 @@
 - @talk_id = 2
 
 .archive
-  .archive-header
+  .archive-header-title
     .container
       .program-info
         .program-title
@@ -15,7 +15,7 @@
             a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/#{talk_data[@talk_id]['program_number_full']}" target="_blank" 分享到 Facebook
             a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F#{talk_data[@talk_id]['program_number_full']}&amp;via=talktotw" target="_blank" twitter 推文
 
-  .archive-header
+  .archive-header-record
     a.program-nav.prev href="/talk/#{talk_data[@talk_id-1]['program_number_full']}.html"
       .program-info
         .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id-1]}</span>
@@ -35,7 +35,7 @@
           .highlight-video
             iframe id="video" src="https://www.youtube.com/embed/#{talk_data[@talk_id]['highlight_id']}?enablejsapi=1&amp;html5=1&amp;showinfo=0" frameborder="0" allowfullscreen=""
 
-  .archive-header
+  .archive-header-link
     .container
       ul.link
         li: a.complete href="https://www.youtube.com/watch?v=#{talk_data[@talk_id]['complete_id']}" target="_blank" 完整重播
