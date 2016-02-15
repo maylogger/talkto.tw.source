@@ -1,0 +1,109 @@
+.live
+  .livestream
+    +pie-clearfix
+    position: relative
+
+  .stream
+    position: relative
+    padding-top: 71.5%
+
+  .chatroom
+    position: relative
+    padding-top: 70%
+    overflow: hidden
+
+  .stream, .chatroom
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+
+  .live-end
+    position: relative
+    color: white
+    text-align: center
+    padding-top: 50%
+    background-repeat: no-repeat
+    background-position: center center
+    +background-size(cover)
+
+    &:after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      +background(radial-gradient(rgba($color-ci-black, .3) 0%, rgba($color-ci-black, 1) 80%))
+
+  .program02 .live-end
+    background-image: url("/images/program02_bg.jpg")
+
+  .program03 .live-end
+    background-image: url("/images/program03_bg.jpg")
+
+  .program04 .live-end
+    background-image: url("/images/program04_bg.jpg")
+
+  .program05 .live-end
+    background-image: url("/images/program05_bg.jpg")
+
+  .program06 .live-end
+    background-image: url("/images/program06_bg.jpg")
+
+  .live-end-info
+    z-index: 10
+    position: absolute
+    top: 50%
+    left: 0
+    right: 0
+    +translateY(-50%)
+
+    span
+      margin: 0 auto 12px
+      @extend .shs-heavy
+      +adjust-font-size-to(18px)
+      color: rgba(white, .5)
+      letter-spacing: .2em
+
+  @include at-breakpoint($pad)
+    .livestream
+      +trailer(2)
+
+    .live-end-info span
+      +adjust-font-size-to(24px, 1.5)
+
+  @include at-breakpoint($desktop)
+    .live-end
+      padding-top: 35.9%
+
+    .live-end-info span
+      +adjust-font-size-to(32px)
+
+    .stream
+      padding-top: 56%
+
+    .chatroom
+      position: absolute
+      width: 100%
+      top: 0
+      right: 0
+      bottom: 0
+      padding-top: 0
+
+      iframe
+        position: absolute
+        top: 0
+        bottom: 0
+        width: calc(100%)
+        height: 100%
+
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2)
+    .stream
+      padding-top: 64%
+
+  @media (min-width: 1186px)
+    .live-end
+      padding-top: 39.1%

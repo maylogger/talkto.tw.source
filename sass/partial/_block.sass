@@ -1,0 +1,36 @@
+.block
+  & + .block
+    +leader()
+
+  .block-title
+    +trailer()
+    padding: 12px 0
+    +adjust-font-size-to(15px)
+    border-bottom: 1px solid $color-ci-pink
+
+    .title-en, .title-tw
+      display: inline-block
+      @extend .gotham-bold-wz-shs
+      letter-spacing: .1em
+
+    .title-en
+      color: $color-ci-pink
+
+    .title-tw
+      color: $color-ci-gray
+
+    .title-en + .title-tw
+      &:before
+        content: "/"
+        padding: 0 6px
+
+  .block-content
+    +pie-clearfix
+
+    p
+      letter-spacing: .05em
+
+  @include at-breakpoint($desktop)
+
+    .block-title
+      +adjust-font-size-to(18px)

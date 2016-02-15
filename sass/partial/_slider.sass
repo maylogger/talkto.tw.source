@@ -1,19 +1,88 @@
-.show
-  background-color: #171717
+@-webkit-keyframes livebtn-animation
+  0%
+    width: 0%
+    z-index: 2
+  50%
+    width: 100%
+    z-index: 2
+  51%
+    width: 100%
+    z-index: 1
+  100%
+    width: 100%
+    z-index: 1
 
-.show-container
-  max-width: 1272px
-  margin: 0 auto
+@-moz-keyframes livebtn-animation
+  0%
+    width: 0%
+    z-index: 2
+  50%
+    width: 100%
+    z-index: 2
+  51%
+    width: 100%
+    z-index: 1
+  100%
+    width: 100%
+    z-index: 1
 
-.show-slider
+@keyframes livebtn-animation
+  0%
+    width: 0%
+    z-index: 2
+  50%
+    width: 100%
+    z-index: 2
+  51%
+    width: 100%
+    z-index: 1
+  100%
+    width: 100%
+    z-index: 1
+
+.slider
+  background-color: $color-ci-black
+  overflow: hidden
+
+.program-slider
   position: relative
+  max-height: 840px
+  overflow: hidden
+
+  .slider-header
+    position: absolute
+    z-index: 1000
+    top: 18px
+    left: 0
+    right: 0
+    height: 0
+    text-align: right
+
+    .container
+      max-width: 1120px
+      height: 0
+
+    .share
+      float: left
+      opacity: .7
+
+      &:hover
+        opacity: 1
+
+    .logo
+      float: right
+      width: 62px
+      height: 80px
+      +hide-text()
+      background: url("/images/logo.svg") center no-repeat
+      +background-size(contain)
 
   .slider-for
+    max-width: 1520px
+    margin: 0 auto
+
     .slider-content
       position: relative
-      min-height: 440px
-      height: 85vh
-      max-height: 800px
       background-position: center center
       +background-size(cover)
 
@@ -24,38 +93,99 @@
         left: 0
         right: 0
         bottom: 0
-        background-color: rgba(0,0,0,.5)
+        +background(linear-gradient(to bottom, rgba($color-ci-black, 0), rgba($color-ci-black, .1), rgba($color-ci-black, 1)))
 
-    .show-info
+    .container
+      position: relative
+      max-width: 1120px
+      min-height: 440px
+      max-height: 720px
+      height: 90vh
+
+    .program-info
       position: absolute
-      left: 0
-      bottom: 96px
-      padding: 24px
-      color: white
-
-      .title
-        @extend .shs-heavy
-        +trailer(.5)
-        +adjust-font-size-to(32px)
+      right: 12px
+      bottom: 2.5%
+      @extend .shs-heavy
 
       .guest
-        +adjust-font-size-to(13px)
+        +adjust-font-size-to(18px, 1.5)
+        color: $color-ci-pink
+        letter-spacing: 0.1em
 
+      .title
+        +adjust-font-size-to(28px, 1.5)
+        color: white
+
+      .time
+        @extend .gotham-bold-wz-shs
+        +adjust-font-size-to(16px, 1.5)
+        color: $color-ci-gray
+
+      .link
+        position: relative
+        overflow: hidden
+        +leader(.25)
+        display: inline-block
+        padding: 6px 17px
+        @extend .shs-regular
+        color: white
+        +adjust-font-size-to(13px)
+        text-decoration: none
+        background-color: $color-ci-pink
+
+      .link.livenow
         &:before
-          content: "特別來賓"
-          padding-right: 6px
-          color: rgba(255,255,255,.7)
+          content: ""
+          overflow: hidden
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          background: url('/images/live-btn-ani1-small.svg') top left no-repeat
+          -webkit-animation: livebtn-animation 5s infinite linear
+          -moz-animation:    livebtn-animation 5s infinite linear
+          animation:         livebtn-animation 5s infinite linear
+
+        &:after
+          content: ""
+          overflow: hidden
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          background: url('/images/live-btn-ani2-small.svg') top left no-repeat
+          -webkit-animation: livebtn-animation 5s 2.5s infinite linear
+          -moz-animation:    livebtn-animation 5s 2.5s infinite linear
+          animation:         livebtn-animation 5s 2.5s infinite linear
+
+
+      .program-number
+        @extend .gotham-bold-wz-shs
+        color: white
+        +adjust-font-size-to(72px, 3)
+        text-align: right
+        letter-spacing: -3px
+
+      .gray-number
+        opacity: .5
+
+      .pink-number
+        color: $color-ci-pink
+        opacity: 1
+
+      .link + .program-number
+        margin-top: -44px
 
   .slider-nav
-    position: absolute
-    left: 0
-    right: 0
-    bottom: 0
-    background-color: rgba(0,0,0,.5)
+    max-width: 1120px
+    margin: 0 auto
 
     .slick-prev, .slick-next
       position: absolute
-      top: 12px
+      top: 6px
       width: 38px
       height: 64px
       color: white
@@ -79,75 +209,98 @@
       right: 0
       background: url("/images/slider-next.svg") center no-repeat
 
-
-
     .slick-list
       margin: 6px 38px
 
     .slider-content
       position: relative
-      height: 64px
       margin: 6px
-      background-position: center center
+      height: 64px
+      @extend .gotham-bold-wz-shs
+      text-align: center
+      font-size: 36px
+      line-height: 64px
+      cursor: pointer
+      opacity: .25
+      background-repeat: no-repeat
+      background-position: center
       +background-size(cover)
+      +transition(opacity .5s)
+
+      .pink-number
+        color: $color-ci-gray
+        +transition(color .5s)
+
+      .gray-number
+        opacity: .5
 
       &:focus
         outline: none
 
-      &:hover
-        margin: 3px
-        border: 3px solid rgba(255,255,255,.7)
-
-      &:before
-        content: ""
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        background-color: rgba(0,0,0,.5)
-        opacity: 1
-        +transition(opacity .25s)
-
       &.slick-current
-        margin: 3px
-        border: 3px solid white
+        opacity: 1
 
-        &:before
-          opacity: 0
+        .pink-number
+          color: $color-ci-pink
 
-        .class-info
-          opacity: 0
 
-      .class-info
-        position: absolute
-        top: 50%
-        left: 0
-        right: 0
-        text-align: center
-        font-weight: bold
-        +adjust-font-size-to(13px)
-        color: white
-        +translateY(-50%)
-        +transition(opacity .25s)
+  @include at-breakpoint($pad)
+    .slider-header
+      top: 24px
 
-  @include at-breakpoint($desktop)
-    margin-left: 0
-    margin-right: 0
+      .logo
+        width: 102px
+        height: 128px
 
     .slider-for
-      .slider-content
-        height: 100vh
+      .slider-content:before
+        background: rgba($color-ci-black, .25)
 
-      .show-info
-        bottom: 120px
-        padding: 48px
-
-        .title
-          +adjust-font-size-to(48px)
+      .program-info
+        bottom: 5%
+        right: 24px
 
         .guest
-          +adjust-font-size-to(16px)
+          +adjust-font-size-to(21px, 1.5)
+
+        .title
+          +adjust-font-size-to(48px, 2.5)
+
+        .time
+          +adjust-font-size-to(18px, 1.5)
+
+        .link
+          +leader(.5)
+          +adjust-font-size-to(18px, 1.5)
+
+        .link.livenow
+          &:before
+            background: url('/images/live-btn-ani1.svg') top left no-repeat
+
+          &:after
+            background: url('/images/live-btn-ani2.svg') top left no-repeat
+
+
+        .program-number
+          +adjust-font-size-to(96px, 4)
+
+        .link + .program-number
+          margin-top: -64px
+
+
+  @include at-breakpoint($desktop)
+    .slider-header
+      top: 48px
+
+    .slider-for
+      .container
+        min-height: 640px
+
+      .program-info
+        right: 48px
+
+        .program-number
+          +adjust-font-size-to(108px, 5)
 
     .slider-nav
       .slick-prev, .slick-next
@@ -159,6 +312,19 @@
 
       .slider-content
         height: 96px
+        font-size: 64px
+        line-height: 96px
 
-        .class-info
-          +adjust-font-size-to(16px)
+  @include at-breakpoint($wide-desktop)
+    .slider-header
+      .logo
+        width: 120px
+        height: 156px
+
+    .slider-for
+      .program-info
+        .title
+          +adjust-font-size-to(56px, 2.75)
+
+        .program-number
+          +adjust-font-size-to(128px, 5.25)

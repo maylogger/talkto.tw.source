@@ -1,0 +1,147 @@
+- @talk_id = 2
+
+.archive
+  .archive-header-title
+    .container
+      .program-info
+        .program-title
+          .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id]}</span>
+          .program-content
+            .guest #{talk_data[@talk_id]['guest']}
+            h1.title #{talk_data[@talk_id]['title']}
+        .share
+          .share-button.small
+            span 分享
+            a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/#{talk_data[@talk_id]['program_number_full']}" target="_blank" 分享到 Facebook
+            a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F#{talk_data[@talk_id]['program_number_full']}&amp;via=talktotw" target="_blank" twitter 推文
+
+  .archive-header-record
+    a.program-nav.prev href="/talk/#{talk_data[@talk_id-1]['program_number_full']}.html"
+      .program-info
+        .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id-1]}</span>
+        .program-topic #{talk_data[@talk_id-1]['program_topic']}
+        img.program-image src="/images/program#{talk_data[@talk_id-1]['program_number_full']}_icon.jpg"
+    a.program-nav.next href="/talk/#{talk_data[@talk_id+1]['program_number_full']}.html"
+      .program-info
+        .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id+1]}</span>
+        .program-topic #{talk_data[@talk_id+1]['program_topic']}
+        img.program-image src="/images/program#{talk_data[@talk_id+1]['program_number_full']}_icon.jpg"
+    .container
+      .record
+        .video-cover style='background-image: url(/images/program0#{[@talk_id]}_bg.jpg)'
+          .play-button#play-button
+            span 精華回顧
+        .video-wrap
+          .highlight-video
+            iframe id="video" src="https://www.youtube.com/embed/#{talk_data[@talk_id]['highlight_id']}?enablejsapi=1&amp;html5=1&amp;showinfo=0" frameborder="0" allowfullscreen=""
+
+  .archive-header-link
+    .container
+      ul.link
+        li: a.complete href="https://www.youtube.com/watch?v=#{talk_data[@talk_id]['complete_id']}" target="_blank" 完整重播
+        li: a.polis-data href="https://github.com/audreyt/polis-tally/blob/gh-pages/talkto02-12-04-tally.csv" target="_blank" 統計資料
+
+  .archive-content
+    .container
+      .content-row
+        .main-content
+          .talk-data
+            .block
+              .block-title
+                .title-en INTRO
+                .title-tw 簡介
+              .block-content
+                p #{talk_data[@talk_id]['intro']}
+
+        .side-content
+          .talk-data
+            .block
+              .block-title
+                .title-en BIO
+                .title-tw 來賓介紹
+              .block-content.bio-content
+                p 葉丙成，號丙紳，現任台大電機系教授、台大 MOOC 計畫執行長。  其為師也，富熱情，常難忍教學一成不變。時於臉書輔導學生求學、人生之惑，後撰文部落格以惠同惑者，傳閱者眾。庚寅年某日見某生於課堂度估，當夜不能寐。翻滾至五更，幡然悟得「 by the students, for the students, of the students」之心法。自此教學通脫不拘，大開大闔，開發各式獨特教學法。教學深具特色，多有口碑。
+                p 摘其教學創舉如下 : 
+                ul
+                  li 全球第一位帶領學生團隊贏得 Wharton-QS 世界教學創新大獎的老師。 
+                  li 史上第一位在國際舞台 (Coursera) 以華語對萬人講學的老師。 
+                  li 台灣第一位設計體驗式簡報教學法，讓小學生打大學生期末簡報分數的老師。 
+                  li 世界第一位將大規模開放式線上課程 (MOOC) 變成多人競技線上遊戲的老師。 
+                  li 當代第一位推行數學結合文學創作的老師，師生共同創作出版科普暢銷書。
+
+
+      .content-row
+        .main-content
+          .talk-data
+            .block
+              .block-title
+                .title-en POINT OF VIEW
+                .title-tw 節目重點整理
+              .block-content
+                ol.point-of-view
+                  li
+                    h3.title 教改有些好東西，但應該讓老師決定怎麼教比較好
+                    p 今天不談翻轉教育，而是要談整體教育情況，談和基層、偏鄉老師互動，把了解到的問題反映出來。老師的教學是沒辦法被強迫的，因為他如果不是打從心裡面相信這樣教是對的，你強迫他這樣教是沒用的。
+
+                  li
+                    h3.title 教育的改革應該由下而上，讓老師來選擇，不是上層強迫老師去執行
+                    p 最大的憂心不是老師不願意去做翻轉教育，最怕的是某年某月的某一天某個縣市政府的某個長官宣布說這個我們從哪個幾年幾月幾號開始所有的學校都要開始做翻轉，所有我們的什麼的市什麼縣市國中全部都在做翻轉。那就完了。
+                  li
+                    h3.title 台灣現在最大的危機是少子化和城鄉差距
+                    p 台灣一年的發展能需要15萬人，以前光是都會區就有15萬人，所以如果都會區教育弄得ok時，台灣發展是ok的。但少子化後就沒有足夠人才，在現在這個時代，每個孩子都是很重要的孩子，我們必需要更重視城鄉差距，用更有創意的方式來幫助偏鄉的孩子。
+                    p 台灣很多時候以前就靠那百分之一的人，就這些百分之一的人有很特別的想法，然後可以帶領台灣有很多不一樣的方向去發展。可是我們現在碰到一個危機是少子化了，人口乘以百分之一，那絕對人數是不夠的。
+                    p 我們沒有足夠的Talent去帶領台灣各式各樣不同的方向去發展，所以這個時候就變成是我們的教育到底有沒有辦法透過教育去把那個percentage把那個1%提升到3%甚至到5%
+                  li
+                    h3.title 台灣是自主學習非常差的國家
+                    p 世界變化太快，新的技術一直出來如果我們的人都不願意讀書的話，不願意自主學習的話，他是跟不上時代的，台灣是不會有競爭力的。台灣每人每年讀書低於兩本。原因是讀書的胃口都被考試搞壞了。
+                    p 我們在學校都是被考試逼著讀書，一旦離開校園之後你就會覺得說，啊我都已經畢業了，我不用考試還讀書感覺虧很大，所以大家都不願意讀書，不願意去學習，我覺得這是另外一個台灣很重要的危機。
+                  li
+                    h3.title 定偏鄉教育法
+                    p 城鄉差距很多，但是所有的規定都一體適用。我們應該把偏鄉的Case用一個不一樣的法律來規範，不要讓他跟都會區有一樣的規定，這就比較會有機會得到他需要的資源。
+                    p 所以可否定一個偏鄉教育法，讓某些情況對偏鄉比較好，享有比較多資源，用不公平來對待不公平。
+                  li
+                    h3.title 靠唸書來脫貧的想法應該更改
+                    p 要靠唸書脫貧要念10幾年到大學，對於弱勢家庭是很困難的。所以與其透過學業脫貧，不如先培養一種技能，讓弱勢孩子學習一種技能來脫貧，比如說學寫程式，你可不用離開家鄉，可以在家裡接案當一個soho。
+                  li
+                    h3.title 入學方法雖然重要，但是把學生教好更重要
+                    p 像台灣這個我覺得一個很值得關注的一件事情就是這個107的課綱。我們看到台灣教育圈有一群夥伴真的是很熱血的這些老師，他們現在把這個焦點放在107課綱，因為他們覺得這個是台灣教育脫胎換骨的最後一次機會。希望這107課綱真的能做到適才適性，就是說讓孩子有更多的選修課程。
+                  li
+                    h3.title 提升自主學習，可用市場機制處理
+                    p 台大去年開始有火星人計畫，就是尋找特殊科目非常厲害的學生。教育部應該對各個學校鬆綁，讓他們能夠有多點特殊選才，才能夠讓社會從考試主導的教育制度下掙脫出來。
+                  li
+                    h3.title 花更多資源陪政府官僚
+                    p 我們應該把教育官員送到國外長一點的時間去學習更多新的技能、想法和技術。應該要花資源去培養教育的中階主管。把國外的新官店帶進來，讓他們做事情的時候不要一直用舊的官僚思維來看事情。
+                  li
+                    h3.title 花更多資源陪政府官僚
+                    p 過去台灣教改著重制度，但除了制度的改革之外，怎樣讓老師能夠有熱情也同等重要。台灣有非常多的好老師，我們應該尊重這些老師，然後讓好老師經營社群，來感動其他老師。
+                  li
+                    h3.title 給總統候選人的建議
+                    p 需要偏鄉教育法、行政鬆綁讓基層老師有尊嚴。
+
+
+        .side-content
+          .polis-data.polis-program01
+            .block
+              .block-title
+                .title-en POLIS
+                .title-tw 全民共識排行榜
+              .block-content
+                ul.polis-result
+                .polis-loadmore ▼ 看更多
+
+      ul.pagination
+        li: a.program.prev href="/talk/0#{[@talk_id-1]}.html" 上一集節目
+        li: a.program.next href="/talk/0#{[@talk_id+1]}.html" 下一集節目
+
+  javascript:
+    var jsonDataPath = "/json/#{talk_data[@talk_id]['polis_result']}"
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,4 @@
 .share-button
-  +leader()
-  text-align: center
-
   span
     display: inline-block
     margin-right: 6px
@@ -15,6 +12,7 @@
     +replace-text-with-svg("icon-sns-share")
     width: 32px
     height: 32px
+    margin-right: 3px
     background-position: 0 0
     +background-size(cover)
 
@@ -31,5 +29,21 @@
     &:hover
       background-position: 0 -96px
 
-  @include at-breakpoint(1520px 16)
-    +leader(2)
+  &.small
+    span
+      +adjust-font-size-to(12px)
+    .fb-share
+      width: 24px
+      height: 24px
+
+      &:hover
+        background-position: 0 -24px
+
+    .tweet
+      width: 24px
+      height: 24px
+      background-position: 0 -48px
+
+      &:hover
+        background-position: 0 -72px
+

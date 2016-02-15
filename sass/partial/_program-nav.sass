@@ -1,0 +1,102 @@
+.program-nav
+  display: block
+  +box-sizing(border-box)
+  position: absolute
+  top: calc(50% - 36px)
+  height: 72px
+  z-index: 100
+
+  &:before
+    content: ""
+    display: block
+    position: absolute
+    z-index: 100
+    top: calc(50% - 12px)
+    border: 12px solid transparent
+
+  .program-info
+    position: absolute
+    +pie-clearfix
+    width: 188px
+    display: none
+    margin-bottom: 0
+    background-color: #222
+    +transition(transform .5s)
+
+
+    .program-number, .program-topic
+      display: inline-block
+
+    .program-number
+      float: none
+      margin-left: -6px
+      padding: 0 6px
+      @extend .gotham-bold-wz-shs
+      font-size: 28px
+      line-height: 72px
+      color: white
+
+      .gray-number
+        opacity: .5
+
+      .pink-number
+        color: $color-ci-pink
+
+    .program-topic
+      @extend .shs-bold
+      font-size: 24px
+      line-height: 70px
+      color: white
+      vertical-align: top
+
+    .program-image
+      margin-bottom: 0
+
+  &.prev
+    left: 0
+    padding-left: 60px
+    text-align: left
+
+    &:before
+      left: 12px
+      border-right-color: rgba(white, .5)
+
+    .program-info
+      left: 0
+      padding-left: 60px
+      +translateX(-100%)
+
+    &:hover
+      .program-info
+        +translateX(0%)
+
+    .program-image
+      float: right
+      margin-left: 12px
+
+  &.next
+    right: 0
+    padding-right: 60px
+    text-align: right
+
+    &:before
+      right: 12px
+      border-left-color: rgba(white, .5)
+
+    .program-info
+      right: 0
+      padding-right: 60px
+      +translateX(100%)
+
+    &:hover
+      .program-info
+        +translateX(0%)
+
+    .program-image
+      float: left
+      margin-right: 12px
+
+@include at-breakpoint($desktop)
+  .program-nav
+    .program-info
+      display: block

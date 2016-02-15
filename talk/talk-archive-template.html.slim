@@ -1,0 +1,130 @@
+- @talk_id = 1
+
+.archive
+  .container
+    .archive-header-title
+      .container
+        .program-info
+          .program-title
+            .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id]}</span>
+            .program-content
+              .guest #{talk_data[@talk_id]['guest']}
+              h1.title #{talk_data[@talk_id]['title']}
+          .share
+            .share-button.small
+              span 分享
+              a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/#{talk_data[@talk_id]['program_number_full']}" target="_blank" 分享到 Facebook
+              a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F#{talk_data[@talk_id]['program_number_full']}&amp;via=talktotw" target="_blank" twitter 推文
+
+    .archive-header-record
+      / a.program-nav.prev href="/talk/#{talk_data[@talk_id-1]['program_number_full']}.html"
+      /   .program-info
+      /     .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id-1]}</span>
+      /     .program-topic #{talk_data[@talk_id-1]['program_topic']}
+      /     img.program-image src="/images/program#{talk_data[@talk_id-1]['program_number_full']}_icon.jpg"
+      a.program-nav.next href="/talk/#{talk_data[@talk_id+1]['program_number_full']}.html"
+        .program-info
+          .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id+1]}</span>
+          .program-topic #{talk_data[@talk_id+1]['program_topic']}
+          img.program-image src="/images/program#{talk_data[@talk_id+1]['program_number_full']}_icon.jpg"
+      .container
+        .record
+          .video-cover style='background-image: url(/images/program0#{[@talk_id]}_bg.jpg)'
+            .play-button#play-button
+              span 精華回顧
+          .video-wrap
+            .highlight-video
+              iframe id="video" src="https://www.youtube.com/embed/#{talk_data[@talk_id]['highlight_id']}?enablejsapi=1&amp;html5=1&amp;showinfo=0" frameborder="0" allowfullscreen=""
+
+    .archive-header-link
+      .container
+        ul.link
+          li: a.complete href="https://www.youtube.com/watch?v=#{talk_data[@talk_id]['complete_id']}" target="_blank" 完整重播
+          li: a.transcript href="http://sayit.archive.tw/政問-1126柯文哲-醫療與健保" target="_blank" 逐字稿
+          li: a.polis-data href="https://github.com/audreyt/polis-tally/blob/gh-pages/talkto01-11-30-tally.csv" target="_blank" 統計資料
+          li: a.extra href="https://github.com/audreyt/polis-tally/blob/gh-pages/talkto01x-11-30-tally.csv" target="_blank" 番外篇
+
+    .archive-content
+      .content-row
+        .main-content
+          .talk-data
+            .block
+              .block-title
+                .title-en INTRO
+                .title-tw 簡介
+              .block-content
+                p #{talk_data[@talk_id]['intro']}
+
+        .side-content
+          .talk-data
+            .block
+              .block-title
+                .title-en BIO
+                .title-tw 來賓介紹
+              .block-content.bio-collapse
+                p 柯文哲現任臺北市長，曾任臺大醫院急診部醫師、臺大醫院創傷醫學部主任、臺大醫學院教授，專長為外科重症醫學、器官移植、人工器官等，是臺灣第一個急診與重症加護專職醫生。
+
+      .content-row
+        .main-content
+          .talk-data
+            .block
+              .block-title
+                .title-en POINT OF VIEW
+                .title-tw 節目重點整理
+              .block-content
+                ol.point-of-view
+                  li
+                    h3.title 健保到底是社會保險還是社會福利？柯P：還是要回歸到社會保險
+                    p 一句話，台灣健保問題是社會保險還是社會福利？現在是用社會保險的錢做社會福利。短期內可以撐得住，長期需要解決。天下沒有白吃的午餐，面對問題就是解決問題的第一點。無論是保險或福利，大家同意就好，民眾認清事實就好。第一個要處理的問題是？回歸保險機制，福利不要那麼多。六歲以下小孩急診看病不用錢，台北市聯合醫院，掛號原本80元，現在50元，市政府補助30元，一年就要4億。社會福利放很容易，收很難。比如說重陽敬老金，就算是民調掉5%也要砍。重陽敬老金就是咬牙砍，看發生什麼事，但也只是罵一罵，罵到最後那些議員也說，他也覺得要做，但也必須要罵，大家各自盡義務。
+                  li
+                    h3.title 健保核刪是必要之惡，但要改善
+                    p 健保核刪是必要之惡，就跟醫學評鑑一樣必須要有，但必須要改善。因為醫療分科分類太多，我是加護病房專家，要我去審婦產科就不妥，沒找到合適的人，實事求是。審查者也要有態度，不會就請另請高明。
+                  li
+                    h3.title 論量計酬造成醫生不是用最有效的方式進行醫療
+                    p 我們現在是論件計酬，很好笑，來看醫生，賺不到錢，按照藥量，所以我要讓你很淒慘，洗個腎什麼，醫生不用最有效的方式治療，不過我主張論人計酬，或是論量計酬。到底為何不能改？因為醫療體系被財團把持。國家不是以最有效率，醫療體制也不是最有效率，每個人都知道能不能改，但沒人去改。除非我當總統啦。
+                  li
+                    h3.title 台灣應該限制醫學願畢業人數，然後開放專科護理師名額
+                    p 台灣不是世界上最先進的國家，美國有、台灣沒有的是專科護理師。因為醫生怕專科護理師來搶工作，應該限制醫學院畢業生人數，開放專科護理師名額。現在的情況主治醫師做住院醫師工作、住院醫師做實習醫師工作、實習醫師做歐巴桑工作。台灣作為一個國家，不是最先進的，看看國外的再回來想想怎麼做就好了。
+                  li
+                    h3.title 不反對醫師加入勞基法
+                    p 反對醫生加入勞基法？不是，不是不太贊成。美國住院醫師有加入，主治醫師沒加入。要加可以，成本要加上去，就是一分錢一分貨。
+                  li
+                    h3.title 不責難醫療制度：要保險和說實話，但「說實話」台灣做不到
+                    p 醫療不責難制度要建立，前提是要讓大家乖乖講實話。北歐醫師接生，產婦死掉，大家了解到底發生什麼事？講實話，不責難，他們會去改進。不責難醫療制度需要保險和講實話，不講沒有辦法改進。我們沒有辦法原諒別人犯錯。美國併發症死亡討論會，對外科醫生來說很重要，人被你搞死很重要，為何會被搞死，要改善改進。台灣第一句話會問誰開的。後來我回台大，我都不想去開這個會，不是粉飾太平就是趁機鬥爭。要成功很根本原因是國民水準，互愛互信互諒，原諒醫生不是故意的，系統上有錯誤就改正，現在出錯就要找個女巫出來燒死，這需要時間改變。
+                  li
+                    h3.title 絕大多數的醫療糾紛沒有醫療過失，絕大多數的醫療過失沒有醫療糾紛
+                    p 我被告過兩次。有個女生先天性肌肉萎縮，心臟瓣膜壞掉，肌肉萎縮持續，然後做氣切，加護住兩個月，轉普通又住九個月，最後肺癌死掉。後來才知道這個病是隱性遺傳的病，地方高等最高一路告，為何告？父母四個小孩有兩個因此死掉，如果不把這個仇恨往外丟，兩夫妻會吵架吵到不行。我們醫療體系最大的問題是為什麼沒有察覺病人有隱藏性的罪惡感？大部份醫療糾紛沒有過失，醫療過失沒有糾紛。
+                  li
+                    h3.title 如何解決五大皆空
+                    p 每年醫學生畢業1300個，我們把住院醫師的容量都設計好，把某些科別限縮，逼大家去五大科。這個在長期來說依然沒有解決問題，因為外科當了兩年還是去當醫美，但有部分解決問題，因為你畢業之後只有兩個選擇，一個就是不當醫生，一個就是乖乖去五大科。所以短期沒有缺，但長期來說是沒有解決的。
+                  li
+                    h3.title 給這次三位總統選人建議<br>醫療健保要改的話最重要的順序是什麼？
+                    p 兩個字，勇敢。什麼是對的什麼是錯的事情大家都知道，但是對的不做，錯的事情每天做。
+
+
+        .side-content
+          .polis-data.polis-program01
+            .block
+              .block-title
+                .title-en POLIS
+                .title-tw 全民共識排行榜
+              .block-content
+                ul.polis-result
+                .polis-loadmore ▼ 看更多
+
+      ul.pagination
+        / li: a.program.prev href="/talk/0#{[@talk_id-1]}.html" 上一集節目
+        li: a.program.next href="/talk/0#{[@talk_id+1]}.html" 下一集節目
+
+  javascript:
+    var jsonDataPath = "/json/#{talk_data[@talk_id]['polis_result']}"
+
+
+
+
+
+
+
+
+
+

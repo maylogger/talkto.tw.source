@@ -1,0 +1,485 @@
+@-webkit-keyframes polisdata-fadein
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@-moz-keyframes polisdata-fadein
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes polisdata-fadein
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+.archive
+  +padding-leader()
+  +padding-trailer(2)
+  +trailer()
+
+  .archive-header-title, .archive-header-record, .archive-header-link
+    +pie-clearfix
+    position: relative
+
+  .archive-content
+    +leader()
+
+  .record
+    position: relative
+
+    .video-wrap
+      max-width: 760px
+      margin: 0 auto
+
+      .highlight-video
+        position: relative
+        padding-top: 56.25%
+
+        iframe
+          position: absolute
+          top: 0
+          width: 100%
+          height: 100%
+
+    .video-cover
+      display: none
+      position: absolute
+      z-index: 10
+      top: 0
+      left: 0
+      right: 0
+      bottom: -52px
+      width: 100%
+      color: white
+      text-align: center
+      background-color: $color-ci-black
+      background-repeat: no-repeat
+      background-position: center center
+      +background-size(cover)
+
+      &:after
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        +background(radial-gradient(rgba($color-ci-black, 0) 0%, rgba($color-ci-black, 1) 90%))
+
+      &:hover
+        .play-button
+          opacity: 1
+
+    .play-button
+      position: absolute
+      z-index: 100
+      top: 42.5%
+      margin: 0 auto
+      width: 100%
+      text-align: center
+      +adjust-font-size-to(16px)
+      font-weight: bold
+      +translateY(-50%)
+      cursor: pointer
+      opacity: .8
+      @include text-shadow(0 0 10px rgba(black, .3))
+      +transition(opacity .5s)
+
+      &:before
+        content: ""
+        display: block
+        margin: 0 auto 12px
+        width: 64px
+        height: 64px
+        border: 3px solid white
+        +border-radius(50%)
+
+      &:after
+        content: ""
+        position: absolute
+        top: 24px
+        left: 50%
+        margin-left: -6px
+        border: 12px solid transparent
+        border-right: 0px
+        border-left: 18px solid white
+
+  .program-info
+    position: relative
+    +pie-clearfix
+    +trailer()
+
+    .share
+      position: absolute
+      top: 3px
+      right: 0
+      z-index: 100
+
+    .program-number
+      margin-left: -2px
+      padding-right: 12px
+      @extend .gotham-bold-wz-shs
+      color: white
+      +adjust-font-size-to(64px, 3)
+
+    .gray-number
+      opacity: .5
+
+    .pink-number
+      color: $color-ci-pink
+
+    .program-content
+      overflow: hidden
+      @extend .shs-heavy
+
+      .guest
+        +adjust-font-size-to(18px, 1.5)
+        color: $color-ci-pink
+        letter-spacing: .1em
+
+      .title
+        +adjust-font-size-to(24px, 1.25)
+
+  .link
+    position: relative
+    z-index: 1000
+    +reset-box-model
+    list-style: none
+    +leader()
+
+    li
+      display: block
+      +adjust-font-size-to(13px)
+      font-weight: bold
+
+      a
+        position: relative
+        display: block
+        padding: 2px
+        color: rgba(white, .7)
+        text-align: left
+        text-decoration: none
+        +transition(color .25s, background-color .25s)
+
+        &:hover
+          color: rgba(white, 1)
+          background-color: rgba(white, .1)
+
+        &:before
+          content: ""
+          display: inline-block
+          margin-top: -3px
+          margin-right: 3px
+          vertical-align: middle
+          width: 24px
+          height: 24px
+          background-image: url("/images/archive-link.svg")
+          background-repeat: no-repeat
+          +background-size(cover)
+
+      .complete:before
+        background-position: 0 -24px
+
+      .transcript:before
+        background-position: 0 0
+
+      .polis-data:before
+        background-position: 0 -48px
+
+      .extra:before
+        background-position: 0 -72px
+
+  .bio-content
+    ul
+      margin-top: 0
+
+  .point-of-view
+    list-style: none
+    padding-left: 0
+
+    li
+      +trailer(2)
+
+      &:before
+        content: ''
+        display: block
+        @extend .gotham-light-wz-shs
+        font-size: 40px
+        line-height: 40px
+        margin-left: -2px
+        margin-bottom: 3px
+        color: $color-ci-pink
+
+    .title
+      +trailer(.5)
+      +adjust-font-size-to(24px, 1.5)
+
+
+  @for $i from 1 through 9
+    .point-of-view li:nth-child(#{$i})
+      &:before
+        content: '0#{$i}'
+
+  @for $i from 10 through 20
+    .point-of-view li:nth-child(#{$i})
+      &:before
+        content: '#{$i}'
+
+  .polis-data
+    .block-title
+      margin-bottom: 0
+      border-bottom: none
+
+    .polis-loadmore
+      padding: 6px 0
+      +adjust-font-size-to(15px)
+      font-weight: bold
+      color: $color-ci-pink
+      text-align: center
+      cursor: pointer
+      +transition(background-color .5s)
+
+      &:hover
+        background-color: #222
+
+  .polis-result
+    +reset-box-model
+    list-style: none
+
+    .animation
+      -webkit-animation: polisdata-fadein 1s 1
+      -moz-animation:    polisdata-fadein 1s 1
+      animation:         polisdata-fadein 1s 1
+
+      .percentage-bar
+        width: 60%
+        opacity: 0
+
+      &.is-active
+        .percentage-bar
+          width: 100%
+          opacity: .85
+
+    li
+      position: relative
+      margin-bottom: 6px
+      background: #333333
+
+    .polis-content
+      +pie-clearfix
+      position: relative
+      z-index: 10
+      padding: 12px
+
+      .percentage
+        position: relative
+        width: 100px
+        height: 100px
+        margin: 0 auto
+        padding-bottom: 12px
+        @extend .gotham-bold-wz-shs
+        text-align: center
+        font-size: 21px
+        line-height: 21px
+        color: $color-ci-pink
+
+        &:after
+          content: attr(data-percentage)'%'
+          display: block
+          position: absolute
+          top: calc(50% - 16px)
+          left: 0
+          right: 0
+          margin: auto
+
+      .comment
+        display: block
+        overflow: hidden
+        margin-bottom: 0
+        +adjust-font-size-to(13px)
+
+
+
+  @include at-breakpoint($pad)
+    .program-info
+
+      .program-number
+        float: left
+        +adjust-font-size-to(72px, 3.5)
+
+      .program-content
+        .guest
+          +adjust-font-size-to(18px, 1.5)
+
+        .title
+          +adjust-font-size-to(32px, 1.5)
+
+    .link
+      +leader(.5)
+      text-align: center
+
+      li
+        display: inline-block
+
+        a
+          padding: 3px 12px
+
+    .archive-content
+      +pie-clearfix
+      position: relative
+
+    .point-of-view
+      padding-left: 72px
+
+      li
+        position: relative
+        +trailer()
+
+        &:before
+          position: absolute
+          top: 0
+          left: -72px
+          width: 56px
+          text-align: right
+          margin-top: 3px
+          margin-left: 0
+          margin-bottom: 0
+
+    .polis-result
+      .polis-content
+        +pie-clearfix
+        position: relative
+        z-index: 10
+        padding: 24px
+        display: table
+        vertical-align: middle
+
+        .percentage-wrap
+          display: table-cell
+          vertical-align: middle
+          width: 100px
+
+        .percentage
+          padding-bottom: 0
+          font-size: 24px
+          line-height: 21px
+
+          &:after
+            top: calc(50% - 10px)
+
+          svg
+            overflow: visible
+
+        .comment
+          display: table-cell
+          vertical-align: middle
+          overflow: hidden
+          padding-left: 24px
+
+
+  @include at-breakpoint($desktop)
+
+    .record
+      .video-cover
+        display: block
+        opacity: 1
+        +transition(visibility 0s 1.5s, opacity 1.5s)
+
+      .share
+        top: 12px
+        right: 12px
+
+    .link
+      +translateY(-120px)
+      +transition(transform .75s)
+
+
+    .video-playing
+      .record .video-cover
+        opacity: 0
+        visibility: hidden
+
+      .link
+        +translateY(0)
+
+    .program-info
+      +pie-clearfix
+
+      .program-title
+        +pie-clearfix
+
+    .archive-content
+      +leader(2)
+
+      .block-content
+        max-width: 90%
+
+      .polis-data .block-content
+        max-width: 100%
+
+      .content-row
+        +pie-clearfix
+        +trailer(2)
+
+      .main-content
+        float: left
+        width: calc(57.5% - 18px)
+
+      .side-content
+        float: right
+        width: calc(42.5% - 18px)
+
+    .bio-content
+      position: relative
+      overflow: hidden
+      +transition(height .5s)
+
+      &:after
+        content: ""
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        +background(linear-gradient(to bottom, rgba($color-ci-black, 0) 70%, rgba($color-ci-black, 1) 85%))
+        opacity: 0
+        +transition(opacity .5s)
+
+      &.collapse
+        height: 250px
+
+        &:before
+          content: "▼ 展開"
+          position: absolute
+          z-index: 10
+          left: 0
+          right: 0
+          bottom: 0
+          text-align: center
+          +adjust-font-size-to(15px)
+          font-weight: bold
+          color: $color-ci-pink
+          cursor: pointer
+
+
+        &:after
+          opacity: 1
+
+
+  @media screen and (min-width: 1024px) and (max-width: 1136px)
+    .summary-inner .program-number
+      font-size: 64px
+      line-height: 48px
+
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2)
+    .record
+      .video-cover
+        display: none
+
+    .link
+      +translateY(0px)

@@ -1,0 +1,337 @@
+.talk
+
+  .container
+    +pie-clearfix
+
+  .talk-title
+    position: relative
+    +pie-clearfix
+    +leader(2)
+    +trailer(1)
+    margin-left: -2px
+
+    .share
+      position: absolute
+      top: 0
+      right: 0
+
+    .program-number
+      padding-right: 12px
+      @extend .gotham-bold-wz-shs
+      color: white
+      +adjust-font-size-to(64px, 3)
+
+    .gray-number
+      opacity: .5
+
+    .pink-number
+      color: $color-ci-pink
+
+    .program-content
+      overflow: hidden
+      @extend .shs-heavy
+
+      .guest
+        +adjust-font-size-to(18px, 1.5)
+        color: $color-ci-pink
+        letter-spacing: .1em
+
+      .title
+        +adjust-font-size-to(24px, 1.25)
+
+  iframe
+    box-sizing: border-box
+
+  .talk-content
+    +padding-leader()
+    +padding-trailer(2)
+    +trailer()
+
+  .talk-data
+    +pie-clearfix
+
+  .polis-embed
+    +padding-leader(3)
+    +padding-trailer(4)
+    background-color: rgb(247, 247, 247)
+
+    iframe
+      width: 100%
+      border: none !important
+
+  .point-of-view-list, .polis-list
+    .list-item
+      +pie-clearfix
+      +padding-trailer(.5)
+      border-bottom: 1px solid $color-ci-pink
+
+    .point, .percentage
+      +leader(1.5)
+      +trailer()
+
+      span
+        display: inline-block
+        width: 72px
+        height: 72px
+        @extend .shs-heavy
+        +adjust-font-size-to(32px, 2.75)
+        text-align: center
+        background-color: $color-ci-pink
+        +border-radius(50%)
+
+    .percentage
+      span
+        position: relative
+        +adjust-font-size-to(26px, 2.75)
+
+        &:after
+          content: "%"
+          position: absolute
+          left: 0
+          right: 0
+          bottom: 0
+          text-align: center
+          +adjust-font-size-to(16px, 1.25)
+
+    .percentage.bg_gray
+      span
+        background-color: $color-ci-gray
+
+    .content
+
+      .title
+        +trailer()
+        @extend .shs-heavy
+        +adjust-font-size-to(21px, 1.25)
+
+        br
+          display: none
+
+      p
+        color: $color-ci-gray
+        +adjust-font-size-to(16px, 1)
+
+  .polis-list
+    .list-item
+      position: relative
+      .rank
+        position: absolute
+        top: 0
+        right: 0
+        color: $color-ci-pink
+
+        &:before
+          content: "NO."
+          color: white
+          font-size: 11px
+
+        span
+          color: $color-ci-pink
+
+    .content
+      p
+        color: white
+
+  .point-of-view-list
+    .list-item:last-child
+      border-bottom: none
+
+  .switch-tab
+    +pie-clearfix
+    +reset-box-model
+    +trailer(1.5)
+    list-style: none
+
+    a
+      position: relative
+      display: inline-block
+      width: 100%
+      @extend .shs-heavy
+      +adjust-font-size-to(18px, 1.25)
+      color: $color-ci-gray
+      text-decoration: none
+
+    li
+      float: left
+      width: calc(50% - 2px)
+      text-align: center
+      border-left: 1px solid $color-ci-pink
+
+      &.active a
+        color: $color-ci-pink
+
+        &:after
+          content: ""
+          position: absolute
+          left: 50%
+          bottom: -16px
+          margin-left: -8px
+          border: 8px solid transparent
+          border-top-color: rgba($color-ci-pink, .7)
+
+      &:last-child
+        border-right: 1px solid $color-ci-pink
+
+  .switch-content
+    &.video
+      max-width: 760px
+      margin: 0 auto
+
+    .tab-pane.iframe
+      position: relative
+      padding-top: 56.25%
+
+      iframe
+        position: absolute
+        top: 0
+        width: 100%
+        height: 100%
+
+  .bio
+    h3
+      +trailer(0.25)
+      +adjust-font-size-to(16px)
+      font-weight: normal
+      @extend %subpixel
+
+    ul
+      margin-top: 0
+
+  @include at-breakpoint($pad)
+    .talk-content
+      +padding-leader(2)
+
+    .talk-title
+      +leader(3)
+
+      .program-number
+        float: left
+        +adjust-font-size-to(72px, 3.5)
+
+      .program-content
+        .guest
+          +adjust-font-size-to(18px, 1.5)
+
+        .title
+          +adjust-font-size-to(32px, 1.5)
+
+    .switch-tab
+      a
+        width: auto
+        +adjust-font-size-to(21px)
+        padding: 0 48px
+
+        br
+          display: none
+
+      li
+        width: auto
+
+    .point-of-view-list, .polis-list
+      .list-item
+        +padding-leader(2)
+        +padding-trailer(2)
+
+      .point, .percentage
+        +leader(0)
+        float: left
+        width: 200px
+
+        span
+          display: inline-block
+          width: 120px
+          height: 120px
+          @extend .shs-heavy
+          +adjust-font-size-to(64px, 4.75)
+          text-align: center
+          background-color: $color-ci-pink
+          +border-radius(50%)
+
+      .percentage
+        span
+          +adjust-font-size-to(48px, 4.75)
+
+          &:after
+            +adjust-font-size-to(21px)
+
+      .content
+        display: block
+        overflow: hidden
+        max-width: 800px
+
+        .title
+          +trailer()
+          @extend .shs-heavy
+          +adjust-font-size-to(24px, 1.5)
+
+          br
+            display: block
+
+        p
+          +adjust-font-size-to(16px, 1.25)
+
+    .polis-list
+      .list-item
+        padding-right: 48px
+        .rank
+          top: 48px
+      .content
+        p
+          +adjust-font-size-to(20px, 1.4)
+
+
+  @include at-breakpoint($desktop)
+    .container
+      position: relative
+
+    .main-content
+      +box-sizing(border-box)
+      float: left
+      width: 64%
+      padding-right: 24px
+
+      &.video
+        padding-right: 0
+
+      .block-title
+        width: 98%
+
+    .intro
+      +adjust-font-size-to(24px, 1.75)
+      max-width: 30em
+      width: 98%
+      p
+        +adjust-font-size-to(24px, 1.75)
+    .bio
+      +adjust-font-size-to(15px, 1.25)
+      p
+        +adjust-font-size-to(15px, 1.25)
+
+    .talk-title
+      .share
+        margin-top: .5em
+
+    .switch-tab
+      a
+        +adjust-font-size-to(24px)
+
+    .side-content
+      float: right
+      width: 36%
+
+      &.chat
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+
+    .point-of-view-list, .polis-list
+      .point, .percentage
+        width: 220px
+
+  @media (min-width: 1186px)
+    .main-content
+      width: 70%
+
+    .side-content
+      width: 30%
