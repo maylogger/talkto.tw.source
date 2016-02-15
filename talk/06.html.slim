@@ -1,61 +1,145 @@
 - @talk_id = 6
 
-.talk.live
-  .talk-content.program06
+.archive
+  .archive-header-title
     .container
-      .livestream.now
-        .live-countdown.now
-          .live-countdown-inner
-            span 距離開播還有
-            .countdown.now
-            / a.link#polis-link href="#polis" 分享你的觀點
-
-      .talk-title
-        .main-content
-          .program-number <span class="gray-number">0</span><span class="pink-number">#{talk_data[@talk_id]['program_number']}</span>
+      .program-info
+        .program-title
+          .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id]}</span>
           .program-content
             .guest #{talk_data[@talk_id]['guest']}
-            .title #{talk_data[@talk_id]['title']}
-
+            h1.title #{talk_data[@talk_id]['title']}
         .share
-          .share-button
+          .share-button.small
             span 分享
             a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/#{talk_data[@talk_id]['program_number_full']}" target="_blank" 分享到 Facebook
             a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F#{talk_data[@talk_id]['program_number_full']}&amp;via=talktotw" target="_blank" twitter 推文
-      .block.talk-data
+
+  .archive-header-record
+    a.program-nav.prev href="/talk/#{talk_data[@talk_id-1]['program_number_full']}.html"
+      .program-info
+        .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id-1]}</span>
+        .program-topic #{talk_data[@talk_id-1]['program_topic']}
+        img.program-image src="/images/program#{talk_data[@talk_id-1]['program_number_full']}_icon.jpg"
+    / a.program-nav.next href="/talk/#{talk_data[@talk_id+1]['program_number_full']}.html"
+    /   .program-info
+    /     .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id+1]}</span>
+    /     .program-topic #{talk_data[@talk_id+1]['program_topic']}
+    /     img.program-image src="/images/program#{talk_data[@talk_id+1]['program_number_full']}_icon.jpg"
+    .container
+      .record
+        .video-cover style='background-image: url(/images/program0#{[@talk_id]}_bg.jpg)'
+          .play-button#play-button
+            span 精華回顧
+        .video-wrap
+          .highlight-video
+            iframe id="video" src="https://www.youtube.com/embed/#{talk_data[@talk_id]['highlight_id']}?enablejsapi=1&amp;html5=1&amp;showinfo=0" frameborder="0" allowfullscreen=""
+
+  .archive-header-link
+    .contaner
+      ul.link
+        li: a.complete href="https://www.youtube.com/watch?v=#{talk_data[@talk_id]['complete_id']}" target="_blank" 完整重播
+        li: a.polis-data href="https://github.com/audreyt/polis-tally/blob/gh-pages/talkto06-12-31-tally.csv" target="_blank" 統計資料
+
+  .archive-content
+    .container
+      .content-row
         .main-content
-          .block-title
-            .title-en INTRO
-            .title-tw 簡介
-          .block-content
-            .intro
-              p #{talk_data[@talk_id]['intro']}
+          .talk-data
+            .block
+              .block-title
+                .title-en INTRO
+                .title-tw 簡介
+              .block-content
+                p #{talk_data[@talk_id]['intro']}
 
         .side-content
-          .block-title
-            .title-en BIO
-            .title-tw 來賓介紹
-          .block-content
-            .bio
-              p 林濁水，1947年出身，台灣南投縣埔里人
-              h3 學經歷：
-              ul
-                li 台灣政治大學畢業
-                li 新潮流雜誌總編輯
-                li 台灣國會立法委員1993〜2006
-                li 民進黨中央評議委員1986〜1992
-                li 民進黨政策會執行長2001〜2003
-                li 民進黨台灣獨立黨綱起草人（1991）
-              h3 現職：專欄作者
-              h3 著作：
-              ul
-                li 瓦解的帝國
-                li 世界圖像下的台灣共同體
-                li 歷史劇場－痛苦執政八年
+          .talk-data
+            .block
+              .block-title
+                .title-en BIO
+                .title-tw 來賓介紹
+              .block-content.bio-content
+                p 林濁水，1947年生，台灣南投縣埔里人
+                h3 學經歷：
+                ul
+                  li 台灣政治大學畢業
+                  li 新潮流雜誌總編輯
+                  li 台灣國會立法委員1993〜2006
+                  li 民進黨中央評議委員1986〜1992
+                  li 民進黨政策會執行長2001〜2003
+                  li 民進黨台灣獨立黨綱起草人（1991）
+                h3 現職：專欄作者
+                h3 著作：
+                ul
+                  li 瓦解的帝國
+                  li 世界圖像下的台灣共同體
+                  li 歷史劇場－痛苦執政八年
+
+      .content-row
+        .main-content
+          .talk-data
+            .block
+              .block-title
+                .title-en POINT OF VIEW
+                .title-tw 節目重點整理
+              .block-content
+                ol.point-of-view
+                  li
+                    h3.title 關於國會調查權
+                    p 各部門各單位都應該有相對應的調查權，重點倒不是說，國會行使調查權侵犯了監察院，因為任何一個機關設置，一定有他相對應的調查權，行政院有行政調查權，監察院有監察調查權，立法院當然也有立法調查權。比較麻煩的，不是你去侵瀆了監察院的權力，而是說同一個案子，你也調查我也調查，會把我們行政官員整死了。所以問題是出在會疊床架屋，而不是出在會互相侵犯。
+                    p 現在的國會調查權在國會改造中並不是最重要的事，因為像以美國為例也不常用，不會解決當今的國會亂象，備而不用，但不是當務之急。
+                  li
+                    h3.title 朝野協商
+                    p 每個地方都需要協商，但問題是我們的協商是法案送到委員會審查通過了，然後因為少部分人不同意，結果要送協商，通過了決議的條文，從頭拿來協商，這樣委員會審查等於是白審查了。所以真正的問題不是公不公開，而是要廢除委員會通過還拿去協商。不然法案一直累積在那邊，最後加班熬夜審法案，品質自然不會好。
+                  li
+                    h3.title 委員會有兩個召委
+                    p 兩個召委是一種分贓，而且雙頭馬車制度對於審法案絕對沒有幫助。
+                  li
+                    h3.title 立委一年換一個委員會更換太快
+                    p 一般國家的國會議員進去之後就在一個委員會裡面從頭到尾，對議題熟悉，政策立法也會有延續性，如果每一年換一個委員會，第一不專業，第二不連續，對整個這個立法的品質是很大的傷害。
+                  li
+                    h3.title 國會改革要分三階段
+                    p 第一個階段是修改內規，像立法院的質詢行使法、組織法，剛才講的單一召委、協商制度，這個修改內規就好了。
+                    p 第二個部分就是要修立法院外面的法，比如說雖然立法院行使調查權，若是立法院和監察院一起行， 這會讓行政院疲於奔命，所以這個要修監察法。
+                    p 第三個部分一定要修憲。
+                  li
+                    h3.title 議長中立問題
+                    p 修憲的原因是講到議長中立，議長要中立一定是內閣制。美國是總統制，重點是制衡，議長是不會中立，因為要制衡總統。而所謂議長中立的一定是內閣制。
+                  li
+                    h3.title 立委減半的問題
+                    p 1. 立委減半、委員會變少無法對應行政機關監督（權力很大但是能力不夠）
+                    p 2. 協商是個壞制度，但國會減半反而更依賴協商
+                    p 3. 違反民主票票等值的基本價值
+                  li
+                    h3.title 到底多少立委席次才適當
+                    p 立委席次可以從兩個方向來看，一個是用人口來計算，比如說人口的開立方根；一個是部會有多少，委員會應該也有要多少才有監督的能力，那至少要有15到20個委員會，每個不能少於10個委員。如果是依照人口的開立方根，我們大約是280左右，如果是足夠的委員會大概是150-200人。
+                    p 我做一個簡單的建議，應當以人口做基準，因為人口會增加會減少，所以不要固定在多少席，如果這樣，那我們就比照歐洲大國，十萬選一個，現在大約應該是230-240個左右。
 
 
-  / .block.polis-embed#polis
-  /   .container
-  /     .block-content
-  /       .polis data-conversation_id="#{talk_data[@talk_id]['polis_id']}"
-  /       script async="true" src="https://pol.is/embed.js"
+        .side-content
+          .polis-data.polis-program01
+            .block
+              .block-title
+                .title-en POLIS
+                .title-tw 全民共識排行榜
+              .block-content
+                ul.polis-result
+                .polis-loadmore ▼ 看更多
+
+      ul.pagination
+        li: a.program.prev href="/talk/0#{[@talk_id-1]}.html" 上一集節目
+        / li: a.program.next href="/talk/0#{[@talk_id+1]}.html" 下一集節目
+
+  javascript:
+    var jsonDataPath = "/json/#{talk_data[@talk_id]['polis_result']}"
+
+
+
+
+
+
+
+
+
+

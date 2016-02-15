@@ -1,9 +1,27 @@
+@-webkit-keyframes polisdata-fadein
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@-moz-keyframes polisdata-fadein
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes polisdata-fadein
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
 .archive
   +padding-leader()
   +padding-trailer(2)
   +trailer()
 
-  .archive-header
+  .archive-header-title, .archive-header-record, .archive-header-link
     +pie-clearfix
     position: relative
 
@@ -175,6 +193,10 @@
       .extra:before
         background-position: 0 -72px
 
+  .bio-content
+    ul
+      margin-top: 0
+
   .point-of-view
     list-style: none
     padding-left: 0
@@ -212,16 +234,27 @@
       margin-bottom: 0
       border-bottom: none
 
+    .polis-loadmore
+      padding: 6px 0
+      +adjust-font-size-to(15px)
+      font-weight: bold
+      color: $color-ci-pink
+      text-align: center
+      cursor: pointer
+      +transition(background-color .5s)
+
+      &:hover
+        background-color: #222
+
   .polis-result
     +reset-box-model
     list-style: none
-    opacity: 0
-    +transition(opacity .5s)
-
-    &.data-complete
-      opacity: 1
 
     .animation
+      -webkit-animation: polisdata-fadein 1s 1
+      -moz-animation:    polisdata-fadein 1s 1
+      animation:         polisdata-fadein 1s 1
+
       .percentage-bar
         width: 60%
         opacity: 0

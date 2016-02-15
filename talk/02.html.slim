@@ -1,8 +1,8 @@
 - @talk_id = 2
 
 .archive
-  .container
-    .archive-header
+  .archive-header-title
+    .container
       .program-info
         .program-title
           .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id]}</span>
@@ -15,6 +15,18 @@
             a.fb-share href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkto.tw/talk/#{talk_data[@talk_id]['program_number_full']}" target="_blank" 分享到 Facebook
             a.tweet href="https://twitter.com/intent/tweet?button_hashtag=talktotw&amp;text=政問 #{talk_data[@talk_id]['program_number_full']}《#{talk_data[@talk_id]['title']}》&amp;url=http%3A%2F%2Ftalkto.tw%2Ftalk%2F#{talk_data[@talk_id]['program_number_full']}&amp;via=talktotw" target="_blank" twitter 推文
 
+  .archive-header-record
+    a.program-nav.prev href="/talk/#{talk_data[@talk_id-1]['program_number_full']}.html"
+      .program-info
+        .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id-1]}</span>
+        .program-topic #{talk_data[@talk_id-1]['program_topic']}
+        img.program-image src="/images/program#{talk_data[@talk_id-1]['program_number_full']}_icon.jpg"
+    a.program-nav.next href="/talk/#{talk_data[@talk_id+1]['program_number_full']}.html"
+      .program-info
+        .program-number <span class="gray-number">0</span><span class="pink-number">#{[@talk_id+1]}</span>
+        .program-topic #{talk_data[@talk_id+1]['program_topic']}
+        img.program-image src="/images/program#{talk_data[@talk_id+1]['program_number_full']}_icon.jpg"
+    .container
       .record
         .video-cover style='background-image: url(/images/program0#{[@talk_id]}_bg.jpg)'
           .play-button#play-button
@@ -23,11 +35,14 @@
           .highlight-video
             iframe id="video" src="https://www.youtube.com/embed/#{talk_data[@talk_id]['highlight_id']}?enablejsapi=1&amp;html5=1&amp;showinfo=0" frameborder="0" allowfullscreen=""
 
+  .archive-header-link
+    .container
       ul.link
         li: a.complete href="https://www.youtube.com/watch?v=#{talk_data[@talk_id]['complete_id']}" target="_blank" 完整重播
         li: a.polis-data href="https://github.com/audreyt/polis-tally/blob/gh-pages/talkto02-12-04-tally.csv" target="_blank" 統計資料
 
-    .archive-content
+  .archive-content
+    .container
       .content-row
         .main-content
           .talk-data
@@ -112,32 +127,14 @@
                 .title-tw 全民共識排行榜
               .block-content
                 ul.polis-result
-                  - 10.times
-                    li.animation
-                      .polis-content
+                .polis-loadmore ▼ 看更多
 
       ul.pagination
         li: a.program.prev href="/talk/0#{[@talk_id-1]}.html" 上一集節目
         li: a.program.next href="/talk/0#{[@talk_id+1]}.html" 下一集節目
 
   javascript:
-    function polisJSON() {
-      $.getJSON("/json/#{talk_data[@talk_id]['polis_result']}", function(json){
-        var i = 0;
-        $(".polis-content").each(function(){
-          $(this).html(''
-            + '<div class="percentage-wrap"><div class="percentage" data-percentage="' + Math.round(json[i].percentage) + '"/></div>'
-            + '<p class="comment">' + json[i].comment_body + '</p>'
-          );
-          i = i + 1;
-        })
-        $(".polis-result").addClass('data-complete');
-        polisChart();
-      });
-    }
-    $(window).load(function(){
-      polisJSON();
-    });
+    var jsonDataPath = "/json/#{talk_data[@talk_id]['polis_result']}"
 
 
 
