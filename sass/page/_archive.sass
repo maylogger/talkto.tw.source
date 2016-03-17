@@ -25,6 +25,9 @@
     +pie-clearfix
     position: relative
 
+  .archive-header-record
+    overflow: hidden
+
   .archive-content
     +leader()
 
@@ -108,41 +111,42 @@
         border-right: 0px
         border-left: 18px solid white
 
-  .program-info
-    position: relative
-    +pie-clearfix
-    +trailer()
+  .archive-header-title
+    .program-info
+      position: relative
+      +pie-clearfix
+      +trailer()
 
-    .share
-      position: absolute
-      top: 3px
-      right: 0
-      z-index: 100
+      .share
+        position: absolute
+        top: 3px
+        right: 0
+        z-index: 100
 
-    .program-number
-      margin-left: -2px
-      padding-right: 12px
-      @extend .gotham-bold-wz-shs
-      color: white
-      +adjust-font-size-to(64px, 3)
+      .program-number
+        margin-left: -2px
+        padding-right: 12px
+        @extend .gotham-bold-wz-shs
+        color: white
+        +adjust-font-size-to(64px, 3)
 
-    .gray-number
-      opacity: .5
+      .gray-number
+        opacity: .5
 
-    .pink-number
-      color: $color-ci-pink
-
-    .program-content
-      overflow: hidden
-      @extend .shs-heavy
-
-      .guest
-        +adjust-font-size-to(18px, 1.5)
+      .pink-number
         color: $color-ci-pink
-        letter-spacing: .1em
 
-      .title
-        +adjust-font-size-to(24px, 1.25)
+      .program-content
+        overflow: hidden
+        @extend .shs-heavy
+
+        .guest
+          +adjust-font-size-to(18px, 1.5)
+          color: $color-ci-pink
+          letter-spacing: .1em
+
+        .title
+          +adjust-font-size-to(24px, 1.25)
 
   .link
     position: relative
@@ -305,7 +309,7 @@
 
 
   @include at-breakpoint($pad)
-    .program-info
+    .archive-header-title .program-info
 
       .program-number
         float: left
