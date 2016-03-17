@@ -1,12 +1,9 @@
 # Talk to Taiwan Source Project
-## 編譯工具
+### 編譯工具
 
 本站原始檔案使用 Fire.app 1.12 作為編譯工具
-css 使用 sass
-html 使用 slim template language
 
-
-## 檔案結構
+### 檔案結構
 
 - fonts：放置 typograhpy.com 提供的 webfont 設定檔案
 
